@@ -1,0 +1,122 @@
+[
+  {
+    "day": 4,
+    "illusion_number": 1,
+    "svg_filename": "muller_lyer_day4_illusion1.svg",
+    "line_length1": 184,
+    "line_length2": 184,
+    "actual_difference": 0,
+    "arrow_length": 20,
+    "angle": 36,
+    "line_thickness": 2,
+    "same_length": true
+  },
+  {
+    "day": 4,
+    "illusion_number": 2,
+    "svg_filename": "muller_lyer_day4_illusion2.svg",
+    "line_length1": 217,
+    "line_length2": 217,
+    "actual_difference": 0,
+    "arrow_length": 20,
+    "angle": 36,
+    "line_thickness": 2,
+    "same_length": true
+  },
+  {
+    "day": 4,
+    "illusion_number": 3,
+    "svg_filename": "muller_lyer_day4_illusion3.svg",
+    "line_length1": 181,
+    "line_length2": 194,
+    "actual_difference": -13,
+    "arrow_length": 20,
+    "angle": 36,
+    "line_thickness": 2,
+    "same_length": false
+  },
+  {
+    "day": 4,
+    "illusion_number": 4,
+    "svg_filename": "muller_lyer_day4_illusion4.svg",
+    "line_length1": 188,
+    "line_length2": 191,
+    "actual_difference": -3,
+    "arrow_length": 20,
+    "angle": 36,
+    "line_thickness": 2,
+    "same_length": false
+  },
+  {
+    "day": 4,
+    "illusion_number": 5,
+    "svg_filename": "muller_lyer_day4_illusion5.svg",
+    "line_length1": 193,
+    "line_length2": 186,
+    "actual_difference": 7,
+    "arrow_length": 20,
+    "angle": 36,
+    "line_thickness": 2,
+    "same_length": false
+  },
+  {
+    "day": 4,
+    "illusion_number": 6,
+    "svg_filename": "muller_lyer_day4_illusion6.svg",
+    "line_length1": 184,
+    "line_length2": 184,
+    "actual_difference": 0,
+    "arrow_length": 20,
+    "angle": 36,
+    "line_thickness": 2,
+    "same_length": true
+  },
+  {
+    "day": 4,
+    "illusion_number": 7,
+    "svg_filename": "muller_lyer_day4_illusion7.svg",
+    "line_length1": 213,
+    "line_length2": 213,
+    "actual_difference": 0,
+    "arrow_length": 20,
+    "angle": 36,
+    "line_thickness": 2,
+    "same_length": true
+  },
+  {
+    "day": 4,
+    "illusion_number": 8,
+    "svg_filename": "muller_lyer_day4_illusion8.svg",
+    "line_length1": 205,
+    "line_length2": 217,
+    "actual_difference": -12,
+    "arrow_length": 20,
+    "angle": 36,
+    "line_thickness": 2,
+    "same_length": false
+  },
+  {
+    "day": 4,
+    "illusion_number": 9,
+    "svg_filename": "muller_lyer_day4_illusion9.svg",
+    "line_length1": 195,
+    "line_length2": 195,
+    "actual_difference": 0,
+    "arrow_length": 20,
+    "angle": 36,
+    "line_thickness": 2,
+    "same_length": true
+  },
+  {
+    "day": 4,
+    "illusion_number": 10,
+    "svg_filename": "muller_lyer_day4_illusion10.svg",
+    "line_length1": 205,
+    "line_length2": 206,
+    "actual_difference": -1,
+    "arrow_length": 20,
+    "angle": 36,
+    "line_thickness": 2,
+    "same_length": false
+  }
+]
