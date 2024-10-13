@@ -4,11 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ quiz['title'] }} - Image {{ image_index + 1 }}</title>
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+        .responsive-image {
+            max-width: 100%;
+            max-height: 100vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+    </style>
     <script>
         let startTime;
 
         function startQuiz() {
-            document.getElementById('image').style.display = 'block';
+            document.getElementById('image').style.display = 'flex';
             document.getElementById('question').style.display = 'none';
             setTimeout(() => {
                 document.getElementById('image').style.display = 'none';
@@ -27,8 +42,8 @@
 </head>
 <body onload="startQuiz()">
     <h1>{{ quiz['title'] }} - Image {{ image_index + 1 }}</h1>
-    <div id="image">
-        <img src="{{ image['url'] }}" alt="Quiz Image">
+    <div id="image" class="image-container">
+        <img src="{{ image['url'] }}" alt="Quiz Image" class="responsive-image">
     </div>
     <div id="question" style="display: none;">
         <h2>{{ image['question'] }}</h2>
