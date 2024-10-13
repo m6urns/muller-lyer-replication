@@ -1,0 +1,28 @@
+[
+    {
+      "id": 0,
+      "title": "Animal Recognition Quiz",
+      "image_url": "/static/images/elephant.jpg",
+      "display_time": 1,
+      "question": "What animal did you see in the image?",
+      "options": [
+        "Elephant",
+        "Lion",
+        "Giraffe",
+        "Zebra"
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Capital City Quiz",
+      "image_url": "/static/images/paris.jpg",
+      "display_time": 1,
+      "question": "Which city was shown in the image?",
+      "options": [
+        "Paris",
+        "London",
+        "New York",
+        "Tokyo"
+      ]
+    }
+  ]

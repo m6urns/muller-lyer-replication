@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ quiz['title'] }}</title>
+    <script>
+        let startTime;
+
+        function startQuiz() {
+            document.getElementById('image').style.display = 'block';
+            document.getElementById('question').style.display = 'none';
+            setTimeout(() => {
+                document.getElementById('image').style.display = 'none';
+                document.getElementById('question').style.display = 'block';
+                startTime = new Date().getTime();
+            }, {{ quiz['display_time'] }} * 1000);
+        }
+
+        function submitAnswer() {
+            const endTime = new Date().getTime();
+            const responseTime = (endTime - startTime) / 1000; // Convert to seconds
+            document.getElementById('response_time').value = responseTime;
+            return true; // Allow form submission
+        }
+    </script>
+</head>
+<body onload="startQuiz()">
+    <h1>{{ quiz['title'] }}</h1>
+    <div id="image">
+        <img src="{{ quiz['image_url'] }}" alt="Quiz Image">
+    </div>
+    <div id="question" style="display: none;">
+        <h2>{{ quiz['question'] }}</h2>
+        <form action="{{ url_for('submit_answer') }}" method="post" onsubmit="return submitAnswer()">
+            {% for option in quiz['options'] %}
+            <label>
+                <input type="radio" name="answer" value="{{ option }}" required>
+                {{ option }}
+            </label><br>
+            {% endfor %}
+            <input type="hidden" name="quiz_id" value="{{ quiz['id'] }}">
+            <input type="hidden" name="response_time" id="response_time">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
