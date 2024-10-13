@@ -2,9 +2,13 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import json
 from datetime import datetime
 import csv
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Set this to a random secret key
+app.secret_key = os.getenv('SECRET_KEY')
 
 # Load quiz configuration
 def load_quiz_config():
