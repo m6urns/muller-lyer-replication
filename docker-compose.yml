@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - SECRET_KEY=
+      - DATA_DIR=/app/data
+    volumes:
+      - ./results:/app/data
+    restart: always

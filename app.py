@@ -3,12 +3,28 @@ import json
 from datetime import datetime
 import csv
 from dotenv import load_dotenv
-import os
+import os 
+import logging
 
 load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY')
+
+# Set data directory
+DATA_DIR = os.getenv('DATA_DIR', '/app/data')
+os.makedirs(DATA_DIR, exist_ok=True)
+
+logging.basicConfig(level=logging.DEBUG)
+
+def log_debug_info():
+    logging.debug(f"Current working directory: {os.getcwd()}")
+    logging.debug(f"Contents of current directory: {os.listdir('.')}")
+    logging.debug(f"Contents of /app/data: {os.listdir('/app/data')}")
+    logging.debug(f"Current user: {os.getuid()}:{os.getgid()}")
+    logging.debug(f"DATA_DIR environment variable: {os.getenv('DATA_DIR')}")
+    
+log_debug_info()
 
 # Load quiz configuration
 def load_quiz_config():
@@ -63,12 +79,24 @@ def submit_answer():
 @app.route('/complete')
 def thank_you():
     return render_template('complete.html')
-
+ 
 def save_answer(user_id, quiz_id, image_index, answer, response_time):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open('results/results.csv', 'a', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow([timestamp, user_id, quiz_id, image_index, answer, response_time])
+    results_file = os.path.join(DATA_DIR, 'results.csv')
+    file_exists = os.path.isfile(results_file)
+    logging.debug(f"Results file: {results_file}")
+    
+    try:
+        with open(results_file, 'a', newline='') as file:
+            writer = csv.writer(file)
+            if not file_exists:
+                writer.writerow(['Timestamp', 'User ID', 'Quiz ID', 'Image Index', 'Answer', 'Response Time'])
+            writer.writerow([timestamp, user_id, quiz_id, image_index, answer, response_time])
+            logging.debug(f"Saved answer to {results_file}")
+    except Exception as e:
+        logging.error(f"Error writing to file: {str(e)}")
+        raise
+        
 
 if __name__ == '__main__':
     app.run(debug=True)
