@@ -4,7 +4,7 @@ from datetime import datetime
 import csv
 
 app = Flask(__name__)
-app.secret_key = 'pyAyytxr9D7ebDPyXCfmVOxbj7mlCF9D0IoAskWqwszTA'  # Set this to a random secret key
+app.secret_key = 'your_secret_key'  # Set this to a random secret key
 
 # Load quiz configuration
 def load_quiz_config():
@@ -22,6 +22,7 @@ def start_quiz():
     quiz_id = int(request.form['quiz_id'])
     user_id = request.form['user_id']
     session['user_id'] = user_id
+    session['current_image_index'] = 0
     return redirect(url_for('quiz', quiz_id=quiz_id))
 
 @app.route('/quiz/<int:quiz_id>')
@@ -31,7 +32,11 @@ def quiz(quiz_id):
     quizzes = load_quiz_config()
     if quiz_id < len(quizzes):
         quiz = quizzes[quiz_id]
-        return render_template('quiz.html', quiz=quiz)
+        current_image_index = session.get('current_image_index', 0)
+        if current_image_index < len(quiz['images']):
+            return render_template('quiz.html', quiz=quiz, image=quiz['images'][current_image_index], image_index=current_image_index)
+        else:
+            return redirect(url_for('thank_you'))
     else:
         return "Quiz not found", 404
 
@@ -43,20 +48,23 @@ def submit_answer():
     user_id = session['user_id']
     answer = request.form['answer']
     quiz_id = int(request.form['quiz_id'])
+    image_index = int(request.form['image_index'])
     response_time = float(request.form['response_time'])
     
-    save_answer(user_id, quiz_id, answer, response_time)
-    return redirect(url_for('complete'))
+    save_answer(user_id, quiz_id, image_index, answer, response_time)
+    
+    session['current_image_index'] = image_index + 1
+    return redirect(url_for('quiz', quiz_id=quiz_id))
 
 @app.route('/complete')
-def complete():
+def thank_you():
     return render_template('complete.html')
 
-def save_answer(user_id, quiz_id, answer, response_time):
+def save_answer(user_id, quiz_id, image_index, answer, response_time):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open('quiz_results.csv', 'a', newline='') as file:
+    with open('results/results.csv', 'a', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow([timestamp, user_id, quiz_id, answer, response_time])
+        writer.writerow([timestamp, user_id, quiz_id, image_index, answer, response_time])
 
 if __name__ == '__main__':
     app.run(debug=True)

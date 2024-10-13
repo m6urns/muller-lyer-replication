@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ quiz['title'] }}</title>
+    <title>{{ quiz['title'] }} - Image {{ image_index + 1 }}</title>
     <script>
         let startTime;
 
@@ -14,7 +14,7 @@
                 document.getElementById('image').style.display = 'none';
                 document.getElementById('question').style.display = 'block';
                 startTime = new Date().getTime();
-            }, {{ quiz['display_time'] }} * 1000);
+            }, {{ image['display_time'] }} * 1000);
         }
 
         function submitAnswer() {
@@ -26,20 +26,21 @@
     </script>
 </head>
 <body onload="startQuiz()">
-    <h1>{{ quiz['title'] }}</h1>
+    <h1>{{ quiz['title'] }} - Image {{ image_index + 1 }}</h1>
     <div id="image">
-        <img src="{{ quiz['image_url'] }}" alt="Quiz Image">
+        <img src="{{ image['url'] }}" alt="Quiz Image">
     </div>
     <div id="question" style="display: none;">
-        <h2>{{ quiz['question'] }}</h2>
+        <h2>{{ image['question'] }}</h2>
         <form action="{{ url_for('submit_answer') }}" method="post" onsubmit="return submitAnswer()">
-            {% for option in quiz['options'] %}
+            {% for option in image['options'] %}
             <label>
                 <input type="radio" name="answer" value="{{ option }}" required>
                 {{ option }}
             </label><br>
             {% endfor %}
             <input type="hidden" name="quiz_id" value="{{ quiz['id'] }}">
+            <input type="hidden" name="image_index" value="{{ image_index }}">
             <input type="hidden" name="response_time" id="response_time">
             <input type="submit" value="Submit">
         </form>

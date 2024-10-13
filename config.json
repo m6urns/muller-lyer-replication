@@ -1,28 +1,50 @@
 [
-    {
-      "id": 0,
-      "title": "Animal Recognition Quiz",
-      "image_url": "/static/images/elephant.jpg",
-      "display_time": 1,
-      "question": "What animal did you see in the image?",
-      "options": [
-        "Elephant",
-        "Lion",
-        "Giraffe",
-        "Zebra"
-      ]
-    },
-    {
-      "id": 1,
-      "title": "Capital City Quiz",
-      "image_url": "/static/images/paris.jpg",
-      "display_time": 1,
-      "question": "Which city was shown in the image?",
-      "options": [
-        "Paris",
-        "London",
-        "New York",
-        "Tokyo"
-      ]
-    }
-  ]
+  {
+    "id": 0,
+    "title": "Animal Recognition Quiz",
+    "images": [
+      {
+        "url": "/static/images/elephant.jpg",
+        "display_time": 5,
+        "question": "What animal did you see in the image?",
+        "options": ["Elephant", "Lion", "Giraffe", "Zebra"]
+      },
+      {
+        "url": "/static/images/lion.jpg",
+        "display_time": 4,
+        "question": "What animal did you see in the image?",
+        "options": ["Elephant", "Lion", "Giraffe", "Zebra"]
+      },
+      {
+        "url": "/static/images/giraffe.jpg",
+        "display_time": 3,
+        "question": "What animal did you see in the image?",
+        "options": ["Elephant", "Lion", "Giraffe", "Zebra"]
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "Capital City Quiz",
+    "images": [
+      {
+        "url": "/static/images/paris.jpg",
+        "display_time": 3,
+        "question": "Which city was shown in the image?",
+        "options": ["Paris", "London", "New York", "Tokyo"]
+      },
+      {
+        "url": "/static/images/london.jpg",
+        "display_time": 3,
+        "question": "Which city was shown in the image?",
+        "options": ["Paris", "London", "New York", "Tokyo"]
+      },
+      {
+        "url": "/static/images/newyork.jpg",
+        "display_time": 3,
+        "question": "Which city was shown in the image?",
+        "options": ["Paris", "London", "New York", "Tokyo"]
+      }
+    ]
+  }
+]
