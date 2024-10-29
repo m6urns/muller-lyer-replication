@@ -81,7 +81,7 @@ def create_muller_lyer_comparison_svg(width, height, line_length1, line_length2,
     svg += '</svg>'
     return svg
 
-def generate_illusions_for_day(day, num_illusions=10, arrow_color='black', generate_duplicates=False):
+def generate_illusions_for_day(day, num_illusions=10, arrow_color='black', generate_duplicates=False, generate_control=False):
     """
     Generate a set of Müller-Lyer comparison illusions for a specific day.
     
@@ -89,6 +89,7 @@ def generate_illusions_for_day(day, num_illusions=10, arrow_color='black', gener
     :param num_illusions: Number of illusions to generate
     :param arrow_color: Color of the angled lines (default: 'black')
     :param generate_duplicates: If True, generates both colored and black versions
+    :param generate_control: If True, generates a control set with equal line lengths
     :return: A list of dictionaries containing illusion data
     """
     illusions = []
@@ -208,6 +209,38 @@ def generate_illusions_for_day(day, num_illusions=10, arrow_color='black', gener
             }
             
             illusions.append(illusion_data)
+            
+        # Generate control set if requested
+    if generate_control:
+        # For each illusion in the original set (including duplicates if enabled)
+        num_controls = num_illusions * (2 if generate_duplicates else 1)
+        
+        for i in range(num_controls):
+            # Use base line length for both lines (making them equal)
+            svg = create_muller_lyer_comparison_svg(
+                width, height, 
+                base_line_length, base_line_length,
+                arrow_length, angle, line_thickness,
+                arrow_color if i >= num_illusions else 'black'
+            )
+            
+            illusion_data = {
+                "day": day,
+                "illusion_number": i + 1 + len(illusions),  # Continue numbering from main set
+                "svg_filename": f"muller_lyer_day{day}_control_illusion{i+1}.svg",
+                "svg": svg,
+                "line_length1": base_line_length,
+                "line_length2": base_line_length,
+                "actual_difference": 0,
+                "arrow_length": arrow_length,
+                "angle": angle,
+                "line_thickness": line_thickness,
+                "same_length": True,
+                "arrow_color": arrow_color if i >= num_illusions else 'black',
+                "is_control": True  # Add flag to identify control set
+            }
+            
+            illusions.append(illusion_data)
     
     # Update illusion numbers to ensure sequential ordering
     for i, illusion in enumerate(illusions):
@@ -245,6 +278,8 @@ if __name__ == "__main__":
     parser.add_argument("--arrow_color", default="black", help="Color for the angled lines (e.g., 'red', '#FF0000')")
     parser.add_argument("--generate_duplicates", action="store_true", 
                         help="Generate both colored and black versions of the same illusions")
+    parser.add_argument("--generate_control", action="store_true",
+                        help="Generate a control set with equal line lengths")
     
     args = parser.parse_args()
     
@@ -253,6 +288,7 @@ if __name__ == "__main__":
             day, 
             num_illusions=args.num_illusions,
             arrow_color=args.arrow_color,
-            generate_duplicates=args.generate_duplicates
+            generate_duplicates=args.generate_duplicates,
+            generate_control=args.generate_control
         )
         save_illusions_and_metadata(illusions, day)
