@@ -1,8 +1,8 @@
 [
   {
     "id": 0,
-    "title": "M\u00fcller-Lyer Illusion Quiz - Day 1 (Fast)",
-    "speed": "fast",
+    "title": "M\u00fcller-Lyer Illusion Quiz - Day 1 (Group1-fast)",
+    "speed": "Group1-fast",
     "images": [
       {
         "url": "/static/images/muller_lyer_day1_illusion1.svg",
@@ -88,8 +88,8 @@
   },
   {
     "id": 1,
-    "title": "M\u00fcller-Lyer Illusion Quiz - Day 1 (Slow)",
-    "speed": "slow",
+    "title": "M\u00fcller-Lyer Illusion Quiz - Day 1 (Group1-slow)",
+    "speed": "Group1-slow",
     "images": [
       {
         "url": "/static/images/muller_lyer_day1_illusion1.svg",
@@ -175,8 +175,8 @@
   },
   {
     "id": 2,
-    "title": "M\u00fcller-Lyer Illusion Quiz - Day 1 (Control-fast)",
-    "speed": "control-fast",
+    "title": "M\u00fcller-Lyer Illusion Quiz - Day 1 (Group2-fast)",
+    "speed": "Group2-fast",
     "images": [
       {
         "url": "/static/images/muller_lyer_day1_illusion5.svg",
@@ -262,8 +262,8 @@
   },
   {
     "id": 3,
-    "title": "M\u00fcller-Lyer Illusion Quiz - Day 1 (Control-slow)",
-    "speed": "control-slow",
+    "title": "M\u00fcller-Lyer Illusion Quiz - Day 1 (Group2-slow)",
+    "speed": "Group2-slow",
     "images": [
       {
         "url": "/static/images/muller_lyer_day1_illusion5.svg",
