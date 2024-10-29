@@ -99,7 +99,7 @@ def generate_illusions_for_day(day, num_illusions=10):
     
     # Generate illusions with the same length
     for i in range(num_illusions // 2):
-        line_length = base_line_length + random.randint(-20, 20)
+        line_length = base_line_length + (random.randint(-4, 4) * 5)
         
         svg = create_muller_lyer_comparison_svg(width, height, line_length, line_length, 
                                                 arrow_length, angle, line_thickness)
