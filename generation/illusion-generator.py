@@ -122,10 +122,10 @@ def generate_illusions_for_day(day, num_illusions=10):
     
     # Generate illusions with different lengths
     for i in range(num_illusions // 2, num_illusions):
-        line_length1 = base_line_length + random.randint(-20, 20)
-        line_length2 = base_line_length + random.randint(-20, 20)
+        line_length1 = base_line_length + (random.randint(-4, 4) * 5)
+        line_length2 = base_line_length + (random.randint(-4, 4) * 5)
         while line_length1 == line_length2:  # Ensure different lengths
-            line_length2 = base_line_length + random.randint(-20, 20)
+            line_length2 = base_line_length + (random.randint(-4, 4) * 5)
         
         actual_difference = line_length1 - line_length2
         
