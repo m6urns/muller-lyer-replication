@@ -43,7 +43,8 @@ def generate_quiz_config(metadata: List[Dict], day: int, display_time: float, sp
                 "actual_difference": illusion['actual_difference'],
                 "arrow_length": illusion['arrow_length'],
                 "angle": illusion['angle'],
-                "line_thickness": illusion['line_thickness']
+                "line_thickness": illusion['line_thickness'], 
+                "arrow_color": illusion.get('arrow_color', 'black')
             }
         }
         quiz["images"].append(image_config)
