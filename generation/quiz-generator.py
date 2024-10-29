@@ -69,18 +69,39 @@ def generate_quizzes(base_folder: str, fast_time: float, slow_time: float, singl
             metadata_path = os.path.join(base_folder, metadata_file)
             metadata = load_metadata(metadata_path)
             if metadata:
+                # Split metadata into control and non-control sets
+                control_metadata = [m for m in metadata if m.get('is_control', False)]
+                regular_metadata = [m for m in metadata if not m.get('is_control', False)]
+                
                 if single_set:
-                    quiz = generate_quiz_config(metadata, day, slow_time, "single", quiz_id)
+                    quiz = generate_quiz_config(regular_metadata, day, slow_time, "single", quiz_id)
                     quizzes.append(quiz)
                     quiz_id += 1
                     logging.info(f"Added single quiz for day {day}")
+                    
+                    # Add control quiz if control metadata exists
+                    if control_metadata:
+                        control_quiz = generate_quiz_config(control_metadata, day, slow_time, "control-single", quiz_id)
+                        quizzes.append(control_quiz)
+                        quiz_id += 1
+                        logging.info(f"Added control single quiz for day {day}")
                 else:
-                    fast_quiz = generate_quiz_config(metadata, day, fast_time, "fast", quiz_id)
+                    # Regular quizzes
+                    fast_quiz = generate_quiz_config(regular_metadata, day, fast_time, "fast", quiz_id)
                     quiz_id += 1
-                    slow_quiz = generate_quiz_config(metadata, day, slow_time, "slow", quiz_id)
+                    slow_quiz = generate_quiz_config(regular_metadata, day, slow_time, "slow", quiz_id)
                     quiz_id += 1
                     quizzes.extend([fast_quiz, slow_quiz])
                     logging.info(f"Added fast and slow quizzes for day {day}")
+                    
+                    # Add control quizzes if control metadata exists
+                    if control_metadata:
+                        control_fast_quiz = generate_quiz_config(control_metadata, day, fast_time, "control-fast", quiz_id)
+                        quiz_id += 1
+                        control_slow_quiz = generate_quiz_config(control_metadata, day, slow_time, "control-slow", quiz_id)
+                        quiz_id += 1
+                        quizzes.extend([control_fast_quiz, control_slow_quiz])
+                        logging.info(f"Added control fast and slow quizzes for day {day}")
             else:
                 logging.warning(f"No metadata found for day {day}")
         else:
