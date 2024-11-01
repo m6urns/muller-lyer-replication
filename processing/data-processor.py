@@ -6,6 +6,8 @@ import logging
 import os
 from pathlib import Path
 
+# python data-processor.py --results ../results/results.csv --config ../config.json --metadata-dir ../static/images/ --output ../data/processed_data.csv
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -25,6 +27,7 @@ class MullerLyerDataProcessor:
         # Create mappings
         self.quiz_config_map = {}
         self.image_metadata_map = {}
+        self.control_status_map = {}  # New mapping for control status
         
     def load_metadata_files(self) -> None:
         """Load all metadata files from the specified directory"""
@@ -80,22 +83,34 @@ class MullerLyerDataProcessor:
         # Create quiz configuration mapping
         for quiz in self.config_data:
             quiz_id = quiz['id']
+            images = quiz['images']
+            
+            # Create a mapping for each image in the quiz
+            image_configs = {}
+            for idx, image in enumerate(images):
+                # Extract filename from URL
+                url = image['url']
+                filename = os.path.basename(url)
+                
+                # Store the config and filename mapping
+                image_configs[idx] = {
+                    'correct_answer': image['correct_answer'],
+                    'metadata': image['metadata'],
+                    'filename': filename
+                }
+            
             self.quiz_config_map[quiz_id] = {
                 'speed': quiz['speed'],
-                'display_time': quiz['images'][0]['display_time'],
-                'images': {
-                    idx: {
-                        'correct_answer': image['correct_answer'],
-                        'metadata': image['metadata']
-                    }
-                    for idx, image in enumerate(quiz['images'])
-                }
+                'display_time': images[0]['display_time'],
+                'images': image_configs
             }
             
-        # Create image metadata mapping using filename as key
+        # Create metadata mappings
         for item in self.metadata:
             filename = item['svg_filename']
             self.image_metadata_map[filename] = item
+            # Map whether this is a control image based on metadata
+            self.control_status_map[filename] = item.get('is_control', False)
     
     def process_data(self) -> pd.DataFrame:
         """Combine and process all data into a single DataFrame"""
@@ -112,6 +127,12 @@ class MullerLyerDataProcessor:
             # Get quiz configuration for this response
             quiz_config = self.quiz_config_map[quiz_id]
             image_config = quiz_config['images'][image_idx]
+            
+            # Get the filename for this image
+            filename = image_config['filename']
+            
+            # Get control status from metadata mapping
+            is_control = self.control_status_map.get(filename, False)
             
             # Create processed record
             record = {
@@ -135,7 +156,7 @@ class MullerLyerDataProcessor:
                 'arrow_length': image_config['metadata']['arrow_length'],
                 'angle': image_config['metadata']['angle'],
                 'arrow_color': image_config['metadata']['arrow_color'],
-                'is_control': image_config['metadata'].get('is_control', False)
+                'is_control': is_control
             }
             
             processed_records.append(record)
