@@ -1,10 +1,10 @@
 import pandas as pd
 import json
 import argparse
-from typing import Dict, Any
+from typing import Dict, Any, List
 import logging
-
-# python data_processor.py --results ../results/results.csv --config ../config.json --metadata ../static/images/muller_lyer_day1_metadata.json --output ../data/processed_data.csv
+import os
+from pathlib import Path
 
 logging.basicConfig(
     level=logging.INFO,
@@ -12,20 +12,43 @@ logging.basicConfig(
 )
 
 class MullerLyerDataProcessor:
-    def __init__(self, results_path: str, config_path: str, metadata_path: str):
+    def __init__(self, results_path: str, config_path: str, metadata_dir: str):
         self.results_path = results_path
         self.config_path = config_path
-        self.metadata_path = metadata_path
+        self.metadata_dir = metadata_dir
         
         # Initialize storage for loaded data
         self.results_df = None
         self.config_data = None
-        self.metadata = None
+        self.metadata = []
         
         # Create mappings
         self.quiz_config_map = {}
         self.image_metadata_map = {}
         
+    def load_metadata_files(self) -> None:
+        """Load all metadata files from the specified directory"""
+        logging.info(f"Loading metadata files from {self.metadata_dir}")
+        
+        metadata_files = sorted([f for f in os.listdir(self.metadata_dir) 
+                               if f.endswith('_metadata.json')])
+        
+        if not metadata_files:
+            raise FileNotFoundError(f"No metadata files found in {self.metadata_dir}")
+            
+        for metadata_file in metadata_files:
+            try:
+                file_path = os.path.join(self.metadata_dir, metadata_file)
+                with open(file_path, 'r') as f:
+                    metadata_content = json.load(f)
+                    self.metadata.extend(metadata_content)
+                logging.info(f"Loaded metadata from {metadata_file}")
+            except Exception as e:
+                logging.error(f"Error loading metadata file {metadata_file}: {e}")
+                raise
+                
+        logging.info(f"Loaded metadata for {len(self.metadata)} total illusions")
+    
     def load_data(self) -> None:
         """Load all data sources"""
         logging.info("Loading data files...")
@@ -47,14 +70,8 @@ class MullerLyerDataProcessor:
             logging.error(f"Error loading config file: {e}")
             raise
             
-        # Load metadata
-        try:
-            with open(self.metadata_path, 'r') as f:
-                self.metadata = json.load(f)
-            logging.info(f"Loaded metadata for {len(self.metadata)} illusions")
-        except Exception as e:
-            logging.error(f"Error loading metadata file: {e}")
-            raise
+        # Load metadata files
+        self.load_metadata_files()
     
     def create_mappings(self) -> None:
         """Create lookup mappings from loaded data"""
@@ -117,7 +134,8 @@ class MullerLyerDataProcessor:
                 'actual_difference': image_config['metadata']['actual_difference'],
                 'arrow_length': image_config['metadata']['arrow_length'],
                 'angle': image_config['metadata']['angle'],
-                'arrow_color': image_config['metadata']['arrow_color']
+                'arrow_color': image_config['metadata']['arrow_color'],
+                'is_control': image_config['metadata'].get('is_control', False)
             }
             
             processed_records.append(record)
@@ -135,7 +153,7 @@ def main():
     parser = argparse.ArgumentParser(description='Process Müller-Lyer experiment data')
     parser.add_argument('--results', required=True, help='Path to results CSV file')
     parser.add_argument('--config', required=True, help='Path to quiz configuration JSON file')
-    parser.add_argument('--metadata', required=True, help='Path to illusion metadata JSON file')
+    parser.add_argument('--metadata-dir', required=True, help='Directory containing metadata JSON files')
     parser.add_argument('--output', required=True, help='Path for output CSV file')
     
     args = parser.parse_args()
@@ -144,7 +162,7 @@ def main():
     processor = MullerLyerDataProcessor(
         results_path=args.results,
         config_path=args.config,
-        metadata_path=args.metadata
+        metadata_dir=args.metadata_dir
     )
     
     # Process data
