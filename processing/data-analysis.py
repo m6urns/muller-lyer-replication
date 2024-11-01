@@ -112,27 +112,50 @@ def create_comparison_visualization(stats: Dict[str, ParticipantStats]) -> None:
     plt.tight_layout()
 
 def create_accuracy_trend_visualization(df: pd.DataFrame) -> None:
-    """Create a line plot showing accuracy trends over days for each participant."""
-    # Calculate daily accuracy for each participant
-    daily_accuracy = df.groupby(['user_id', 'day']).agg({
+    """Create a line plot showing accuracy trends over days for each participant, separated by speed."""
+    # Calculate daily accuracy for each participant and speed condition
+    daily_accuracy = df.groupby(['user_id', 'day', 'speed_group']).agg({
         'is_correct': ['count', 'sum']
     }).reset_index()
     
     # Calculate accuracy percentage
-    daily_accuracy.columns = ['user_id', 'day', 'total_trials', 'correct_trials']
+    daily_accuracy.columns = ['user_id', 'day', 'speed_group', 'total_trials', 'correct_trials']
     daily_accuracy['accuracy'] = (daily_accuracy['correct_trials'] / 
                                 daily_accuracy['total_trials'] * 100)
+    
+    # Simplify speed group names
+    daily_accuracy['speed'] = daily_accuracy['speed_group'].apply(
+        lambda x: 'Fast' if 'Fast' in x else 'Slow'
+    )
     
     # Create the visualization
     plt.figure(figsize=(12, 6))
     sns.set_style("whitegrid")
     
-    # Create line plot
-    sns.lineplot(data=daily_accuracy, x='day', y='accuracy', 
-                hue='user_id', marker='o', markersize=8)
+    # Get unique users for color assignment
+    users = sorted(df['user_id'].unique())
+    colors = sns.color_palette("husl", n_colors=len(users))
+    
+    # Create line plot for each user and speed condition
+    for i, user in enumerate(users):
+        user_data = daily_accuracy[daily_accuracy['user_id'] == user]
+        
+        # Plot fast condition (solid line)
+        fast_data = user_data[user_data['speed'] == 'Fast']
+        if not fast_data.empty:
+            plt.plot(fast_data['day'], fast_data['accuracy'], 
+                    color=colors[i], linestyle='-', marker='o',
+                    label=f'{user} (Fast)', markersize=8)
+        
+        # Plot slow condition (dashed line)
+        slow_data = user_data[user_data['speed'] == 'Slow']
+        if not slow_data.empty:
+            plt.plot(slow_data['day'], slow_data['accuracy'], 
+                    color=colors[i], linestyle='--', marker='s',
+                    label=f'{user} (Slow)', markersize=8)
     
     # Customize the plot
-    plt.title('Accuracy Trends Over Time by Participant', pad=20)
+    plt.title('Accuracy Trends Over Time by Participant and Speed', pad=20)
     plt.xlabel('Day')
     plt.ylabel('Accuracy (%)')
     
@@ -140,7 +163,10 @@ def create_accuracy_trend_visualization(df: pd.DataFrame) -> None:
     plt.xticks(sorted(daily_accuracy['day'].unique()))
     
     # Add legend with a title
-    plt.legend(title='Participant ID', bbox_to_anchor=(1.05, 1), loc='upper left')
+    plt.legend(title='Participant ID (Speed)',
+              bbox_to_anchor=(1.05, 1), 
+              loc='upper left',
+              borderaxespad=0)
     
     # Ensure no labels are cut off
     plt.tight_layout()
