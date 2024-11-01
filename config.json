@@ -5,26 +5,6 @@
     "speed": "Group1-fast",
     "images": [
       {
-        "url": "/static/images/muller_lyer_day1_illusion1.svg",
-        "display_time": 0.5,
-        "question": "Which line appears longer?",
-        "options": [
-          "Left",
-          "Right",
-          "Same length"
-        ],
-        "correct_answer": "Same length",
-        "metadata": {
-          "line_length1": 195,
-          "line_length2": 195,
-          "actual_difference": 0,
-          "arrow_length": 20,
-          "angle": 36,
-          "line_thickness": 2,
-          "arrow_color": "black"
-        }
-      },
-      {
         "url": "/static/images/muller_lyer_day1_illusion2.svg",
         "display_time": 0.5,
         "question": "Which line appears longer?",
@@ -38,6 +18,26 @@
           "line_length1": 220,
           "line_length2": 215,
           "actual_difference": 5,
+          "arrow_length": 20,
+          "angle": 36,
+          "line_thickness": 2,
+          "arrow_color": "black"
+        }
+      },
+      {
+        "url": "/static/images/muller_lyer_day1_illusion1.svg",
+        "display_time": 0.5,
+        "question": "Which line appears longer?",
+        "options": [
+          "Left",
+          "Right",
+          "Same length"
+        ],
+        "correct_answer": "Same length",
+        "metadata": {
+          "line_length1": 195,
+          "line_length2": 195,
+          "actual_difference": 0,
           "arrow_length": 20,
           "angle": 36,
           "line_thickness": 2,
@@ -92,26 +92,6 @@
     "speed": "Group1-slow",
     "images": [
       {
-        "url": "/static/images/muller_lyer_day1_illusion1.svg",
-        "display_time": 5.0,
-        "question": "Which line appears longer?",
-        "options": [
-          "Left",
-          "Right",
-          "Same length"
-        ],
-        "correct_answer": "Same length",
-        "metadata": {
-          "line_length1": 195,
-          "line_length2": 195,
-          "actual_difference": 0,
-          "arrow_length": 20,
-          "angle": 36,
-          "line_thickness": 2,
-          "arrow_color": "black"
-        }
-      },
-      {
         "url": "/static/images/muller_lyer_day1_illusion2.svg",
         "display_time": 5.0,
         "question": "Which line appears longer?",
@@ -129,6 +109,26 @@
           "angle": 36,
           "line_thickness": 2,
           "arrow_color": "black"
+        }
+      },
+      {
+        "url": "/static/images/muller_lyer_day1_illusion4.svg",
+        "display_time": 5.0,
+        "question": "Which line appears longer?",
+        "options": [
+          "Left",
+          "Right",
+          "Same length"
+        ],
+        "correct_answer": "Left",
+        "metadata": {
+          "line_length1": 220,
+          "line_length2": 215,
+          "actual_difference": 5,
+          "arrow_length": 20,
+          "angle": 36,
+          "line_thickness": 2,
+          "arrow_color": "red"
         }
       },
       {
@@ -152,7 +152,7 @@
         }
       },
       {
-        "url": "/static/images/muller_lyer_day1_illusion4.svg",
+        "url": "/static/images/muller_lyer_day1_illusion1.svg",
         "display_time": 5.0,
         "question": "Which line appears longer?",
         "options": [
@@ -160,15 +160,15 @@
           "Right",
           "Same length"
         ],
-        "correct_answer": "Left",
+        "correct_answer": "Same length",
         "metadata": {
-          "line_length1": 220,
-          "line_length2": 215,
-          "actual_difference": 5,
+          "line_length1": 195,
+          "line_length2": 195,
+          "actual_difference": 0,
           "arrow_length": 20,
           "angle": 36,
           "line_thickness": 2,
-          "arrow_color": "red"
+          "arrow_color": "black"
         }
       }
     ]
@@ -179,46 +179,6 @@
     "speed": "Group2-fast",
     "images": [
       {
-        "url": "/static/images/muller_lyer_day1_illusion5.svg",
-        "display_time": 0.5,
-        "question": "Which line appears longer?",
-        "options": [
-          "Left",
-          "Right",
-          "Same length"
-        ],
-        "correct_answer": "Same length",
-        "metadata": {
-          "line_length1": 200,
-          "line_length2": 200,
-          "actual_difference": 0,
-          "arrow_length": 20,
-          "angle": 36,
-          "line_thickness": 2,
-          "arrow_color": "black"
-        }
-      },
-      {
-        "url": "/static/images/muller_lyer_day1_illusion6.svg",
-        "display_time": 0.5,
-        "question": "Which line appears longer?",
-        "options": [
-          "Left",
-          "Right",
-          "Same length"
-        ],
-        "correct_answer": "Same length",
-        "metadata": {
-          "line_length1": 200,
-          "line_length2": 200,
-          "actual_difference": 0,
-          "arrow_length": 20,
-          "angle": 36,
-          "line_thickness": 2,
-          "arrow_color": "black"
-        }
-      },
-      {
         "url": "/static/images/muller_lyer_day1_illusion7.svg",
         "display_time": 0.5,
         "question": "Which line appears longer?",
@@ -256,6 +216,46 @@
           "angle": 36,
           "line_thickness": 2,
           "arrow_color": "red"
+        }
+      },
+      {
+        "url": "/static/images/muller_lyer_day1_illusion5.svg",
+        "display_time": 0.5,
+        "question": "Which line appears longer?",
+        "options": [
+          "Left",
+          "Right",
+          "Same length"
+        ],
+        "correct_answer": "Same length",
+        "metadata": {
+          "line_length1": 200,
+          "line_length2": 200,
+          "actual_difference": 0,
+          "arrow_length": 20,
+          "angle": 36,
+          "line_thickness": 2,
+          "arrow_color": "black"
+        }
+      },
+      {
+        "url": "/static/images/muller_lyer_day1_illusion6.svg",
+        "display_time": 0.5,
+        "question": "Which line appears longer?",
+        "options": [
+          "Left",
+          "Right",
+          "Same length"
+        ],
+        "correct_answer": "Same length",
+        "metadata": {
+          "line_length1": 200,
+          "line_length2": 200,
+          "actual_difference": 0,
+          "arrow_length": 20,
+          "angle": 36,
+          "line_thickness": 2,
+          "arrow_color": "black"
         }
       }
     ]
@@ -266,46 +266,6 @@
     "speed": "Group2-slow",
     "images": [
       {
-        "url": "/static/images/muller_lyer_day1_illusion5.svg",
-        "display_time": 5.0,
-        "question": "Which line appears longer?",
-        "options": [
-          "Left",
-          "Right",
-          "Same length"
-        ],
-        "correct_answer": "Same length",
-        "metadata": {
-          "line_length1": 200,
-          "line_length2": 200,
-          "actual_difference": 0,
-          "arrow_length": 20,
-          "angle": 36,
-          "line_thickness": 2,
-          "arrow_color": "black"
-        }
-      },
-      {
-        "url": "/static/images/muller_lyer_day1_illusion6.svg",
-        "display_time": 5.0,
-        "question": "Which line appears longer?",
-        "options": [
-          "Left",
-          "Right",
-          "Same length"
-        ],
-        "correct_answer": "Same length",
-        "metadata": {
-          "line_length1": 200,
-          "line_length2": 200,
-          "actual_difference": 0,
-          "arrow_length": 20,
-          "angle": 36,
-          "line_thickness": 2,
-          "arrow_color": "black"
-        }
-      },
-      {
         "url": "/static/images/muller_lyer_day1_illusion7.svg",
         "display_time": 5.0,
         "question": "Which line appears longer?",
@@ -326,6 +286,26 @@
         }
       },
       {
+        "url": "/static/images/muller_lyer_day1_illusion5.svg",
+        "display_time": 5.0,
+        "question": "Which line appears longer?",
+        "options": [
+          "Left",
+          "Right",
+          "Same length"
+        ],
+        "correct_answer": "Same length",
+        "metadata": {
+          "line_length1": 200,
+          "line_length2": 200,
+          "actual_difference": 0,
+          "arrow_length": 20,
+          "angle": 36,
+          "line_thickness": 2,
+          "arrow_color": "black"
+        }
+      },
+      {
         "url": "/static/images/muller_lyer_day1_illusion8.svg",
         "display_time": 5.0,
         "question": "Which line appears longer?",
@@ -343,6 +323,26 @@
           "angle": 36,
           "line_thickness": 2,
           "arrow_color": "red"
+        }
+      },
+      {
+        "url": "/static/images/muller_lyer_day1_illusion6.svg",
+        "display_time": 5.0,
+        "question": "Which line appears longer?",
+        "options": [
+          "Left",
+          "Right",
+          "Same length"
+        ],
+        "correct_answer": "Same length",
+        "metadata": {
+          "line_length1": 200,
+          "line_length2": 200,
+          "actual_difference": 0,
+          "arrow_length": 20,
+          "angle": 36,
+          "line_thickness": 2,
+          "arrow_color": "black"
         }
       }
     ]

@@ -4,6 +4,7 @@ import re
 from typing import List, Dict
 import logging
 import argparse
+import random
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -21,7 +22,7 @@ def load_metadata(file_path: str) -> List[Dict]:
         logging.error(f"Error decoding JSON from file: {file_path}")
         return []
 
-def generate_quiz_config(metadata: List[Dict], day: int, display_time: float, speed: str, quiz_id: int) -> Dict:
+def generate_quiz_config(metadata: List[Dict], day: int, display_time: float, speed: str, quiz_id: int, randomize: bool = True) -> Dict:
     logging.debug(f"Generating {speed} quiz config for day {day} with {len(metadata)} illusions")
     quiz = {
         "id": quiz_id,
@@ -30,6 +31,7 @@ def generate_quiz_config(metadata: List[Dict], day: int, display_time: float, sp
         "images": []
     }
 
+    image_configs = []
     for illusion in metadata:
         image_config = {
             "url": f"/static/images/{illusion['svg_filename']}",
@@ -47,12 +49,17 @@ def generate_quiz_config(metadata: List[Dict], day: int, display_time: float, sp
                 "arrow_color": illusion.get('arrow_color', 'black')
             }
         }
-        quiz["images"].append(image_config)
+        # quiz["images"].append(image_config)
+        image_configs.append(image_config)
+        
+    if randomize:
+        random.shuffle(image_configs)
+    quiz["images"] = image_configs
 
     logging.debug(f"Generated {speed} quiz for day {day} with {len(quiz['images'])} images")
     return quiz
 
-def generate_quizzes(base_folder: str, fast_time: float, slow_time: float, single_set: bool) -> List[Dict]:
+def generate_quizzes(base_folder: str, fast_time: float, slow_time: float, single_set: bool, randomize: bool = True) -> List[Dict]:
     logging.info(f"Generating quizzes from base folder: {base_folder}")
     quizzes = []
     if not os.path.exists(base_folder):
@@ -74,31 +81,31 @@ def generate_quizzes(base_folder: str, fast_time: float, slow_time: float, singl
                 regular_metadata = [m for m in metadata if not m.get('is_control', False)]
                 
                 if single_set:
-                    quiz = generate_quiz_config(regular_metadata, day, slow_time, "single", quiz_id)
+                    quiz = generate_quiz_config(regular_metadata, day, slow_time, "single", quiz_id, randomize)
                     quizzes.append(quiz)
                     quiz_id += 1
                     logging.info(f"Added single quiz for day {day}")
                     
                     # Add control quiz if control metadata exists
                     if control_metadata:
-                        control_quiz = generate_quiz_config(control_metadata, day, slow_time, "control-single", quiz_id)
+                        control_quiz = generate_quiz_config(control_metadata, day, slow_time, "control-single", quiz_id, randomize)
                         quizzes.append(control_quiz)
                         quiz_id += 1
                         logging.info(f"Added control single quiz for day {day}")
                 else:
                     # Regular quizzes
-                    fast_quiz = generate_quiz_config(regular_metadata, day, fast_time, "Group1-fast", quiz_id)
+                    fast_quiz = generate_quiz_config(regular_metadata, day, fast_time, "Group1-fast", quiz_id, randomize)
                     quiz_id += 1
-                    slow_quiz = generate_quiz_config(regular_metadata, day, slow_time, "Group1-slow", quiz_id)
+                    slow_quiz = generate_quiz_config(regular_metadata, day, slow_time, "Group1-slow", quiz_id, randomize)
                     quiz_id += 1
                     quizzes.extend([fast_quiz, slow_quiz])
                     logging.info(f"Added fast and slow quizzes for day {day}")
                     
                     # Add control quizzes if control metadata exists
                     if control_metadata:
-                        control_fast_quiz = generate_quiz_config(control_metadata, day, fast_time, "Group2-fast", quiz_id)
+                        control_fast_quiz = generate_quiz_config(control_metadata, day, fast_time, "Group2-fast", quiz_id, randomize)
                         quiz_id += 1
-                        control_slow_quiz = generate_quiz_config(control_metadata, day, slow_time, "Group2-slow", quiz_id)
+                        control_slow_quiz = generate_quiz_config(control_metadata, day, slow_time, "Group2-slow", quiz_id, randomize)
                         quiz_id += 1
                         quizzes.extend([control_fast_quiz, control_slow_quiz])
                         logging.info(f"Added control fast and slow quizzes for day {day}")
@@ -123,9 +130,12 @@ if __name__ == "__main__":
     parser.add_argument("--fast_time", type=float, default=0.5, help="Display time for fast quizzes (in seconds)")
     parser.add_argument("--slow_time", type=float, default=5.0, help="Display time for slow quizzes (in seconds)")
     parser.add_argument("--single_set", action="store_true", help="Generate only a single set of quizzes")
+    parser.add_argument("--no-randomize", action="store_false", dest="randomize", 
+                      help="Do not randomize the order of images in quizzes")
+    parser.set_defaults(randomize=True)
     args = parser.parse_args()
 
     logging.info("Starting quiz generation process")
-    quizzes = generate_quizzes(args.base_folder, args.fast_time, args.slow_time, args.single_set)
+    quizzes = generate_quizzes(args.base_folder, args.fast_time, args.slow_time, args.single_set, args.randomize)
     save_config(quizzes, args.output_file)
     logging.info("Quiz generation process completed")
