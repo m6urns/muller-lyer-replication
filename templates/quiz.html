@@ -2,21 +2,19 @@
 
 {% block content %}
 <div id="quiz-container">
-  <!-- Hidden inputs for React component -->
+  <!-- Use the secure image_url -->
   <input type="hidden" id="display-time" value="{{ image['display_time'] }}" />
-  <input type="hidden" id="image-url" value="{{ url_for('static', filename=image['url'].replace('/static/', '')) }}" />
+  <input type="hidden" id="image-url" value="{{ image_url }}" />
   <input type="hidden" id="quiz-id" value="{{ quiz['id'] }}" />
   <input type="hidden" id="image-index" value="{{ image_index }}" />
   <input type="hidden" id="question-text" value="{{ image['question'] }}" />
   <input type="hidden" id="options" value='{{ image["options"]|tojson|safe }}' />
   
-  <!-- Root element for React component -->
   <div id="quiz-root"></div>
 </div>
 {% endblock %}
 
 {% block scripts %}
-<!-- Add the React component code -->
 <script>
 const QuizDisplay = () => {
   const [showImage, setShowImage] = React.useState(true);
@@ -25,7 +23,6 @@ const QuizDisplay = () => {
   const [selectedAnswer, setSelectedAnswer] = React.useState('');
   const startTime = React.useRef(Date.now());
 
-  // Get and validate input values
   const getInputValue = (id) => {
     const element = document.getElementById(id);
     return element ? element.value : null;
@@ -46,7 +43,7 @@ const QuizDisplay = () => {
   }
 
   React.useEffect(() => {
-    console.log('Image URL:', imageUrl); // Debug log
+    console.log('Image URL:', imageUrl); // Debug logging
     const newTimer = setTimeout(() => {
       setShowImage(false);
     }, displayTime * 1000);
@@ -67,12 +64,22 @@ const QuizDisplay = () => {
     formData.append('answer', selectedAnswer);
     formData.append('response_time', (Date.now() - startTime.current) / 1000);
     
-    fetch('/submit_answer', {
+    // Use absolute HTTPS URL
+    fetch(window.location.protocol + '//' + window.location.host + '/submit_answer', {
       method: 'POST',
-      body: formData
+      body: formData,
+      credentials: 'same-origin'
+    }).then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response;
     }).then(() => {
       setIsAnswered(true);
       window.location.reload();
+    }).catch(error => {
+      console.error('Error:', error);
+      alert('There was an error submitting your answer. Please try again.');
     });
   };
 
@@ -82,13 +89,19 @@ const QuizDisplay = () => {
 
   return React.createElement('div', { className: 'container mx-auto px-4 py-8 max-w-4xl' },
     React.createElement('div', { className: 'bg-white rounded-lg shadow-lg overflow-hidden' },
-      React.createElement('div', { className: 'p-6 space-y-8' },
-        // Image Section
-        showImage && React.createElement('div', { className: 'aspect-video relative bg-gray-100 rounded-lg overflow-hidden' },
+      React.createElement('div', { className: 'p-6' },
+        // Fixed height container for image
+        React.createElement('div', {
+          className: 'relative w-full h-96 mb-8 bg-gray-50'
+        },
+          // Image with opacity transition
           React.createElement('img', {
             src: imageUrl,
             alt: 'Quiz',
-            className: 'w-full h-full object-contain'
+            className: 'absolute inset-0 w-full h-full object-contain transition-opacity duration-300',
+            style: {
+              opacity: showImage ? 1 : 0
+            }
           })
         ),
 
