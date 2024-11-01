@@ -3,6 +3,8 @@ import random
 import json
 import argparse
 
+# python ../../generation/illusion-generator.py --days 3 --num_illusions 5 --arrow_color "red" --generate_duplicates --generate_control
+
 def create_muller_lyer_figure(x, y, line_length, arrow_length, angle, line_thickness, direction='out', arrow_color='black'):
     """
     Generate SVG elements for a single Müller-Lyer figure.

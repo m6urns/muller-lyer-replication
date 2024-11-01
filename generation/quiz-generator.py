@@ -6,6 +6,8 @@ import logging
 import argparse
 import random
 
+# python ../../generation/quiz-generator.py
+
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def load_metadata(file_path: str) -> List[Dict]:

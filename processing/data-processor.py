@@ -6,6 +6,8 @@ import logging
 import os
 from pathlib import Path
 
+# python data-processor.py --results ../results/results.csv --config ../config.json --metadata-dir ../static/images/ --output ../data/processed_data.csv
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
