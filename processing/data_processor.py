@@ -4,6 +4,8 @@ import argparse
 from typing import Dict, Any
 import logging
 
+# python data_processor.py --results ../results/results.csv --config ../config.json --metadata ../static/images/muller_lyer_day1_metadata.json --output ../data/processed_data.csv
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
