@@ -6,8 +6,6 @@ import logging
 import os
 from pathlib import Path
 
-# python data-processor.py --results ../results/results.csv --config ../config.json --metadata-dir ../static/images/ --output ../data/processed_data.csv
-
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -27,7 +25,8 @@ class MullerLyerDataProcessor:
         # Create mappings
         self.quiz_config_map = {}
         self.image_metadata_map = {}
-        self.control_status_map = {}  # New mapping for control status
+        self.control_status_map = {}
+        self.day_map = {}  # New mapping for day information
         
     def load_metadata_files(self) -> None:
         """Load all metadata files from the specified directory"""
@@ -109,8 +108,8 @@ class MullerLyerDataProcessor:
         for item in self.metadata:
             filename = item['svg_filename']
             self.image_metadata_map[filename] = item
-            # Map whether this is a control image based on metadata
             self.control_status_map[filename] = item.get('is_control', False)
+            self.day_map[filename] = item['day']  # Add day information to mapping
     
     def process_data(self) -> pd.DataFrame:
         """Combine and process all data into a single DataFrame"""
@@ -131,8 +130,9 @@ class MullerLyerDataProcessor:
             # Get the filename for this image
             filename = image_config['filename']
             
-            # Get control status from metadata mapping
+            # Get control status and day from metadata mapping
             is_control = self.control_status_map.get(filename, False)
+            day = self.day_map.get(filename, None)
             
             # Create processed record
             record = {
@@ -150,6 +150,8 @@ class MullerLyerDataProcessor:
                 'correct_answer': image_config['correct_answer'],
                 
                 # Image metadata
+                'day': day,  # Add day information
+                'illusion_filename': filename,  # Add illusion filename
                 'line_length1': image_config['metadata']['line_length1'],
                 'line_length2': image_config['metadata']['line_length2'],
                 'actual_difference': image_config['metadata']['actual_difference'],
@@ -166,6 +168,13 @@ class MullerLyerDataProcessor:
         
         # Add is_correct column
         processed_df['is_correct'] = processed_df['user_answer'] == processed_df['correct_answer']
+        
+        # Reorder columns to put day and illusion_filename earlier in the DataFrame
+        cols = processed_df.columns.tolist()
+        reordered_cols = ['timestamp', 'user_id', 'day', 'quiz_id', 'image_index', 
+                         'illusion_filename'] + [col for col in cols if col not in 
+                         ['timestamp', 'user_id', 'day', 'quiz_id', 'image_index', 'illusion_filename']]
+        processed_df = processed_df[reordered_cols]
         
         logging.info(f"Created processed dataset with {len(processed_df)} records")
         return processed_df
