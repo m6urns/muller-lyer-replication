@@ -49,12 +49,25 @@ def start_quiz():
 def quiz(quiz_id):
     if 'user_id' not in session:
         return redirect(url_for('index'))
+    
     quizzes = load_quiz_config()
     if quiz_id < len(quizzes):
         quiz = quizzes[quiz_id]
         current_image_index = session.get('current_image_index', 0)
+        
         if current_image_index < len(quiz['images']):
-            return render_template('quiz.html', quiz=quiz, image=quiz['images'][current_image_index], image_index=current_image_index)
+            image = quiz['images'][current_image_index]
+            
+            # Debug logging
+            app.logger.debug(f"Quiz ID: {quiz_id}")
+            app.logger.debug(f"Image Index: {current_image_index}")
+            app.logger.debug(f"Image Data: {image}")
+            app.logger.debug(f"Image URL: {url_for('static', filename=image['url'].replace('/static/', ''))}")
+            
+            return render_template('quiz.html', 
+                                 quiz=quiz, 
+                                 image=image, 
+                                 image_index=current_image_index)
         else:
             return redirect(url_for('thank_you'))
     else:

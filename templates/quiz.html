@@ -1,123 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ quiz['title'] }} - Image {{ image_index + 1 }}</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-        h1 {
-            text-align: center;
-            padding: 20px 0;
-            margin: 0;
-        }
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            flex-grow: 1;
-            padding-top: 80px; /* Adjust based on the height of your header */
-            box-sizing: border-box;
-        }
-        .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: calc(80vh - 80px); /* Adjust based on the height of your header */
-            width: 100%;
-        }
-        .responsive-image {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-        }
-        #question {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 600px;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-        label {
-            margin: 10px 0;
-            text-align: center;
-        }
-        input[type="submit"] {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-    </style>
-    <script>
-        let startTime;
+{% extends "base.html" %}
 
-        function startQuiz() {
-            document.getElementById('image').style.display = 'flex';
-            document.getElementById('question').style.display = 'none';
-            setTimeout(() => {
-                document.getElementById('image').style.display = 'none';
-                document.getElementById('question').style.display = 'flex';
-                startTime = new Date().getTime();
-            }, {{ image['display_time'] }} * 1000);
-        }
+{% block content %}
+<div id="quiz-container">
+  <!-- Hidden inputs for React component -->
+  <input type="hidden" id="display-time" value="{{ image['display_time'] }}" />
+  <input type="hidden" id="image-url" value="{{ url_for('static', filename=image['url'].replace('/static/', '')) }}" />
+  <input type="hidden" id="quiz-id" value="{{ quiz['id'] }}" />
+  <input type="hidden" id="image-index" value="{{ image_index }}" />
+  <input type="hidden" id="question-text" value="{{ image['question'] }}" />
+  <input type="hidden" id="options" value='{{ image["options"]|tojson|safe }}' />
+  
+  <!-- Root element for React component -->
+  <div id="quiz-root"></div>
+</div>
+{% endblock %}
 
-        function submitAnswer() {
-            const endTime = new Date().getTime();
-            const responseTime = (endTime - startTime) / 1000; // Convert to seconds
-            document.getElementById('response_time').value = responseTime;
-            return true; // Allow form submission
-        }
-    </script>
-</head>
-<body onload="startQuiz()">
-    <div class="header">
-        <h1>{{ quiz['title'] }} - Image {{ image_index + 1 }}</h1>
-    </div>
-    <div class="content">
-        <div id="image" class="image-container">
-            <img src="{{ image['url'] }}" alt="Quiz Image" class="responsive-image">
-        </div>
-        <div id="question" style="display: none;">
-            <h2>{{ image['question'] }}</h2>
-            <form action="{{ url_for('submit_answer') }}" method="post" onsubmit="return submitAnswer()">
-                {% for option in image['options'] %}
-                <label>
-                    <input type="radio" name="answer" value="{{ option }}" required>
-                    {{ option }}
-                </label>
-                {% endfor %}
-                <input type="hidden" name="quiz_id" value="{{ quiz['id'] }}">
-                <input type="hidden" name="image_index" value="{{ image_index }}">
-                <input type="hidden" name="response_time" id="response_time">
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-    </div>
-</body>
-</html>
+{% block scripts %}
+<!-- Add the React component code -->
+<script>
+const QuizDisplay = () => {
+  const [showImage, setShowImage] = React.useState(true);
+  const [timer, setTimer] = React.useState(null);
+  const [isAnswered, setIsAnswered] = React.useState(false);
+  const [selectedAnswer, setSelectedAnswer] = React.useState('');
+  const startTime = React.useRef(Date.now());
+
+  // Get and validate input values
+  const getInputValue = (id) => {
+    const element = document.getElementById(id);
+    return element ? element.value : null;
+  };
+
+  const displayTime = parseFloat(getInputValue('display-time')) || 5;
+  const imageUrl = getInputValue('image-url');
+  const quizId = getInputValue('quiz-id');
+  const imageIndex = getInputValue('image-index');
+  const questionText = getInputValue('question-text');
+  let options = [];
+  try {
+    const optionsJson = getInputValue('options');
+    options = optionsJson ? JSON.parse(optionsJson) : [];
+  } catch (e) {
+    console.error('Error parsing options:', e);
+    options = [];
+  }
+
+  React.useEffect(() => {
+    console.log('Image URL:', imageUrl); // Debug log
+    const newTimer = setTimeout(() => {
+      setShowImage(false);
+    }, displayTime * 1000);
+    setTimer(newTimer);
+
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [displayTime]);
+
+  const handleAnswer = (event) => {
+    event.preventDefault();
+    if (isAnswered) return;
+    
+    const formData = new FormData();
+    formData.append('quiz_id', quizId);
+    formData.append('image_index', imageIndex);
+    formData.append('answer', selectedAnswer);
+    formData.append('response_time', (Date.now() - startTime.current) / 1000);
+    
+    fetch('/submit_answer', {
+      method: 'POST',
+      body: formData
+    }).then(() => {
+      setIsAnswered(true);
+      window.location.reload();
+    });
+  };
+
+  const handleOptionChange = (option) => {
+    setSelectedAnswer(option);
+  };
+
+  return React.createElement('div', { className: 'container mx-auto px-4 py-8 max-w-4xl' },
+    React.createElement('div', { className: 'bg-white rounded-lg shadow-lg overflow-hidden' },
+      React.createElement('div', { className: 'p-6 space-y-8' },
+        // Image Section
+        showImage && React.createElement('div', { className: 'aspect-video relative bg-gray-100 rounded-lg overflow-hidden' },
+          React.createElement('img', {
+            src: imageUrl,
+            alt: 'Quiz',
+            className: 'w-full h-full object-contain'
+          })
+        ),
+
+        // Question Section
+        React.createElement('form', {
+          onSubmit: handleAnswer,
+          className: 'space-y-6'
+        },
+          React.createElement('div', { className: 'space-y-4' },
+            React.createElement('h2', { className: 'text-xl font-semibold' },
+              questionText
+            ),
+            React.createElement('div', { className: 'flex flex-col space-y-2' },
+              options.map((option) =>
+                React.createElement('label', {
+                  key: option,
+                  className: `flex items-center p-4 border rounded cursor-pointer ${
+                    selectedAnswer === option ? 'border-blue-500 bg-blue-50' : 'border-gray-200'
+                  }`
+                },
+                  React.createElement('input', {
+                    type: 'radio',
+                    name: 'answer',
+                    value: option,
+                    checked: selectedAnswer === option,
+                    onChange: () => handleOptionChange(option),
+                    className: 'mr-3'
+                  }),
+                  option
+                )
+              )
+            )
+          ),
+          React.createElement('button', {
+            type: 'submit',
+            disabled: !selectedAnswer || isAnswered,
+            className: 'w-full py-3 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed'
+          }, 'Submit Answer')
+        )
+      )
+    )
+  );
+};
+
+// Initialize the React component
+const root = ReactDOM.createRoot(document.getElementById('quiz-root'));
+root.render(React.createElement(QuizDisplay));
+</script>
+{% endblock %}
