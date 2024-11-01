@@ -94,18 +94,18 @@ def generate_quizzes(base_folder: str, fast_time: float, slow_time: float, singl
                         logging.info(f"Added control single quiz for day {day}")
                 else:
                     # Regular quizzes
-                    fast_quiz = generate_quiz_config(regular_metadata, day, fast_time, "Group1-fast", quiz_id, randomize)
+                    fast_quiz = generate_quiz_config(regular_metadata, day, fast_time, "Group 1 - Fast", quiz_id, randomize)
                     quiz_id += 1
-                    slow_quiz = generate_quiz_config(regular_metadata, day, slow_time, "Group1-slow", quiz_id, randomize)
+                    slow_quiz = generate_quiz_config(regular_metadata, day, slow_time, "Group 1 - Slow", quiz_id, randomize)
                     quiz_id += 1
                     quizzes.extend([fast_quiz, slow_quiz])
                     logging.info(f"Added fast and slow quizzes for day {day}")
                     
                     # Add control quizzes if control metadata exists
                     if control_metadata:
-                        control_fast_quiz = generate_quiz_config(control_metadata, day, fast_time, "Group2-fast", quiz_id, randomize)
+                        control_fast_quiz = generate_quiz_config(control_metadata, day, fast_time, "Group 2 - Fast", quiz_id, randomize)
                         quiz_id += 1
-                        control_slow_quiz = generate_quiz_config(control_metadata, day, slow_time, "Group2-slow", quiz_id, randomize)
+                        control_slow_quiz = generate_quiz_config(control_metadata, day, slow_time, "Group 2 - Slow", quiz_id, randomize)
                         quiz_id += 1
                         quizzes.extend([control_fast_quiz, control_slow_quiz])
                         logging.info(f"Added control fast and slow quizzes for day {day}")
