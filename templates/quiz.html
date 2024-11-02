@@ -8,6 +8,8 @@
   <input type="hidden" id="image-index" value="{{ image_index }}" />
   <input type="hidden" id="question-text" value="{{ image['question'] }}" />
   <input type="hidden" id="options" value='{{ image["options"]|tojson|safe }}' />
+  <!-- Add hidden input for all quiz images -->
+  <input type="hidden" id="all-images" value='{{ quiz["images"]|tojson|safe }}' />
   
   <div id="quiz-root"></div>
 </div>
@@ -15,17 +17,78 @@
 
 {% block scripts %}
 <script>
+// Preloader component
+const ImagePreloader = ({ images }) => {
+  return React.createElement('div', 
+    { 
+      style: {
+        position: 'absolute',
+        width: 0,
+        height: 0,
+        overflow: 'hidden',
+        visibility: 'hidden'
+      }
+    },
+    images.map((img, index) => 
+      React.createElement('img', {
+        key: index,
+        src: img,
+        onLoad: () => console.log(`Preloaded image: ${img}`),
+        onError: (e) => console.error(`Failed to preload image: ${img}`, e)
+      })
+    )
+  );
+};
+
 const QuizDisplay = () => {
   const [showImage, setShowImage] = React.useState(true);
   const [timer, setTimer] = React.useState(null);
   const [isAnswered, setIsAnswered] = React.useState(false);
   const [selectedAnswer, setSelectedAnswer] = React.useState('');
+  const [imagesPreloaded, setImagesPreloaded] = React.useState(false);
   const startTime = React.useRef(Date.now());
 
   const getInputValue = (id) => {
     const element = document.getElementById(id);
     return element ? element.value : null;
   };
+
+  // Get all quiz images
+  const getAllImages = () => {
+    try {
+      const allImagesJson = getInputValue('all-images');
+      const allImages = JSON.parse(allImagesJson);
+      return allImages.map(img => 
+        new URL(img.url.replace('/static/', ''), window.location.origin + '/static/').href
+      );
+    } catch (e) {
+      console.error('Error parsing all images:', e);
+      return [];
+    }
+  };
+
+  // Preload images
+  React.useEffect(() => {
+    const images = getAllImages();
+    const preloadPromises = images.map(src => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = resolve;
+        img.onerror = reject;
+        img.src = src;
+      });
+    });
+
+    Promise.all(preloadPromises)
+      .then(() => {
+        console.log('All images preloaded successfully');
+        setImagesPreloaded(true);
+      })
+      .catch(error => {
+        console.error('Error preloading images:', error);
+        setImagesPreloaded(true); // Continue anyway
+      });
+  }, []);
 
   const displayTime = parseFloat(getInputValue('display-time')) || 5;
   const imageUrl = getInputValue('image-url');
@@ -42,6 +105,8 @@ const QuizDisplay = () => {
   }
 
   React.useEffect(() => {
+    if (!imagesPreloaded) return; // Don't start timer until images are preloaded
+
     const newTimer = setTimeout(() => {
       setShowImage(false);
     }, displayTime * 1000);
@@ -50,7 +115,7 @@ const QuizDisplay = () => {
     return () => {
       if (timer) clearTimeout(timer);
     };
-  }, [displayTime]);
+  }, [displayTime, imagesPreloaded]);
 
   const handleAnswer = (event) => {
     event.preventDefault();
@@ -77,73 +142,89 @@ const QuizDisplay = () => {
     setSelectedAnswer(option);
   };
 
-  return React.createElement('div', { 
-    className: 'max-w-lg mx-auto px-4 py-6 md:max-w-2xl lg:max-w-4xl' 
-  },
-    React.createElement('div', { 
-      className: 'bg-white rounded-lg shadow-lg overflow-hidden'
+  // Show loading state while images are preloading
+  if (!imagesPreloaded) {
+    return React.createElement('div', { 
+      className: 'flex items-center justify-center min-h-screen'
     },
-      React.createElement('div', { className: 'p-4 md:p-6' },
-        // Image container with responsive height
-        React.createElement('div', {
-          className: 'relative w-full h-64 md:h-96 mb-6 bg-gray-50 rounded-lg'
-        },
-          showImage && React.createElement('img', {
-            src: imageUrl,
-            alt: 'Quiz',
-            className: 'absolute inset-0 w-full h-full object-contain'
-          })
-        ),
+      React.createElement('div', { 
+        className: 'text-xl text-gray-600'
+      }, 'Loading quiz...')
+    );
+  }
 
-        // Question Section
-        React.createElement('form', {
-          onSubmit: handleAnswer,
-          className: 'space-y-4'
-        },
-          React.createElement('div', { className: 'space-y-4' },
-            React.createElement('h2', { 
-              className: 'text-lg md:text-xl font-semibold'
-            },
-              questionText
-            ),
-            React.createElement('div', { 
-              className: 'grid grid-cols-1 md:grid-cols-3 gap-3'
-            },
-              options.map((option) =>
-                React.createElement('label', {
-                  key: option,
-                  className: `
-                    flex items-center justify-center p-4 
-                    border-2 rounded-lg cursor-pointer
-                    ${selectedAnswer === option ? 'border-blue-500 bg-blue-50' : 'border-gray-200'}
-                    hover:border-blue-300 transition-colors duration-200
-                    text-base md:text-lg
-                  `
-                },
-                  React.createElement('input', {
-                    type: 'radio',
-                    name: 'answer',
-                    value: option,
-                    checked: selectedAnswer === option,
-                    onChange: () => handleOptionChange(option),
-                    className: 'mr-3'
-                  }),
-                  option
+  return React.createElement(React.Fragment, null,
+    // Add the preloader component
+    React.createElement(ImagePreloader, { images: getAllImages() }),
+    
+    React.createElement('div', { 
+      className: 'max-w-lg mx-auto px-4 py-6 md:max-w-2xl lg:max-w-4xl' 
+    },
+      React.createElement('div', { 
+        className: 'bg-white rounded-lg shadow-lg overflow-hidden'
+      },
+        React.createElement('div', { className: 'p-4 md:p-6' },
+          // Image container with responsive height
+          React.createElement('div', {
+            className: 'relative w-full h-64 md:h-96 mb-6 bg-gray-50 rounded-lg'
+          },
+            showImage && React.createElement('img', {
+              src: imageUrl,
+              alt: 'Quiz',
+              className: 'absolute inset-0 w-full h-full object-contain'
+            })
+          ),
+
+          // Question Section
+          React.createElement('form', {
+            onSubmit: handleAnswer,
+            className: 'space-y-4'
+          },
+            React.createElement('div', { className: 'space-y-4' },
+              React.createElement('h2', { 
+                className: 'text-lg md:text-xl font-semibold'
+              },
+                questionText
+              ),
+              React.createElement('div', { 
+                className: 'grid grid-cols-1 md:grid-cols-3 gap-3'
+              },
+                options.map((option) =>
+                  React.createElement('label', {
+                    key: option,
+                    className: `
+                      flex items-center justify-center p-4 
+                      border-2 rounded-lg cursor-pointer
+                      ${selectedAnswer === option ? 'border-blue-500 bg-blue-50' : 'border-gray-200'}
+                      hover:border-blue-300 transition-colors duration-200
+                      text-base md:text-lg
+                    `
+                  },
+                    React.createElement('input', {
+                      type: 'radio',
+                      name: 'answer',
+                      value: option,
+                      checked: selectedAnswer === option,
+                      onChange: () => handleOptionChange(option),
+                      className: 'mr-3'
+                    }),
+                    option
+                  )
                 )
               )
-            )
-          ),
-          React.createElement('button', {
-            type: 'submit',
-            disabled: !selectedAnswer || isAnswered,
-            className: `
-              w-full py-4 md:py-3 px-4 
-              bg-blue-600 text-white text-lg md:text-base
-              rounded-lg hover:bg-blue-700 
-              disabled:opacity-50 disabled:cursor-not-allowed
-              transition-colors duration-200
-            `
-          }, 'Submit Answer')
+            ),
+            React.createElement('button', {
+              type: 'submit',
+              disabled: !selectedAnswer || isAnswered,
+              className: `
+                w-full py-4 md:py-3 px-4 
+                bg-blue-600 text-white text-lg md:text-base
+                rounded-lg hover:bg-blue-700 
+                disabled:opacity-50 disabled:cursor-not-allowed
+                transition-colors duration-200
+              `
+            }, 'Submit Answer')
+          )
         )
       )
     )
