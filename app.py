@@ -12,12 +12,16 @@ app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY')
 app.config['PREFERRED_URL_SCHEME'] = 'https'
 
-# Add security headers
 @app.after_request
 def add_security_headers(response):
-    response.headers['Content-Security-Policy'] = "default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; style-src 'self' https: 'unsafe-inline'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com;"
-    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
-    response.headers['X-Content-Type-Options'] = 'nosniff'
+    response.headers['Content-Security-Policy'] = (
+        "default-src 'self'; "
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; "
+        "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
+        "img-src 'self' data: https:; "  # Allow HTTPS images
+        "connect-src 'self' https:; "
+        "font-src 'self' data: https:;"
+    )
     return response
 
 # Set data directory
@@ -54,11 +58,10 @@ def start_quiz():
     session['current_image_index'] = 0
     return redirect(url_for('quiz', quiz_id=quiz_id))
 
-# Modify your quiz route to ensure HTTPS URLs
 @app.route('/quiz/<int:quiz_id>')
 def quiz(quiz_id):
     if 'user_id' not in session:
-        return redirect(url_for('index', _scheme='https', _external=True))
+        return redirect(url_for('index'))
     
     quizzes = load_quiz_config()
     if quiz_id < len(quizzes):
@@ -66,20 +69,21 @@ def quiz(quiz_id):
         current_image_index = session.get('current_image_index', 0)
         
         if current_image_index < len(quiz['images']):
-            image = quiz['images'][current_image_index]
-            # Ensure image URL is HTTPS
-            image_url = url_for('static', 
-                              filename=image['url'].replace('/static/', ''),
-                              _scheme='https',
-                              _external=True)
+            # Process all image URLs at once
+            processed_quiz = quiz.copy()
+            processed_quiz['images'] = [
+                {
+                    **img,
+                    'url': url_for('static', filename=img['url'].replace('/static/', ''))
+                }
+                for img in quiz['images']
+            ]
             
             return render_template('quiz.html', 
-                                 quiz=quiz, 
-                                 image=image,
-                                 image_url=image_url,
+                                 quiz=processed_quiz,
                                  image_index=current_image_index)
         else:
-            return redirect(url_for('thank_you', _scheme='https', _external=True))
+            return redirect(url_for('thank_you'))
     else:
         return "Quiz not found", 404
 

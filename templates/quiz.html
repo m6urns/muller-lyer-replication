@@ -1,15 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div id="quiz-container">
-  <!-- Use the secure image_url -->
-  <input type="hidden" id="display-time" value="{{ image['display_time'] }}" />
-  <input type="hidden" id="image-url" value="{{ image_url }}" />
-  <input type="hidden" id="quiz-id" value="{{ quiz['id'] }}" />
-  <input type="hidden" id="image-index" value="{{ image_index }}" />
-  <input type="hidden" id="question-text" value="{{ image['question'] }}" />
-  <input type="hidden" id="options" value='{{ image["options"]|tojson|safe }}' />
-  
+<div id="quiz-container" class="w-full min-h-screen bg-gray-50">
+  <!-- Add quiz metadata -->
+  <input type="hidden" id="quiz-metadata" value='{{ quiz|tojson|safe }}' />
   <div id="quiz-root"></div>
 </div>
 {% endblock %}
@@ -17,110 +11,182 @@
 {% block scripts %}
 <script>
 const QuizDisplay = () => {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(parseInt({{ image_index }}));
   const [showImage, setShowImage] = React.useState(true);
   const [timer, setTimer] = React.useState(null);
   const [isAnswered, setIsAnswered] = React.useState(false);
   const [selectedAnswer, setSelectedAnswer] = React.useState('');
+  const [imagesPreloaded, setImagesPreloaded] = React.useState(false);
   const startTime = React.useRef(Date.now());
+  const quizData = React.useRef(JSON.parse(document.getElementById('quiz-metadata').value));
+  const responseStartTime = React.useRef(null);
 
-  const getInputValue = (id) => {
-    const element = document.getElementById(id);
-    return element ? element.value : null;
+  // Get current question data
+  const getCurrentQuestion = () => {
+    return quizData.current.images[currentQuestionIndex];
   };
 
-  const displayTime = parseFloat(getInputValue('display-time')) || 5;
-  const imageUrl = getInputValue('image-url');
-  const quizId = getInputValue('quiz-id');
-  const imageIndex = getInputValue('image-index');
-  const questionText = getInputValue('question-text');
-  let options = [];
-  try {
-    const optionsJson = getInputValue('options');
-    options = optionsJson ? JSON.parse(optionsJson) : [];
-  } catch (e) {
-    console.error('Error parsing options:', e);
-    options = [];
-  }
+  // Preload images
+  React.useEffect(() => {
+    const images = quizData.current.images.map(img => img.url);
+    console.log('Preloading images:', images);
+    
+    const preloadPromises = images.map(src => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = resolve;
+        img.onerror = reject;
+        img.src = src;
+      });
+    });
+
+    Promise.all(preloadPromises)
+      .then(() => {
+        console.log('All images preloaded successfully');
+        setImagesPreloaded(true);
+      })
+      .catch(error => {
+        console.error('Error preloading images:', error);
+        setImagesPreloaded(true); // Continue anyway
+      });
+  }, []);
 
   React.useEffect(() => {
-    console.log('Image URL:', imageUrl); // Debug logging
+    if (!imagesPreloaded) return;
+
+    // Clear any existing timer
+    if (timer) {
+      clearTimeout(timer);
+    }
+
+    // Reset image display and start time
+    setShowImage(true);
+    responseStartTime.current = Date.now();
+    const currentQuestion = getCurrentQuestion();
+
+    console.log(`Starting timer for question ${currentQuestionIndex}, display time: ${currentQuestion.display_time}s`);
+    
     const newTimer = setTimeout(() => {
+      console.log(`Timer expired for question ${currentQuestionIndex}`);
       setShowImage(false);
-    }, displayTime * 1000);
+    }, currentQuestion.display_time * 1000);
+
     setTimer(newTimer);
 
+    // Cleanup function
     return () => {
-      if (timer) clearTimeout(timer);
+      if (newTimer) {
+        clearTimeout(newTimer);
+      }
     };
-  }, [displayTime]);
+  }, [currentQuestionIndex, imagesPreloaded]); // Dependencies include currentQuestionIndex
 
-  const handleAnswer = (event) => {
+  const handleAnswer = async (event) => {
     event.preventDefault();
     if (isAnswered) return;
     
-    const formData = new FormData();
-    formData.append('quiz_id', quizId);
-    formData.append('image_index', imageIndex);
-    formData.append('answer', selectedAnswer);
-    formData.append('response_time', (Date.now() - startTime.current) / 1000);
-    
-    // Use absolute HTTPS URL
-    fetch(window.location.protocol + '//' + window.location.host + '/submit_answer', {
-      method: 'POST',
-      body: formData,
-      credentials: 'same-origin'
-    }).then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response;
-    }).then(() => {
+    try {
+      const formData = new FormData();
+      formData.append('quiz_id', quizData.current.id);
+      formData.append('image_index', currentQuestionIndex);
+      formData.append('answer', selectedAnswer);
+      // Use responseStartTime instead of startTime for accurate timing
+      formData.append('response_time', (Date.now() - responseStartTime.current) / 1000);
+      
+      const response = await fetch('/submit_answer', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!response.ok) throw new Error('Failed to submit answer');
+
       setIsAnswered(true);
-      window.location.reload();
-    }).catch(error => {
-      console.error('Error:', error);
+      setSelectedAnswer('');
+      
+      // Clear current timer
+      if (timer) {
+        clearTimeout(timer);
+      }
+      
+      // Check if we have more questions
+      if (currentQuestionIndex + 1 < quizData.current.images.length) {
+        // Add a short delay before moving to next question
+        setTimeout(() => {
+          setIsAnswered(false);
+          setCurrentQuestionIndex(prev => prev + 1);
+        }, 500);
+      } else {
+        window.location.href = '/complete';
+      }
+    } catch (error) {
+      console.error('Error submitting answer:', error);
       alert('There was an error submitting your answer. Please try again.');
-    });
+    }
   };
 
   const handleOptionChange = (option) => {
     setSelectedAnswer(option);
   };
 
-  return React.createElement('div', { className: 'container mx-auto px-4 py-8 max-w-4xl' },
-    React.createElement('div', { className: 'bg-white rounded-lg shadow-lg overflow-hidden' },
-      React.createElement('div', { className: 'p-6' },
-        // Fixed height container for image
+  if (!imagesPreloaded) {
+    return React.createElement('div', { 
+      className: 'flex items-center justify-center min-h-screen'
+    },
+      React.createElement('div', { 
+        className: 'text-xl text-gray-600'
+      }, 'Loading quiz...')
+    );
+  }
+
+  const currentQuestion = getCurrentQuestion();
+
+  return React.createElement('div', { 
+    className: 'max-w-lg mx-auto px-4 py-6 md:max-w-2xl lg:max-w-4xl' 
+  },
+    React.createElement('div', { 
+      className: 'bg-white rounded-lg shadow-lg overflow-hidden'
+    },
+      React.createElement('div', { className: 'p-4 md:p-6' },
+        // Progress indicator
         React.createElement('div', {
-          className: 'relative w-full h-96 mb-8 bg-gray-50'
+          className: 'mb-4 text-sm text-gray-600'
+        }, `Question ${currentQuestionIndex + 1} of ${quizData.current.images.length}`),
+
+        // Image container
+        React.createElement('div', {
+          className: 'relative w-full h-64 md:h-96 mb-6 bg-gray-50 rounded-lg'
         },
-          // Image with opacity transition
-          React.createElement('img', {
-            src: imageUrl,
+          showImage && React.createElement('img', {
+            src: currentQuestion.url,
             alt: 'Quiz',
-            className: 'absolute inset-0 w-full h-full object-contain transition-opacity duration-300',
-            style: {
-              opacity: showImage ? 1 : 0
-            }
+            className: 'absolute inset-0 w-full h-full object-contain'
           })
         ),
 
         // Question Section
         React.createElement('form', {
           onSubmit: handleAnswer,
-          className: 'space-y-6'
+          className: 'space-y-4'
         },
           React.createElement('div', { className: 'space-y-4' },
-            React.createElement('h2', { className: 'text-xl font-semibold' },
-              questionText
+            React.createElement('h2', { 
+              className: 'text-lg md:text-xl font-semibold'
+            },
+              currentQuestion.question
             ),
-            React.createElement('div', { className: 'flex flex-col space-y-2' },
-              options.map((option) =>
+            React.createElement('div', { 
+              className: 'grid grid-cols-1 md:grid-cols-3 gap-3'
+            },
+              currentQuestion.options.map((option) =>
                 React.createElement('label', {
                   key: option,
-                  className: `flex items-center p-4 border rounded cursor-pointer ${
-                    selectedAnswer === option ? 'border-blue-500 bg-blue-50' : 'border-gray-200'
-                  }`
+                  className: `
+                    flex items-center justify-center p-4 
+                    border-2 rounded-lg cursor-pointer
+                    ${selectedAnswer === option ? 'border-blue-500 bg-blue-50' : 'border-gray-200'}
+                    hover:border-blue-300 transition-colors duration-200
+                    text-base md:text-lg
+                  `
                 },
                   React.createElement('input', {
                     type: 'radio',
@@ -138,8 +204,14 @@ const QuizDisplay = () => {
           React.createElement('button', {
             type: 'submit',
             disabled: !selectedAnswer || isAnswered,
-            className: 'w-full py-3 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed'
-          }, 'Submit Answer')
+            className: `
+              w-full py-4 md:py-3 px-4 
+              bg-blue-600 text-white text-lg md:text-base
+              rounded-lg hover:bg-blue-700 
+              disabled:opacity-50 disabled:cursor-not-allowed
+              transition-colors duration-200
+            `
+          }, isAnswered ? 'Submitted' : 'Submit Answer')
         )
       )
     )
