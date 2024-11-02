@@ -13,11 +13,21 @@ app.secret_key = os.getenv('SECRET_KEY')
 app.config['PREFERRED_URL_SCHEME'] = 'https'
 
 # Add security headers
+# @app.after_request
+# def add_security_headers(response):
+#     response.headers['Content-Security-Policy'] = "default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; style-src 'self' https: 'unsafe-inline'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com;"
+#     response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+#     response.headers['X-Content-Type-Options'] = 'nosniff'
+#     return response
 @app.after_request
 def add_security_headers(response):
-    response.headers['Content-Security-Policy'] = "default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; style-src 'self' https: 'unsafe-inline'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com;"
-    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
-    response.headers['X-Content-Type-Options'] = 'nosniff'
+    response.headers['Content-Security-Policy'] = (
+        "default-src 'self' cdnjs.cloudflare.com; "
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval' cdnjs.cloudflare.com; "
+        "style-src 'self' 'unsafe-inline' cdn.jsdelivr.net; "
+        "img-src 'self' data:; "
+        "connect-src 'self'"
+    )
     return response
 
 # Set data directory
