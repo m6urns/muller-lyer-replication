@@ -69,25 +69,18 @@ def quiz(quiz_id):
         current_image_index = session.get('current_image_index', 0)
         
         if current_image_index < len(quiz['images']):
-            # Process all image URLs
+            # Process all image URLs at once
             processed_quiz = quiz.copy()
-            processed_quiz['images'] = []
-            
-            for img in quiz['images']:
-                processed_img = img.copy()
-                if 'url' in processed_img:
-                    # Remove /static/ prefix and use url_for
-                    img_path = processed_img['url'].replace('/static/', '')
-                    processed_img['url'] = url_for('static', filename=img_path)
-                processed_quiz['images'].append(processed_img)
-            
-            current_image = processed_quiz['images'][current_image_index]
-            
-            app.logger.debug(f"Processed image URL: {current_image['url']}")
+            processed_quiz['images'] = [
+                {
+                    **img,
+                    'url': url_for('static', filename=img['url'].replace('/static/', ''))
+                }
+                for img in quiz['images']
+            ]
             
             return render_template('quiz.html', 
-                                 quiz=processed_quiz, 
-                                 image=current_image,
+                                 quiz=processed_quiz,
                                  image_index=current_image_index)
         else:
             return redirect(url_for('thank_you'))
