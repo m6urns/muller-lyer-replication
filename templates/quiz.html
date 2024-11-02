@@ -2,14 +2,15 @@
 
 {% block content %}
 <div id="quiz-container">
-  <!-- Use the secure image_url -->
+  <!-- Hidden inputs for React component -->
   <input type="hidden" id="display-time" value="{{ image['display_time'] }}" />
-  <input type="hidden" id="image-url" value="{{ image_url }}" />
+  <input type="hidden" id="image-url" value="{{ url_for('static', filename=image['url'].replace('/static/', '')) }}" />
   <input type="hidden" id="quiz-id" value="{{ quiz['id'] }}" />
   <input type="hidden" id="image-index" value="{{ image_index }}" />
   <input type="hidden" id="question-text" value="{{ image['question'] }}" />
   <input type="hidden" id="options" value='{{ image["options"]|tojson|safe }}' />
   
+  <!-- Root element for React component -->
   <div id="quiz-root"></div>
 </div>
 {% endblock %}
@@ -43,7 +44,6 @@ const QuizDisplay = () => {
   }
 
   React.useEffect(() => {
-    console.log('Image URL:', imageUrl); // Debug logging
     const newTimer = setTimeout(() => {
       setShowImage(false);
     }, displayTime * 1000);
@@ -64,22 +64,12 @@ const QuizDisplay = () => {
     formData.append('answer', selectedAnswer);
     formData.append('response_time', (Date.now() - startTime.current) / 1000);
     
-    // Use absolute HTTPS URL
-    fetch(window.location.protocol + '//' + window.location.host + '/submit_answer', {
+    fetch('/submit_answer', {
       method: 'POST',
-      body: formData,
-      credentials: 'same-origin'
-    }).then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response;
+      body: formData
     }).then(() => {
       setIsAnswered(true);
       window.location.reload();
-    }).catch(error => {
-      console.error('Error:', error);
-      alert('There was an error submitting your answer. Please try again.');
     });
   };
 
@@ -87,20 +77,24 @@ const QuizDisplay = () => {
     setSelectedAnswer(option);
   };
 
-  return React.createElement('div', { className: 'container mx-auto px-4 py-8 max-w-4xl' },
-    React.createElement('div', { className: 'bg-white rounded-lg shadow-lg overflow-hidden' },
-      React.createElement('div', { className: 'p-6' },
+  return React.createElement('div', { 
+    className: 'container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8'
+  },
+    React.createElement('div', { 
+      className: 'bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl mx-auto'
+    },
+      React.createElement('div', { className: 'p-4 sm:p-6' },
         // Fixed height container for image
         React.createElement('div', {
-          className: 'relative w-full h-96 mb-8 bg-gray-50'
+          className: 'relative w-full h-[400px] mb-8 bg-gray-50'
         },
-          // Image with opacity transition
           React.createElement('img', {
             src: imageUrl,
             alt: 'Quiz',
             className: 'absolute inset-0 w-full h-full object-contain transition-opacity duration-300',
             style: {
-              opacity: showImage ? 1 : 0
+              opacity: showImage ? 1 : 0,
+              pointerEvents: showImage ? 'auto' : 'none'
             }
           })
         ),
@@ -111,16 +105,23 @@ const QuizDisplay = () => {
           className: 'space-y-6'
         },
           React.createElement('div', { className: 'space-y-4' },
-            React.createElement('h2', { className: 'text-xl font-semibold' },
+            React.createElement('h2', { 
+              className: 'text-xl font-semibold'
+            },
               questionText
             ),
-            React.createElement('div', { className: 'flex flex-col space-y-2' },
+            React.createElement('div', { 
+              className: 'flex flex-col sm:grid sm:grid-cols-3 gap-3'
+            },
               options.map((option) =>
                 React.createElement('label', {
                   key: option,
-                  className: `flex items-center p-4 border rounded cursor-pointer ${
-                    selectedAnswer === option ? 'border-blue-500 bg-blue-50' : 'border-gray-200'
-                  }`
+                  className: `
+                    flex items-center justify-center p-4 
+                    border-2 rounded-lg cursor-pointer 
+                    ${selectedAnswer === option ? 'border-blue-500 bg-blue-50' : 'border-gray-200'}
+                    hover:border-blue-300 transition-colors duration-200
+                  `
                 },
                   React.createElement('input', {
                     type: 'radio',
@@ -138,7 +139,11 @@ const QuizDisplay = () => {
           React.createElement('button', {
             type: 'submit',
             disabled: !selectedAnswer || isAnswered,
-            className: 'w-full py-3 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed'
+            className: `
+              w-full py-3 px-4 bg-blue-600 text-white rounded-lg 
+              hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed
+              transition-colors duration-200
+            `
           }, 'Submit Answer')
         )
       )
