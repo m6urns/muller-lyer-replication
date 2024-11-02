@@ -24,12 +24,21 @@
         </button>
     </form>
     
-    <div class="mt-8 text-center">
-        <a href="https://github.com/m6urns/muller-lyer-replication" 
-           class="text-blue-600 hover:text-blue-800"
-           target="_blank" 
-           rel="noopener noreferrer">
+    <div class="flex justify-center space-x-4">
+        <a 
+            href="https://github.com/m6urns/muller-lyer-replication" 
+            class="text-blue-600 hover:text-blue-800"
+            target="_blank" 
+            rel="noopener noreferrer"
+        >
             View on GitHub
+        </a>
+        <span class="text-gray-300">|</span>
+        <a 
+            href="{{ url_for('statistics') }}" 
+            class="text-blue-600 hover:text-blue-800"
+        >
+            View Statistics
         </a>
     </div>
 </div>
