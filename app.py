@@ -87,7 +87,6 @@ def quiz(quiz_id):
     else:
         return "Quiz not found", 404
 
-
 @app.route('/submit_answer', methods=['POST'])
 def submit_answer():
     if 'user_id' not in session:
@@ -124,7 +123,10 @@ def save_answer(user_id, quiz_id, image_index, answer, response_time):
     except Exception as e:
         logging.error(f"Error writing to file: {str(e)}")
         raise
-        
+
+@app.route('/statistics')
+def statistics():
+    return render_template('statistics.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
