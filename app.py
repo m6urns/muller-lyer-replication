@@ -15,11 +15,12 @@ app.config['PREFERRED_URL_SCHEME'] = 'https'
 @app.after_request
 def add_security_headers(response):
     response.headers['Content-Security-Policy'] = (
-        "default-src 'self' cdnjs.cloudflare.com; "
-        "script-src 'self' 'unsafe-inline' 'unsafe-eval' cdnjs.cloudflare.com; "
-        "style-src 'self' 'unsafe-inline' cdn.jsdelivr.net; "
-        "img-src 'self' data:; "
-        "connect-src 'self'"
+        "default-src 'self'; "
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; "
+        "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
+        "img-src 'self' data: https:; "  # Allow HTTPS images
+        "connect-src 'self' https:; "
+        "font-src 'self' data: https:;"
     )
     return response
 
@@ -57,7 +58,6 @@ def start_quiz():
     session['current_image_index'] = 0
     return redirect(url_for('quiz', quiz_id=quiz_id))
 
-# Modify your quiz route to ensure HTTPS URLs
 @app.route('/quiz/<int:quiz_id>')
 def quiz(quiz_id):
     if 'user_id' not in session:
@@ -69,16 +69,25 @@ def quiz(quiz_id):
         current_image_index = session.get('current_image_index', 0)
         
         if current_image_index < len(quiz['images']):
-            # Process all image URLs to ensure they're absolute
+            # Process all image URLs
+            processed_quiz = quiz.copy()
+            processed_quiz['images'] = []
+            
             for img in quiz['images']:
-                if 'url' in img:
-                    img['url'] = url_for('static', 
-                                       filename=img['url'].replace('/static/', ''),
-                                       _external=True)
+                processed_img = img.copy()
+                if 'url' in processed_img:
+                    # Remove /static/ prefix and use url_for
+                    img_path = processed_img['url'].replace('/static/', '')
+                    processed_img['url'] = url_for('static', filename=img_path)
+                processed_quiz['images'].append(processed_img)
+            
+            current_image = processed_quiz['images'][current_image_index]
+            
+            app.logger.debug(f"Processed image URL: {current_image['url']}")
             
             return render_template('quiz.html', 
-                                 quiz=quiz, 
-                                 image=quiz['images'][current_image_index],
+                                 quiz=processed_quiz, 
+                                 image=current_image,
                                  image_index=current_image_index)
         else:
             return redirect(url_for('thank_you'))

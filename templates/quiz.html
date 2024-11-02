@@ -17,28 +17,27 @@
 
 {% block scripts %}
 <script>
-// Preloader component
-const ImagePreloader = ({ images }) => {
-  return React.createElement('div', 
-    { 
-      style: {
-        position: 'absolute',
-        width: 0,
-        height: 0,
-        overflow: 'hidden',
-        visibility: 'hidden'
-      }
-    },
-    images.map((img, index) => 
-      React.createElement('img', {
-        key: index,
-        src: img,
-        onLoad: () => console.log(`Preloaded image: ${img}`),
-        onError: (e) => console.error(`Failed to preload image: ${img}`, e)
-      })
-    )
-  );
-};
+  const ImagePreloader = ({ images }) => {
+    return React.createElement('div', 
+      { 
+        style: {
+          position: 'absolute',
+          width: 0,
+          height: 0,
+          overflow: 'hidden',
+          visibility: 'hidden'
+        }
+      },
+      images.map((imgUrl, index) => 
+        React.createElement('img', {
+          key: index,
+          src: imgUrl,
+          onLoad: () => console.log(`Preloaded image: ${imgUrl}`),
+          onError: (e) => console.error(`Failed to preload image: ${imgUrl}`, e)
+        })
+      )
+    );
+  };
 
 const QuizDisplay = () => {
   const [showImage, setShowImage] = React.useState(true);
@@ -58,9 +57,8 @@ const QuizDisplay = () => {
     try {
       const allImagesJson = getInputValue('all-images');
       const allImages = JSON.parse(allImagesJson);
-      return allImages.map(img => 
-        new URL(img.url.replace('/static/', ''), window.location.origin + '/static/').href
-      );
+      // Images are already processed by Flask, use URLs directly
+      return allImages.map(img => img.url);
     } catch (e) {
       console.error('Error parsing all images:', e);
       return [];
@@ -70,15 +68,23 @@ const QuizDisplay = () => {
   // Preload images
   React.useEffect(() => {
     const images = getAllImages();
+    console.log('Attempting to preload images:', images);
+    
     const preloadPromises = images.map(src => {
       return new Promise((resolve, reject) => {
         const img = new Image();
-        img.onload = resolve;
-        img.onerror = reject;
+        img.onload = () => {
+          console.log(`Successfully loaded: ${src}`);
+          resolve();
+        };
+        img.onerror = (e) => {
+          console.error(`Failed to load: ${src}`, e);
+          reject(e);
+        };
         img.src = src;
       });
     });
-
+  
     Promise.all(preloadPromises)
       .then(() => {
         console.log('All images preloaded successfully');
