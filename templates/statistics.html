@@ -45,6 +45,11 @@
                 Back to Home
             </a>
         </div>
+        <div class="text-sm text-gray-500 mt-2">
+            Last updated: {{ datetime.fromtimestamp(path.getmtime(
+                url_for('static', filename='images/stats/accuracy_comparison.png')[1:]
+            )).strftime('%Y-%m-%d %H:%M:%S') }}
+        </div>
     </div>
 </div>
 {% endblock %}
