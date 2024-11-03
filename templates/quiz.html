@@ -100,6 +100,7 @@ const QuizDisplay = () => {
 
       if (!response.ok) throw new Error('Failed to submit answer');
 
+      setShowImage(false);
       setIsAnswered(true);
       setSelectedAnswer('');
       
@@ -114,7 +115,7 @@ const QuizDisplay = () => {
         setTimeout(() => {
           setIsAnswered(false);
           setCurrentQuestionIndex(prev => prev + 1);
-        }, 800);
+        }, 1000);
       } else {
         window.location.href = '/complete';
       }

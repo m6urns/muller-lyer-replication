@@ -1,16 +1,29 @@
 from flask import Flask, render_template, request, redirect, url_for, session
+import atexit
 import json
 from datetime import datetime
 import csv
 from dotenv import load_dotenv
 import os 
 import logging
+from stats_updater import StatsUpdater
+from pathlib import Path
 
 load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY')
 app.config['PREFERRED_URL_SCHEME'] = 'https'
+
+# Initialize and start the stats updater
+stats_updater = StatsUpdater(update_interval=300)  # 5 minutes
+stats_updater.start()
+
+# Register a function to stop the updater when the app stops
+@atexit.register
+def shutdown_stats_updater():
+    stats_updater.stop()
+    return app
 
 @app.after_request
 def add_security_headers(response):
@@ -126,7 +139,12 @@ def save_answer(user_id, quiz_id, image_index, answer, response_time):
 
 @app.route('/statistics')
 def statistics():
-    return render_template('statistics.html')
+    return render_template(
+        'statistics.html', 
+        datetime=datetime,
+        path=Path,
+        static_folder=app.static_folder
+    )
 
 if __name__ == '__main__':
     app.run(debug=True)
