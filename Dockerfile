@@ -13,8 +13,9 @@ RUN apt-get update && apt-get install -y \
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-# Copy data-analysis.py to root directory
+# Copy analysis scripts to root directory
 COPY processing/data-analysis.py /app/data-analysis.py
+COPY processing/data-processor.py /app/data-processor.py
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt \
@@ -35,8 +36,10 @@ ENV DATA_DIR=/app/data
 # Create necessary directories and set permissions
 RUN mkdir -p /app/data \
     && mkdir -p /app/static/images/stats \
+    && mkdir -p /app/results \
     && chmod -R 777 /app/static/images/stats \
-    && chmod -R 777 /app/data
+    && chmod -R 777 /app/data \
+    && chmod -R 777 /app/results
 
 # Create a script to run both the stats updater and Gunicorn
 RUN echo '#!/bin/bash\n\

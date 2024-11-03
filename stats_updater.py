@@ -31,65 +31,77 @@ class StatsUpdater:
         
         # Define paths
         self.base_path = Path('/app')
+        self.data_processor = self.base_path / 'data-processor.py'
         self.analysis_script = self.base_path / 'data-analysis.py'
         self.static_path = self.base_path / 'static' / 'images' / 'stats'
         self.data_path = self.base_path / 'data'
         
-        # Create stats directory if it doesn't exist
+        # Create necessary directories
         self.static_path.mkdir(parents=True, exist_ok=True)
-        
-        # Copy data-analysis.py to the correct location if it's in a different place
-        source_script = self.base_path / 'processing' / 'data-analysis.py'
-        if source_script.exists():
-            shutil.copy2(source_script, self.analysis_script)
-            self.logger.info(f"Copied analysis script from {source_script} to {self.analysis_script}")
+        self.data_path.mkdir(parents=True, exist_ok=True)
+
+    def run_data_processor(self):
+        """Run the data processor script to prepare data for analysis."""
+        try:
+            self.logger.info("Running data processor...")
+            
+            # Prepare paths for data processor arguments
+            results_path = self.base_path / 'results' / 'results.csv'
+            config_path = self.base_path / 'config.json'
+            metadata_dir = self.base_path / 'static' / 'images'
+            output_path = self.data_path / 'processed_data.csv'
+            
+            # Build command
+            cmd = [
+                'python', str(self.data_processor),
+                '--results', str(results_path),
+                '--config', str(config_path),
+                '--metadata-dir', str(metadata_dir),
+                '--output', str(output_path)
+            ]
+            
+            # Run data processor
+            result = subprocess.run(
+                cmd,
+                capture_output=True,
+                text=True,
+                check=True
+            )
+            
+            self.logger.info("Data processor completed successfully")
+            if result.stdout:
+                self.logger.info(f"Data processor output: {result.stdout}")
+            
+            return True
+            
+        except subprocess.CalledProcessError as e:
+            self.logger.error(f"Error running data processor: {e}")
+            self.logger.error(f"Data processor stderr: {e.stderr}")
+            return False
+        except Exception as e:
+            self.logger.error(f"Unexpected error in data processor: {e}")
+            return False
 
     def update_statistics(self):
-        """Run the analysis script and update the statistics images."""
+        """Run the data processor and analysis scripts to update statistics."""
         try:
             self.logger.info("Starting statistics update...")
-            
-            # Debug information
-            self.logger.info(f"Current working directory: {os.getcwd()}")
-            self.logger.info(f"Analysis script path: {self.analysis_script}")
-            self.logger.info(f"Static path: {self.static_path}")
-            self.logger.info(f"Data path: {self.data_path}")
-            
-            # Check if the script exists
-            if not self.analysis_script.exists():
-                self.logger.error(f"Analysis script not found at {self.analysis_script}")
-                return
-                
-            # Check if data files exist
-            if not (self.data_path / 'results.csv').exists():
-                self.logger.error(f"Data file not found at {self.data_path / 'results.csv'}")
-                return
-            
-            # Print directory contents for debugging
-            self.logger.info("Directory contents:")
-            self.logger.info(f"/app: {os.listdir('/app')}")
-            self.logger.info(f"/app/data: {os.listdir('/app/data')}")
-            
             start_time = datetime.now()
             
-            # Set up environment variables for the script
-            env = os.environ.copy()
-            env['DATA_DIR'] = str(self.data_path)
+            # First run the data processor
+            if not self.run_data_processor():
+                self.logger.error("Data processing failed, skipping analysis")
+                return
             
-            # Run the analysis script
+            # Then run the analysis script
             result = subprocess.run(
                 ['python', str(self.analysis_script)],
                 capture_output=True,
                 text=True,
                 check=True,
                 cwd=str(self.base_path),
-                env=env
+                env=os.environ.copy()
             )
-            
-            # Log the script output
-            self.logger.info(f"Script output: {result.stdout}")
-            if result.stderr:
-                self.logger.warning(f"Script stderr: {result.stderr}")
             
             # Move generated images to static folder
             for image_name in ['accuracy_comparison.png', 'accuracy_trend.png']:
@@ -106,9 +118,7 @@ class StatsUpdater:
             
         except subprocess.CalledProcessError as e:
             self.logger.error(f"Error running analysis script: {e}")
-            self.logger.error(f"Script output: {e.output}")
-            if e.stderr:
-                self.logger.error(f"Script stderr: {e.stderr}")
+            self.logger.error(f"Script stderr: {e.stderr}")
         except Exception as e:
             self.logger.error(f"Unexpected error during statistics update: {e}")
             import traceback
