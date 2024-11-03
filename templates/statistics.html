@@ -1,55 +1,68 @@
 {% extends "base.html" %}
-
 {% block content %}
+
 <div class="container mx-auto px-4 py-8 max-w-6xl">
     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-        <!-- Header -->
         <div class="p-6 border-b border-gray-200">
             <h1 class="text-2xl font-bold text-gray-800">Statistics</h1>
         </div>
-        
-        <!-- Content -->
+
         <div class="p-6 space-y-8">
-            <!-- First Image Section -->
+            {% set comparison_img = 'images/stats/accuracy_comparison.png' %}
+            {% set trend_img = 'images/stats/accuracy_trend.png' %}
+            
             <div class="space-y-4">
                 <h2 class="text-xl font-semibold text-gray-700">Response Time Distribution</h2>
+                {% if path(static_folder + '/' + comparison_img).exists() %}
                 <div class="bg-gray-50 rounded-lg p-4 aspect-video">
-                    <img 
-                        src="{{ url_for('static', filename='images/stats/accuracy_comparison.png') }}" 
-                        alt="Response Time Distribution"
-                        class="w-full h-full object-contain"
-                    />
+                    <img src="{{ url_for('static', filename=comparison_img) }}" 
+                         class="w-full h-full object-contain" 
+                         alt="Response Time Distribution">
+                    <div class="text-sm text-gray-500 mt-2">
+                        Last updated: {{ 
+                            datetime.fromtimestamp(
+                                path(static_folder + '/' + comparison_img).stat().st_mtime
+                            ).strftime('%Y-%m-%d %H:%M:%S') 
+                        }}
+                    </div>
                 </div>
+                {% else %}
+                <div class="bg-gray-50 rounded-lg p-4 text-center text-gray-500">
+                    Generating statistics... Please check back in a moment.
+                </div>
+                {% endif %}
             </div>
 
-            <!-- Second Image Section -->
             <div class="space-y-4">
                 <h2 class="text-xl font-semibold text-gray-700">Accuracy by Participant</h2>
+                {% if path(static_folder + '/' + trend_img).exists() %}
                 <div class="bg-gray-50 rounded-lg p-4 aspect-video">
-                    <img 
-                        src="{{ url_for('static', filename='images/stats/accuracy_trend.png') }}" 
-                        alt="Accuracy by Question Type"
-                        class="w-full h-full object-contain"
-                    />
+                    <img src="{{ url_for('static', filename=trend_img) }}" 
+                         class="w-full h-full object-contain" 
+                         alt="Accuracy by Question Type">
+                    <div class="text-sm text-gray-500 mt-2">
+                        Last updated: {{ 
+                            datetime.fromtimestamp(
+                                path(static_folder + '/' + trend_img).stat().st_mtime
+                            ).strftime('%Y-%m-%d %H:%M:%S') 
+                        }}
+                    </div>
                 </div>
+                {% else %}
+                <div class="bg-gray-50 rounded-lg p-4 text-center text-gray-500">
+                    Generating statistics... Please check back in a moment.
+                </div>
+                {% endif %}
             </div>
         </div>
 
-        <!-- Footer with navigation -->
         <div class="p-6 border-t border-gray-200">
-            <a 
-                href="{{ url_for('index') }}" 
-                class="inline-flex items-center text-blue-600 hover:text-blue-800"
-            >
-                <span class="mr-2">←</span>
-                Back to Home
+            <a href="{{ url_for('index') }}" 
+               class="inline-flex items-center text-blue-600 hover:text-blue-800">
+                <span class="mr-2">←</span> Back to Home
             </a>
-        </div>
-        <div class="text-sm text-gray-500 mt-2">
-            Last updated: {{ datetime.fromtimestamp(path.getmtime(
-                url_for('static', filename='images/stats/accuracy_comparison.png')[1:]
-            )).strftime('%Y-%m-%d %H:%M:%S') }}
         </div>
     </div>
 </div>
+
 {% endblock %}

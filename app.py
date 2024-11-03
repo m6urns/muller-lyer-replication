@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 import os 
 import logging
 from stats_updater import StatsUpdater
+from pathlib import Path
 
 load_dotenv()
 
@@ -138,7 +139,12 @@ def save_answer(user_id, quiz_id, image_index, answer, response_time):
 
 @app.route('/statistics')
 def statistics():
-    return render_template('statistics.html', datetime=datetime)
+    return render_template(
+        'statistics.html', 
+        datetime=datetime,
+        path=Path,
+        static_folder=app.static_folder
+    )
 
 if __name__ == '__main__':
     app.run(debug=True)
