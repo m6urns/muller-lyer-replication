@@ -1,9 +1,11 @@
 import pandas as pd
 import numpy as np
-from typing import Dict, List, Tuple
 import matplotlib.pyplot as plt
 import seaborn as sns
 from dataclasses import dataclass
+import argparse
+from pathlib import Path
+import logging
 
 # python ../processing/data-analysis.py
 @dataclass
@@ -172,33 +174,29 @@ def create_accuracy_trend_visualization(df: pd.DataFrame) -> None:
     plt.tight_layout()
 
 def main():
+    parser = argparse.ArgumentParser(description='Generate statistics visualizations')
+    parser.add_argument('--input', required=True, help='Path to processed data CSV file')
+    parser.add_argument('--output-dir', required=True, help='Directory for output images')
+    
+    args = parser.parse_args()
+    
     # Load and process data
-    df = pd.read_csv('processed_data.csv')
+    df = pd.read_csv(args.input)
     
     # Calculate statistics
     participant_stats = calculate_participant_stats(df)
     
-    # Print summary statistics
-    print("\nParticipant Summary Statistics:")
-    print("-" * 80)
-    for user_id, stats in participant_stats.items():
-        print(f"\nUser ID: {user_id}")
-        print(f"Total trials: {stats.total_trials}")
-        print(f"Black arrows: {stats.correct_black}/{stats.total_black} correct ({safe_divide(stats.correct_black, stats.total_black)})")
-        print(f"Red arrows: {stats.correct_red}/{stats.total_red} correct ({safe_divide(stats.correct_red, stats.total_red)})")
-        print(f"Average response time (Fast): {format_rt(stats.avg_rt_fast)}")
-        print(f"Average response time (Slow): {format_rt(stats.avg_rt_slow)}")
-        print(f"Fast trials: {stats.correct_fast}/{stats.total_fast} correct ({safe_divide(stats.correct_fast, stats.total_fast)})")
-        print(f"Slow trials: {stats.correct_slow}/{stats.total_slow} correct ({safe_divide(stats.correct_slow, stats.total_slow)})")
+    # Create output directory if it doesn't exist
+    output_dir = Path(args.output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
     
-    # Create and save fast vs slow comparison visualization
+    # Create and save visualizations
     create_comparison_visualization(participant_stats)
-    plt.savefig('accuracy_comparison.png', dpi=300, bbox_inches='tight')
+    plt.savefig(output_dir / 'accuracy_comparison.png', dpi=300, bbox_inches='tight')
     plt.close()
     
-    # Create and save accuracy trend visualization
     create_accuracy_trend_visualization(df)
-    plt.savefig('accuracy_trend.png', dpi=300, bbox_inches='tight')
+    plt.savefig(output_dir / 'accuracy_trend.png', dpi=300, bbox_inches='tight')
     plt.close()
 
 if __name__ == "__main__":

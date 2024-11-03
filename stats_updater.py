@@ -46,12 +46,11 @@ class StatsUpdater:
             self.logger.info("Running data processor...")
             
             # Prepare paths for data processor arguments
-            results_path = self.data_path / 'results.csv'  # Updated path
+            results_path = self.data_path / 'results.csv'
             config_path = self.base_path / 'config.json'
             metadata_dir = self.base_path / 'static' / 'images'
             output_path = self.data_path / 'processed_data.csv'
             
-            # Debug info
             self.logger.info(f"Results path: {results_path}")
             self.logger.info(f"Results file exists: {results_path.exists()}")
             
@@ -103,25 +102,34 @@ class StatsUpdater:
                 self.logger.error("Data processing failed, skipping analysis")
                 return
             
+            processed_data_path = self.data_path / 'processed_data.csv'
+            self.logger.info(f"Checking processed data exists: {processed_data_path.exists()}")
+            
+            # Set up environment for analysis script
+            env = os.environ.copy()
+            env['DATA_DIR'] = str(self.data_path)
+            
             # Then run the analysis script
+            cmd = [
+                'python',
+                str(self.analysis_script),
+                '--input', str(processed_data_path),
+                '--output-dir', str(self.static_path)
+            ]
+            
+            self.logger.info(f"Running analysis command: {' '.join(cmd)}")
+            
             result = subprocess.run(
-                ['python', str(self.analysis_script)],
+                cmd,
                 capture_output=True,
                 text=True,
                 check=True,
                 cwd=str(self.base_path),
-                env=os.environ.copy()
+                env=env
             )
             
-            # Move generated images to static folder
-            for image_name in ['accuracy_comparison.png', 'accuracy_trend.png']:
-                source = self.base_path / image_name
-                if source.exists():
-                    destination = self.static_path / image_name
-                    os.replace(source, destination)
-                    self.logger.info(f"Moved {image_name} to static folder")
-                else:
-                    self.logger.warning(f"Generated image not found: {source}")
+            if result.stdout:
+                self.logger.info(f"Analysis output: {result.stdout}")
             
             duration = (datetime.now() - start_time).total_seconds()
             self.logger.info(f"Statistics update completed in {duration:.2f} seconds")
