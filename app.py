@@ -138,7 +138,7 @@ def save_answer(user_id, quiz_id, image_index, answer, response_time):
 
 @app.route('/statistics')
 def statistics():
-    return render_template('statistics.html')
+    return render_template('statistics.html', datetime=datetime)
 
 if __name__ == '__main__':
     app.run(debug=True)

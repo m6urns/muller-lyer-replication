@@ -46,10 +46,18 @@ class StatsUpdater:
             self.logger.info("Running data processor...")
             
             # Prepare paths for data processor arguments
-            results_path = self.base_path / 'results' / 'results.csv'
+            results_path = self.data_path / 'results.csv'  # Updated path
             config_path = self.base_path / 'config.json'
             metadata_dir = self.base_path / 'static' / 'images'
             output_path = self.data_path / 'processed_data.csv'
+            
+            # Debug info
+            self.logger.info(f"Results path: {results_path}")
+            self.logger.info(f"Results file exists: {results_path.exists()}")
+            
+            if not results_path.exists():
+                self.logger.error("Results file not found")
+                return False
             
             # Build command
             cmd = [
@@ -80,6 +88,8 @@ class StatsUpdater:
             return False
         except Exception as e:
             self.logger.error(f"Unexpected error in data processor: {e}")
+            import traceback
+            self.logger.error(traceback.format_exc())
             return False
 
     def update_statistics(self):
