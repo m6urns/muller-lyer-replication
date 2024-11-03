@@ -6,8 +6,8 @@ from dataclasses import dataclass
 import argparse
 from pathlib import Path
 import logging
+from typing import Dict, List, Optional, Tuple
 
-# python ../processing/data-analysis.py
 @dataclass
 class ParticipantStats:
     user_id: str
