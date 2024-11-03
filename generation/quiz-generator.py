@@ -6,8 +6,6 @@ import logging
 import argparse
 import random
 
-# python ../../generation/quiz-generator.py
-
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def load_metadata(file_path: str) -> List[Dict]:
@@ -51,7 +49,6 @@ def generate_quiz_config(metadata: List[Dict], day: int, display_time: float, sp
                 "arrow_color": illusion.get('arrow_color', 'black')
             }
         }
-        # quiz["images"].append(image_config)
         image_configs.append(image_config)
         
     if randomize:
@@ -61,6 +58,13 @@ def generate_quiz_config(metadata: List[Dict], day: int, display_time: float, sp
     logging.debug(f"Generated {speed} quiz for day {day} with {len(quiz['images'])} images")
     return quiz
 
+def extract_day_number(filename: str) -> int:
+    """Extract the day number from a metadata filename."""
+    match = re.search(r'day(\d+)', filename)
+    if match:
+        return int(match.group(1))
+    return 0
+
 def generate_quizzes(base_folder: str, fast_time: float, slow_time: float, single_set: bool, randomize: bool = True) -> List[Dict]:
     logging.info(f"Generating quizzes from base folder: {base_folder}")
     quizzes = []
@@ -68,12 +72,14 @@ def generate_quizzes(base_folder: str, fast_time: float, slow_time: float, singl
         logging.error(f"Base folder does not exist: {base_folder}")
         return quizzes
 
+    # Get metadata files and sort them by day number
     metadata_files = [f for f in os.listdir(base_folder) if f.endswith('_metadata.json')]
+    metadata_files.sort(key=extract_day_number)  # Sort files based on day number
+
     quiz_id = 0
-    for metadata_file in sorted(metadata_files):
-        match = re.search(r'day(\d+)', metadata_file)
-        if match:
-            day = int(match.group(1))
+    for metadata_file in metadata_files:
+        day = extract_day_number(metadata_file)
+        if day > 0:  # Only process if we successfully extracted a day number
             logging.debug(f"Processing metadata for day {day}")
             metadata_path = os.path.join(base_folder, metadata_file)
             metadata = load_metadata(metadata_path)
@@ -88,7 +94,6 @@ def generate_quizzes(base_folder: str, fast_time: float, slow_time: float, singl
                     quiz_id += 1
                     logging.info(f"Added single quiz for day {day}")
                     
-                    # Add control quiz if control metadata exists
                     if control_metadata:
                         control_quiz = generate_quiz_config(control_metadata, day, slow_time, "control-single", quiz_id, randomize)
                         quizzes.append(control_quiz)
@@ -103,7 +108,6 @@ def generate_quizzes(base_folder: str, fast_time: float, slow_time: float, singl
                     quizzes.extend([fast_quiz, slow_quiz])
                     logging.info(f"Added fast and slow quizzes for day {day}")
                     
-                    # Add control quizzes if control metadata exists
                     if control_metadata:
                         control_fast_quiz = generate_quiz_config(control_metadata, day, fast_time, "Group 2 - Fast", quiz_id, randomize)
                         quiz_id += 1
