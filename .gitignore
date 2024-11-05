@@ -1,7 +1,8 @@
-results/
+#results/
 data/
 .conda
 .conda_env
 .env
 __pycache__/
 *.pyc
+docker-compose.yml
