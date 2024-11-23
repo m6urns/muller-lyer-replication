@@ -1444,3 +1444,723 @@ timestamp,user_id,day,quiz_id,image_index,illusion_filename,user_answer,response
 2024-11-15 21:31:19,Ryanc,4,12,13,muller_lyer_day4_illusion3.svg,Same length,2.4,Group 1 - Fast,0.5,Same length,195,195,0,20,36,black,False,True
 2024-11-15 21:31:22,Ryanc,4,12,14,muller_lyer_day4_illusion11.svg,Left,1.809,Group 1 - Fast,0.5,Same length,195,195,0,20,36,red,False,False
 2024-11-15 21:31:25,Ryanc,4,12,15,muller_lyer_day4_illusion2.svg,Same length,1.94,Group 1 - Fast,0.5,Same length,185,185,0,20,36,black,False,True
+2024-11-18 21:21:09,caitthax,5,16,0,muller_lyer_day5_illusion2.svg,Left,1.593,Group 1 - Fast,0.5,Same length,205,205,0,20,36,black,False,False
+2024-11-18 21:21:12,caitthax,5,16,1,muller_lyer_day5_illusion10.svg,Same length,1.867,Group 1 - Fast,0.5,Same length,205,205,0,20,36,red,False,True
+2024-11-18 21:21:15,caitthax,5,16,2,muller_lyer_day5_illusion5.svg,Same length,1.648,Group 1 - Fast,0.5,Right,180,210,-30,20,36,black,False,False
+2024-11-18 21:21:17,caitthax,5,16,3,muller_lyer_day5_illusion15.svg,Same length,1.658,Group 1 - Fast,0.5,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:21:20,caitthax,5,16,4,muller_lyer_day5_illusion3.svg,Left,1.531,Group 1 - Fast,0.5,Same length,210,210,0,20,36,black,False,False
+2024-11-18 21:21:23,caitthax,5,16,5,muller_lyer_day5_illusion12.svg,Left,1.521,Group 1 - Fast,0.5,Same length,185,185,0,20,36,red,False,False
+2024-11-18 21:21:26,caitthax,5,16,6,muller_lyer_day5_illusion11.svg,Same length,1.84,Group 1 - Fast,0.5,Same length,210,210,0,20,36,red,False,True
+2024-11-18 21:21:29,caitthax,5,16,7,muller_lyer_day5_illusion6.svg,Left,1.475,Group 1 - Fast,0.5,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:21:32,caitthax,5,16,8,muller_lyer_day5_illusion9.svg,Same length,1.674,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,True
+2024-11-18 21:21:34,caitthax,5,16,9,muller_lyer_day5_illusion4.svg,Left,1.624,Group 1 - Fast,0.5,Same length,185,185,0,20,36,black,False,False
+2024-11-18 21:21:37,caitthax,5,16,10,muller_lyer_day5_illusion14.svg,Left,1.505,Group 1 - Fast,0.5,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:21:40,caitthax,5,16,11,muller_lyer_day5_illusion16.svg,Same length,1.408,Group 1 - Fast,0.5,Right,180,205,-25,20,36,red,False,False
+2024-11-18 21:21:43,caitthax,5,16,12,muller_lyer_day5_illusion13.svg,Same length,1.553,Group 1 - Fast,0.5,Right,180,210,-30,20,36,red,False,False
+2024-11-18 21:21:46,caitthax,5,16,13,muller_lyer_day5_illusion1.svg,Left,1.776,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,False
+2024-11-18 21:21:48,caitthax,5,16,14,muller_lyer_day5_illusion8.svg,Same length,1.357,Group 1 - Fast,0.5,Right,180,205,-25,20,36,black,False,False
+2024-11-18 21:21:51,jonah.harmon,5,16,0,muller_lyer_day5_illusion2.svg,Same length,2.13,Group 1 - Fast,0.5,Same length,205,205,0,20,36,black,False,True
+2024-11-18 21:21:51,caitthax,5,16,15,muller_lyer_day5_illusion7.svg,Same length,1.642,Group 1 - Fast,0.5,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:21:54,jonah.harmon,5,16,1,muller_lyer_day5_illusion10.svg,Same length,1.569,Group 1 - Fast,0.5,Same length,205,205,0,20,36,red,False,True
+2024-11-18 21:21:57,jonah.harmon,5,16,2,muller_lyer_day5_illusion5.svg,Same length,1.64,Group 1 - Fast,0.5,Right,180,210,-30,20,36,black,False,False
+2024-11-18 21:22:01,jonah.harmon,5,16,3,muller_lyer_day5_illusion15.svg,Left,2.913,Group 1 - Fast,0.5,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:22:04,jonah.harmon,5,16,4,muller_lyer_day5_illusion3.svg,Same length,1.284,Group 1 - Fast,0.5,Same length,210,210,0,20,36,black,False,True
+2024-11-18 21:22:07,jonah.harmon,5,16,5,muller_lyer_day5_illusion12.svg,Left,1.859,Group 1 - Fast,0.5,Same length,185,185,0,20,36,red,False,False
+2024-11-18 21:22:09,jonah.harmon,5,16,6,muller_lyer_day5_illusion11.svg,Same length,1.365,Group 1 - Fast,0.5,Same length,210,210,0,20,36,red,False,True
+2024-11-18 21:22:13,jonah.harmon,5,16,7,muller_lyer_day5_illusion6.svg,Left,1.795,Group 1 - Fast,0.5,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:22:15,caitthax,5,17,0,muller_lyer_day5_illusion5.svg,Same length,6.278,Group 1 - Slow,5.0,Right,180,210,-30,20,36,black,False,False
+2024-11-18 21:22:16,jonah.harmon,5,16,8,muller_lyer_day5_illusion9.svg,Left,1.898,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,False
+2024-11-18 21:22:19,jonah.harmon,5,16,9,muller_lyer_day5_illusion4.svg,Same length,1.833,Group 1 - Fast,0.5,Same length,185,185,0,20,36,black,False,True
+2024-11-18 21:22:21,caitthax,5,17,1,muller_lyer_day5_illusion11.svg,Left,4.297,Group 1 - Slow,5.0,Same length,210,210,0,20,36,red,False,False
+2024-11-18 21:22:22,jonah.harmon,5,16,10,muller_lyer_day5_illusion14.svg,Left,1.675,Group 1 - Fast,0.5,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:22:24,jonah.harmon,5,16,11,muller_lyer_day5_illusion16.svg,Same length,1.419,Group 1 - Fast,0.5,Right,180,205,-25,20,36,red,False,False
+2024-11-18 21:22:27,jonah.harmon,5,16,12,muller_lyer_day5_illusion13.svg,Same length,1.422,Group 1 - Fast,0.5,Right,180,210,-30,20,36,red,False,False
+2024-11-18 21:22:29,caitthax,5,17,2,muller_lyer_day5_illusion3.svg,Left,6.266,Group 1 - Slow,5.0,Same length,210,210,0,20,36,black,False,False
+2024-11-18 21:22:30,jonah.harmon,5,16,13,muller_lyer_day5_illusion1.svg,Same length,1.628,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,True
+2024-11-18 21:22:32,caitthax,5,17,3,muller_lyer_day5_illusion6.svg,Left,2.434,Group 1 - Slow,5.0,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:22:33,jonah.harmon,5,16,14,muller_lyer_day5_illusion8.svg,Right,2.232,Group 1 - Fast,0.5,Right,180,205,-25,20,36,black,False,True
+2024-11-18 21:22:36,caitthax,5,17,4,muller_lyer_day5_illusion8.svg,Same length,2.712,Group 1 - Slow,5.0,Right,180,205,-25,20,36,black,False,False
+2024-11-18 21:22:37,jonah.harmon,5,16,15,muller_lyer_day5_illusion7.svg,Left,2.044,Group 1 - Fast,0.5,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:22:40,caitthax,5,17,5,muller_lyer_day5_illusion15.svg,Same length,2.504,Group 1 - Slow,5.0,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:22:44,caitthax,5,17,6,muller_lyer_day5_illusion10.svg,Left,2.337,Group 1 - Slow,5.0,Same length,205,205,0,20,36,red,False,False
+2024-11-18 21:22:48,caitthax,5,17,7,muller_lyer_day5_illusion9.svg,Same length,2.741,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,True
+2024-11-18 21:22:52,caitthax,5,17,8,muller_lyer_day5_illusion2.svg,Same length,3.302,Group 1 - Slow,5.0,Same length,205,205,0,20,36,black,False,True
+2024-11-18 21:22:56,caitthax,5,17,9,muller_lyer_day5_illusion14.svg,Left,1.869,Group 1 - Slow,5.0,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:22:59,jonah.harmon,5,17,0,muller_lyer_day5_illusion5.svg,Right,7.96,Group 1 - Slow,5.0,Right,180,210,-30,20,36,black,False,True
+2024-11-18 21:23:01,caitthax,5,17,10,muller_lyer_day5_illusion7.svg,Same length,3.415,Group 1 - Slow,5.0,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:23:03,jonah.harmon,5,17,1,muller_lyer_day5_illusion11.svg,Same length,2.155,Group 1 - Slow,5.0,Same length,210,210,0,20,36,red,False,True
+2024-11-18 21:23:05,caitthax,5,17,11,muller_lyer_day5_illusion13.svg,Right,3.356,Group 1 - Slow,5.0,Right,180,210,-30,20,36,red,False,True
+2024-11-18 21:23:08,jonah.harmon,5,17,2,muller_lyer_day5_illusion3.svg,Same length,4.087,Group 1 - Slow,5.0,Same length,210,210,0,20,36,black,False,True
+2024-11-18 21:23:10,caitthax,5,17,12,muller_lyer_day5_illusion16.svg,Same length,3.311,Group 1 - Slow,5.0,Right,180,205,-25,20,36,red,False,False
+2024-11-18 21:23:12,jonah.harmon,5,17,3,muller_lyer_day5_illusion6.svg,Left,2.492,Group 1 - Slow,5.0,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:23:16,caitthax,5,17,13,muller_lyer_day5_illusion12.svg,Same length,4.899,Group 1 - Slow,5.0,Same length,185,185,0,20,36,red,False,True
+2024-11-18 21:23:19,jonah.harmon,5,17,4,muller_lyer_day5_illusion8.svg,Same length,5.239,Group 1 - Slow,5.0,Right,180,205,-25,20,36,black,False,False
+2024-11-18 21:23:20,caitthax,5,17,14,muller_lyer_day5_illusion1.svg,Same length,2.668,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,True
+2024-11-18 21:23:23,jonah.harmon,5,17,5,muller_lyer_day5_illusion15.svg,Same length,3.335,Group 1 - Slow,5.0,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:23:25,caitthax,5,17,15,muller_lyer_day5_illusion4.svg,Same length,3.211,Group 1 - Slow,5.0,Same length,185,185,0,20,36,black,False,True
+2024-11-18 21:23:27,jonah.harmon,5,17,6,muller_lyer_day5_illusion10.svg,Same length,2.499,Group 1 - Slow,5.0,Same length,205,205,0,20,36,red,False,True
+2024-11-18 21:23:32,jonah.harmon,5,17,7,muller_lyer_day5_illusion9.svg,Same length,3.933,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,True
+2024-11-18 21:23:37,jonah.harmon,5,17,8,muller_lyer_day5_illusion2.svg,Same length,3.454,Group 1 - Slow,5.0,Same length,205,205,0,20,36,black,False,True
+2024-11-18 21:23:43,jonah.harmon,5,17,9,muller_lyer_day5_illusion14.svg,Left,4.428,Group 1 - Slow,5.0,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:23:47,jonah.harmon,5,17,10,muller_lyer_day5_illusion7.svg,Same length,2.967,Group 1 - Slow,5.0,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:23:57,jonah.harmon,5,17,11,muller_lyer_day5_illusion13.svg,Same length,8.52,Group 1 - Slow,5.0,Right,180,210,-30,20,36,red,False,False
+2024-11-18 21:24:05,jonah.harmon,5,17,12,muller_lyer_day5_illusion16.svg,Right,6.66,Group 1 - Slow,5.0,Right,180,205,-25,20,36,red,False,True
+2024-11-18 21:24:11,jonah.harmon,5,17,13,muller_lyer_day5_illusion12.svg,Same length,4.672,Group 1 - Slow,5.0,Same length,185,185,0,20,36,red,False,True
+2024-11-18 21:24:16,jonah.harmon,5,17,14,muller_lyer_day5_illusion1.svg,Same length,4.418,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,True
+2024-11-18 21:24:22,jonah.harmon,5,17,15,muller_lyer_day5_illusion4.svg,Same length,4.692,Group 1 - Slow,5.0,Same length,185,185,0,20,36,black,False,True
+2024-11-18 21:27:55,mwhite,5,18,0,muller_lyer_day5_illusion23.svg,Left,1.979,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:27:58,mwhite,5,18,1,muller_lyer_day5_illusion22.svg,Left,1.767,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:28:01,mwhite,5,18,2,muller_lyer_day5_illusion18.svg,Left,1.428,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:28:04,mwhite,5,18,3,muller_lyer_day5_illusion25.svg,Left,1.448,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:28:06,mwhite,5,18,4,muller_lyer_day5_illusion21.svg,Same length,1.514,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:28:11,mwhite,5,18,5,muller_lyer_day5_illusion20.svg,Same length,3.112,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:28:14,mwhite,5,18,6,muller_lyer_day5_illusion24.svg,Left,1.721,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:28:17,mwhite,5,18,7,muller_lyer_day5_illusion29.svg,Same length,1.567,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:28:19,mwhite,5,18,8,muller_lyer_day5_illusion31.svg,Same length,1.357,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:28:19,mattb,5,16,0,muller_lyer_day5_illusion2.svg,Left,2.537,Group 1 - Fast,0.5,Same length,205,205,0,20,36,black,False,False
+2024-11-18 21:28:22,mwhite,5,18,9,muller_lyer_day5_illusion27.svg,Same length,1.528,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:28:23,mattb,5,16,1,muller_lyer_day5_illusion10.svg,Same length,2.179,Group 1 - Fast,0.5,Same length,205,205,0,20,36,red,False,True
+2024-11-18 21:28:25,mwhite,5,18,10,muller_lyer_day5_illusion19.svg,Same length,1.845,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:28:26,mattb,5,16,2,muller_lyer_day5_illusion5.svg,Right,2.061,Group 1 - Fast,0.5,Right,180,210,-30,20,36,black,False,True
+2024-11-18 21:28:28,mwhite,5,18,11,muller_lyer_day5_illusion32.svg,Left,1.445,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:28:29,mattb,5,16,3,muller_lyer_day5_illusion15.svg,Same length,1.926,Group 1 - Fast,0.5,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:28:31,mwhite,5,18,12,muller_lyer_day5_illusion26.svg,Left,2.144,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:28:32,mattb,5,16,4,muller_lyer_day5_illusion3.svg,Left,1.651,Group 1 - Fast,0.5,Same length,210,210,0,20,36,black,False,False
+2024-11-18 21:28:34,mwhite,5,18,13,muller_lyer_day5_illusion30.svg,Same length,1.441,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:28:37,mattb,5,16,5,muller_lyer_day5_illusion12.svg,Same length,3.851,Group 1 - Fast,0.5,Same length,185,185,0,20,36,red,False,True
+2024-11-18 21:28:38,mwhite,5,18,14,muller_lyer_day5_illusion17.svg,Same length,2.222,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:28:40,mattb,5,16,6,muller_lyer_day5_illusion11.svg,Left,1.895,Group 1 - Fast,0.5,Same length,210,210,0,20,36,red,False,False
+2024-11-18 21:28:40,mwhite,5,18,15,muller_lyer_day5_illusion28.svg,Left,1.347,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:28:43,mattb,5,16,7,muller_lyer_day5_illusion6.svg,Left,1.647,Group 1 - Fast,0.5,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:28:47,mattb,5,16,8,muller_lyer_day5_illusion9.svg,Same length,2.655,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,True
+2024-11-18 21:28:51,mattb,5,16,9,muller_lyer_day5_illusion4.svg,Left,3.046,Group 1 - Fast,0.5,Same length,185,185,0,20,36,black,False,False
+2024-11-18 21:28:54,mattb,5,16,10,muller_lyer_day5_illusion14.svg,Left,1.865,Group 1 - Fast,0.5,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:28:57,mattb,5,16,11,muller_lyer_day5_illusion16.svg,Right,2.029,Group 1 - Fast,0.5,Right,180,205,-25,20,36,red,False,True
+2024-11-18 21:29:01,mattb,5,16,12,muller_lyer_day5_illusion13.svg,Same length,2.233,Group 1 - Fast,0.5,Right,180,210,-30,20,36,red,False,False
+2024-11-18 21:29:04,mwhite,5,19,0,muller_lyer_day5_illusion22.svg,Left,5.045,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:29:04,mattb,5,16,13,muller_lyer_day5_illusion1.svg,Left,1.999,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,False
+2024-11-18 21:29:06,1121123,5,16,0,muller_lyer_day5_illusion2.svg,Left,2.396,Group 1 - Fast,0.5,Same length,205,205,0,20,36,black,False,False
+2024-11-18 21:29:07,mattb,5,16,14,muller_lyer_day5_illusion8.svg,Right,1.963,Group 1 - Fast,0.5,Right,180,205,-25,20,36,black,False,True
+2024-11-18 21:29:09,gavinedd,5,18,0,muller_lyer_day5_illusion23.svg,Left,2.364,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:29:10,1121123,5,16,1,muller_lyer_day5_illusion10.svg,Left,1.948,Group 1 - Fast,0.5,Same length,205,205,0,20,36,red,False,False
+2024-11-18 21:29:10,mattb,5,16,15,muller_lyer_day5_illusion7.svg,Left,1.719,Group 1 - Fast,0.5,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:29:10,mwhite,5,19,1,muller_lyer_day5_illusion19.svg,Same length,4.795,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:29:12,gavinedd,5,18,1,muller_lyer_day5_illusion22.svg,Same length,2.141,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:29:12,1121123,5,16,2,muller_lyer_day5_illusion5.svg,Right,1.595,Group 1 - Fast,0.5,Right,180,210,-30,20,36,black,False,True
+2024-11-18 21:29:15,gavinedd,5,18,2,muller_lyer_day5_illusion18.svg,Same length,1.755,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:29:16,mwhite,5,19,2,muller_lyer_day5_illusion20.svg,Same length,4.146,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:29:16,1121123,5,16,3,muller_lyer_day5_illusion15.svg,Left,2.005,Group 1 - Fast,0.5,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:29:18,gavinedd,5,18,3,muller_lyer_day5_illusion25.svg,Same length,1.769,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:29:18,1121123,5,16,4,muller_lyer_day5_illusion3.svg,Left,1.323,Group 1 - Fast,0.5,Same length,210,210,0,20,36,black,False,False
+2024-11-18 21:29:22,gavinedd,5,18,4,muller_lyer_day5_illusion21.svg,Same length,2.491,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:29:23,1121123,5,16,5,muller_lyer_day5_illusion12.svg,Left,2.819,Group 1 - Fast,0.5,Same length,185,185,0,20,36,red,False,False
+2024-11-18 21:29:23,mwhite,5,19,3,muller_lyer_day5_illusion17.svg,Same length,5.966,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:29:25,gavinedd,5,18,5,muller_lyer_day5_illusion20.svg,Same length,2.167,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:29:25,1121123,5,16,6,muller_lyer_day5_illusion11.svg,Same length,1.449,Group 1 - Fast,0.5,Same length,210,210,0,20,36,red,False,True
+2024-11-18 21:29:28,1121123,5,16,7,muller_lyer_day5_illusion6.svg,Left,1.244,Group 1 - Fast,0.5,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:29:28,gavinedd,5,18,6,muller_lyer_day5_illusion24.svg,Same length,1.827,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:29:28,mattb,5,17,0,muller_lyer_day5_illusion5.svg,Same length,5.467,Group 1 - Slow,5.0,Right,180,210,-30,20,36,black,False,False
+2024-11-18 21:29:30,mwhite,5,19,4,muller_lyer_day5_illusion32.svg,Left,6.186,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:29:31,gavinedd,5,18,7,muller_lyer_day5_illusion29.svg,Left,1.779,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:29:31,1121123,5,16,8,muller_lyer_day5_illusion9.svg,Same length,2.369,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,True
+2024-11-18 21:29:33,mattb,5,17,1,muller_lyer_day5_illusion11.svg,Left,2.919,Group 1 - Slow,5.0,Same length,210,210,0,20,36,red,False,False
+2024-11-18 21:29:34,gavinedd,5,18,8,muller_lyer_day5_illusion31.svg,Left,2.075,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:29:35,mwhite,5,19,5,muller_lyer_day5_illusion27.svg,Left,3.359,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:29:35,1121123,5,16,9,muller_lyer_day5_illusion4.svg,Same length,2.288,Group 1 - Fast,0.5,Same length,185,185,0,20,36,black,False,True
+2024-11-18 21:29:36,mattb,5,17,2,muller_lyer_day5_illusion3.svg,Left,2.547,Group 1 - Slow,5.0,Same length,210,210,0,20,36,black,False,False
+2024-11-18 21:29:38,1121123,5,16,10,muller_lyer_day5_illusion14.svg,Left,1.297,Group 1 - Fast,0.5,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:29:38,gavinedd,5,18,9,muller_lyer_day5_illusion27.svg,Left,2.363,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:29:40,mattb,5,17,3,muller_lyer_day5_illusion6.svg,Left,1.963,Group 1 - Slow,5.0,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:29:40,mwhite,5,19,6,muller_lyer_day5_illusion24.svg,Left,3.924,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:29:41,gavinedd,5,18,10,muller_lyer_day5_illusion19.svg,Left,1.988,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:29:42,1121123,5,16,11,muller_lyer_day5_illusion16.svg,Same length,3.544,Group 1 - Fast,0.5,Right,180,205,-25,20,36,red,False,False
+2024-11-18 21:29:44,gavinedd,5,18,11,muller_lyer_day5_illusion32.svg,Same length,1.939,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:29:44,mattb,5,17,4,muller_lyer_day5_illusion8.svg,Same length,3.396,Group 1 - Slow,5.0,Right,180,205,-25,20,36,black,False,False
+2024-11-18 21:29:45,1121123,5,16,12,muller_lyer_day5_illusion13.svg,Right,1.313,Group 1 - Fast,0.5,Right,180,210,-30,20,36,red,False,True
+2024-11-18 21:29:45,mwhite,5,19,7,muller_lyer_day5_illusion23.svg,Same length,3.687,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:29:48,mattb,5,17,5,muller_lyer_day5_illusion15.svg,Left,2.311,Group 1 - Slow,5.0,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:29:48,gavinedd,5,18,12,muller_lyer_day5_illusion26.svg,Same length,2.662,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:29:50,1121123,5,16,13,muller_lyer_day5_illusion1.svg,Left,3.277,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,False
+2024-11-18 21:29:50,mwhite,5,19,8,muller_lyer_day5_illusion30.svg,Left,3.523,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:29:52,gavinedd,5,18,13,muller_lyer_day5_illusion30.svg,Same length,2.402,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:29:52,mattb,5,17,6,muller_lyer_day5_illusion10.svg,Left,3.072,Group 1 - Slow,5.0,Same length,205,205,0,20,36,red,False,False
+2024-11-18 21:29:54,1121123,5,16,14,muller_lyer_day5_illusion8.svg,Same length,2.744,Group 1 - Fast,0.5,Right,180,205,-25,20,36,black,False,False
+2024-11-18 21:29:55,mwhite,5,19,9,muller_lyer_day5_illusion29.svg,Left,3.292,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:29:55,gavinedd,5,18,14,muller_lyer_day5_illusion17.svg,Left,1.972,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:29:56,mattb,5,17,7,muller_lyer_day5_illusion9.svg,Same length,3.026,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,True
+2024-11-18 21:29:58,gavinedd,5,18,15,muller_lyer_day5_illusion28.svg,Same length,1.702,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:30:00,mattb,5,17,8,muller_lyer_day5_illusion2.svg,Left,2.068,Group 1 - Slow,5.0,Same length,205,205,0,20,36,black,False,False
+2024-11-18 21:30:00,1121123,5,16,15,muller_lyer_day5_illusion7.svg,Same length,4.601,Group 1 - Fast,0.5,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:30:02,mwhite,5,19,10,muller_lyer_day5_illusion31.svg,Same length,5.618,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:30:03,mattb,5,17,9,muller_lyer_day5_illusion14.svg,Left,1.813,Group 1 - Slow,5.0,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:30:06,mattb,5,17,10,muller_lyer_day5_illusion7.svg,Same length,2.053,Group 1 - Slow,5.0,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:30:07,mwhite,5,19,11,muller_lyer_day5_illusion28.svg,Same length,4.509,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:30:09,mattb,5,17,11,muller_lyer_day5_illusion13.svg,Right,2.443,Group 1 - Slow,5.0,Right,180,210,-30,20,36,red,False,True
+2024-11-18 21:30:13,1121123,5,17,0,muller_lyer_day5_illusion5.svg,Same length,4.404,Group 1 - Slow,5.0,Right,180,210,-30,20,36,black,False,False
+2024-11-18 21:30:13,mattb,5,17,12,muller_lyer_day5_illusion16.svg,Right,2.451,Group 1 - Slow,5.0,Right,180,205,-25,20,36,red,False,True
+2024-11-18 21:30:13,mwhite,5,19,12,muller_lyer_day5_illusion21.svg,Left,4.712,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:30:16,mattb,5,17,13,muller_lyer_day5_illusion12.svg,Left,1.87,Group 1 - Slow,5.0,Same length,185,185,0,20,36,red,False,False
+2024-11-18 21:30:18,1121123,5,17,1,muller_lyer_day5_illusion11.svg,Left,3.653,Group 1 - Slow,5.0,Same length,210,210,0,20,36,red,False,False
+2024-11-18 21:30:19,mwhite,5,19,13,muller_lyer_day5_illusion26.svg,Same length,4.282,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:30:20,mattb,5,17,14,muller_lyer_day5_illusion1.svg,Same length,2.076,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,True
+2024-11-18 21:30:20,1121123,5,17,2,muller_lyer_day5_illusion3.svg,Left,1.493,Group 1 - Slow,5.0,Same length,210,210,0,20,36,black,False,False
+2024-11-18 21:30:22,mattb,5,17,15,muller_lyer_day5_illusion4.svg,Left,1.606,Group 1 - Slow,5.0,Same length,185,185,0,20,36,black,False,False
+2024-11-18 21:30:23,1121123,5,17,3,muller_lyer_day5_illusion6.svg,Left,1.282,Group 1 - Slow,5.0,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:30:23,mwhite,5,19,14,muller_lyer_day5_illusion25.svg,Left,3.051,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:30:28,1121123,5,17,4,muller_lyer_day5_illusion8.svg,Same length,3.704,Group 1 - Slow,5.0,Right,180,205,-25,20,36,black,False,False
+2024-11-18 21:30:30,mwhite,5,19,15,muller_lyer_day5_illusion18.svg,Same length,5.052,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:30:31,1121123,5,17,5,muller_lyer_day5_illusion15.svg,Left,2.317,Group 1 - Slow,5.0,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:30:36,gavinedd,5,19,0,muller_lyer_day5_illusion22.svg,Left,3.71,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:30:37,1121123,5,17,6,muller_lyer_day5_illusion10.svg,Left,4.273,Group 1 - Slow,5.0,Same length,205,205,0,20,36,red,False,False
+2024-11-18 21:30:41,gavinedd,5,19,1,muller_lyer_day5_illusion19.svg,Same length,4.031,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:30:42,mattrau1,5,18,0,muller_lyer_day5_illusion23.svg,Left,2.6,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:30:44,Tanner,5,16,0,muller_lyer_day5_illusion2.svg,Same length,2.806,Group 1 - Fast,0.5,Same length,205,205,0,20,36,black,False,True
+2024-11-18 21:30:44,1121123,5,17,7,muller_lyer_day5_illusion9.svg,Left,5.1,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,False
+2024-11-18 21:30:44,gavinedd,5,19,2,muller_lyer_day5_illusion20.svg,Same length,2.267,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:30:45,mattrau1,5,18,1,muller_lyer_day5_illusion22.svg,Left,2.319,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:30:47,Tanner,5,16,1,muller_lyer_day5_illusion10.svg,Same length,1.847,Group 1 - Fast,0.5,Same length,205,205,0,20,36,red,False,True
+2024-11-18 21:30:49,mattrau1,5,18,2,muller_lyer_day5_illusion18.svg,Same length,2.224,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:30:49,kmurphy,5,16,0,muller_lyer_day5_illusion2.svg,Left,4.097,Group 1 - Fast,0.5,Same length,205,205,0,20,36,black,False,False
+2024-11-18 21:30:49,gavinedd,5,19,3,muller_lyer_day5_illusion17.svg,Same length,3.762,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:30:50,Tanner,5,16,2,muller_lyer_day5_illusion5.svg,Same length,1.633,Group 1 - Fast,0.5,Right,180,210,-30,20,36,black,False,False
+2024-11-18 21:30:50,John,5,16,0,muller_lyer_day5_illusion2.svg,Same length,2.018,Group 1 - Fast,0.5,Same length,205,205,0,20,36,black,False,True
+2024-11-18 21:30:52,1121123,5,17,8,muller_lyer_day5_illusion2.svg,Left,6.48,Group 1 - Slow,5.0,Same length,205,205,0,20,36,black,False,False
+2024-11-18 21:30:52,mattrau1,5,18,3,muller_lyer_day5_illusion25.svg,Left,2.619,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:30:53,John,5,16,1,muller_lyer_day5_illusion10.svg,Left,1.887,Group 1 - Fast,0.5,Same length,205,205,0,20,36,red,False,False
+2024-11-18 21:30:53,kmurphy,5,16,1,muller_lyer_day5_illusion10.svg,Left,2.559,Group 1 - Fast,0.5,Same length,205,205,0,20,36,red,False,False
+2024-11-18 21:30:54,Tanner,5,16,3,muller_lyer_day5_illusion15.svg,Same length,2.7,Group 1 - Fast,0.5,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:30:55,1121123,5,17,9,muller_lyer_day5_illusion14.svg,Left,1.207,Group 1 - Slow,5.0,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:30:55,gavinedd,5,19,4,muller_lyer_day5_illusion32.svg,Same length,4.225,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:30:56,John,5,16,2,muller_lyer_day5_illusion5.svg,Same length,1.626,Group 1 - Fast,0.5,Right,180,210,-30,20,36,black,False,False
+2024-11-18 21:30:56,mattrau1,5,18,4,muller_lyer_day5_illusion21.svg,Left,2.653,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:30:56,kmurphy,5,16,2,muller_lyer_day5_illusion5.svg,Same length,1.605,Group 1 - Fast,0.5,Right,180,210,-30,20,36,black,False,False
+2024-11-18 21:30:58,Tanner,5,16,4,muller_lyer_day5_illusion3.svg,Right,3.118,Group 1 - Fast,0.5,Same length,210,210,0,20,36,black,False,False
+2024-11-18 21:30:59,John,5,16,3,muller_lyer_day5_illusion15.svg,Left,1.478,Group 1 - Fast,0.5,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:31:00,mattrau1,5,18,5,muller_lyer_day5_illusion20.svg,Same length,2.096,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:31:00,1121123,5,17,10,muller_lyer_day5_illusion7.svg,Left,3.799,Group 1 - Slow,5.0,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:31:00,Ryanc,5,16,0,muller_lyer_day5_illusion2.svg,Left,1.769,Group 1 - Fast,0.5,Same length,205,205,0,20,36,black,False,False
+2024-11-18 21:31:00,kmurphy,5,16,3,muller_lyer_day5_illusion15.svg,Same length,2.208,Group 1 - Fast,0.5,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:31:01,gavinedd,5,19,5,muller_lyer_day5_illusion27.svg,Same length,4.855,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:31:01,Tanner,5,16,5,muller_lyer_day5_illusion12.svg,Same length,1.673,Group 1 - Fast,0.5,Same length,185,185,0,20,36,red,False,True
+2024-11-18 21:31:02,John,5,16,4,muller_lyer_day5_illusion3.svg,Same length,2.01,Group 1 - Fast,0.5,Same length,210,210,0,20,36,black,False,True
+2024-11-18 21:31:03,Ryanc,5,16,1,muller_lyer_day5_illusion10.svg,Same length,1.796,Group 1 - Fast,0.5,Same length,205,205,0,20,36,red,False,True
+2024-11-18 21:31:03,mattrau1,5,18,6,muller_lyer_day5_illusion24.svg,Left,2.383,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:31:04,Tanner,5,16,6,muller_lyer_day5_illusion11.svg,Right,1.53,Group 1 - Fast,0.5,Same length,210,210,0,20,36,red,False,False
+2024-11-18 21:31:04,kmurphy,5,16,4,muller_lyer_day5_illusion3.svg,Left,2.277,Group 1 - Fast,0.5,Same length,210,210,0,20,36,black,False,False
+2024-11-18 21:31:05,John,5,16,5,muller_lyer_day5_illusion12.svg,Same length,1.073,Group 1 - Fast,0.5,Same length,185,185,0,20,36,red,False,True
+2024-11-18 21:31:05,gavinedd,5,19,6,muller_lyer_day5_illusion24.svg,Left,3.215,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:31:06,1121123,5,17,11,muller_lyer_day5_illusion13.svg,Right,4.165,Group 1 - Slow,5.0,Right,180,210,-30,20,36,red,False,True
+2024-11-18 21:31:06,Ryanc,5,16,2,muller_lyer_day5_illusion5.svg,Right,1.853,Group 1 - Fast,0.5,Right,180,210,-30,20,36,black,False,True
+2024-11-18 21:31:07,Tanner,5,16,7,muller_lyer_day5_illusion6.svg,Same length,1.72,Group 1 - Fast,0.5,Left,215,180,35,20,36,black,False,False
+2024-11-18 21:31:08,mattrau1,5,18,7,muller_lyer_day5_illusion29.svg,Same length,3.373,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:31:08,John,5,16,6,muller_lyer_day5_illusion11.svg,Left,1.581,Group 1 - Fast,0.5,Same length,210,210,0,20,36,red,False,False
+2024-11-18 21:31:08,kmurphy,5,16,5,muller_lyer_day5_illusion12.svg,Left,2.244,Group 1 - Fast,0.5,Same length,185,185,0,20,36,red,False,False
+2024-11-18 21:31:09,1121123,5,17,12,muller_lyer_day5_illusion16.svg,Same length,1.931,Group 1 - Slow,5.0,Right,180,205,-25,20,36,red,False,False
+2024-11-18 21:31:09,Ryanc,5,16,3,muller_lyer_day5_illusion15.svg,Left,1.962,Group 1 - Fast,0.5,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:31:09,gavinedd,5,19,7,muller_lyer_day5_illusion23.svg,Left,2.689,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:31:11,John,5,16,7,muller_lyer_day5_illusion6.svg,Left,1.575,Group 1 - Fast,0.5,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:31:11,mattrau1,5,18,8,muller_lyer_day5_illusion31.svg,Same length,2.283,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:31:12,kmurphy,5,16,6,muller_lyer_day5_illusion11.svg,Left,2.065,Group 1 - Fast,0.5,Same length,210,210,0,20,36,red,False,False
+2024-11-18 21:31:12,Tanner,5,16,8,muller_lyer_day5_illusion9.svg,Right,3.169,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,False
+2024-11-18 21:31:12,Ryanc,5,16,4,muller_lyer_day5_illusion3.svg,Left,2.027,Group 1 - Fast,0.5,Same length,210,210,0,20,36,black,False,False
+2024-11-18 21:31:12,gavinedd,5,19,8,muller_lyer_day5_illusion30.svg,Left,2.139,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:31:12,1121123,5,17,13,muller_lyer_day5_illusion12.svg,Left,2.279,Group 1 - Slow,5.0,Same length,185,185,0,20,36,red,False,False
+2024-11-18 21:31:14,John,5,16,8,muller_lyer_day5_illusion9.svg,Same length,1.897,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,True
+2024-11-18 21:31:14,kmurphy,5,16,7,muller_lyer_day5_illusion6.svg,Left,1.489,Group 1 - Fast,0.5,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:31:15,mattrau1,5,18,9,muller_lyer_day5_illusion27.svg,Same length,2.369,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:31:15,Ryanc,5,16,5,muller_lyer_day5_illusion12.svg,Left,1.788,Group 1 - Fast,0.5,Same length,185,185,0,20,36,red,False,False
+2024-11-18 21:31:16,Tanner,5,16,9,muller_lyer_day5_illusion4.svg,Left,1.866,Group 1 - Fast,0.5,Same length,185,185,0,20,36,black,False,False
+2024-11-18 21:31:16,1121123,5,17,14,muller_lyer_day5_illusion1.svg,Left,2.312,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,False
+2024-11-18 21:31:16,gavinedd,5,19,9,muller_lyer_day5_illusion29.svg,Left,2.76,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:31:17,kmurphy,5,16,8,muller_lyer_day5_illusion9.svg,Same length,1.494,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,True
+2024-11-18 21:31:17,John,5,16,9,muller_lyer_day5_illusion4.svg,Same length,2.147,Group 1 - Fast,0.5,Same length,185,185,0,20,36,black,False,True
+2024-11-18 21:31:18,Ryanc,5,16,6,muller_lyer_day5_illusion11.svg,Same length,1.529,Group 1 - Fast,0.5,Same length,210,210,0,20,36,red,False,True
+2024-11-18 21:31:19,mattrau1,5,18,10,muller_lyer_day5_illusion19.svg,Left,2.564,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:31:19,Tanner,5,16,10,muller_lyer_day5_illusion14.svg,Left,1.429,Group 1 - Fast,0.5,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:31:19,1121123,5,17,15,muller_lyer_day5_illusion4.svg,Left,1.757,Group 1 - Slow,5.0,Same length,185,185,0,20,36,black,False,False
+2024-11-18 21:31:20,kmurphy,5,16,9,muller_lyer_day5_illusion4.svg,Left,1.599,Group 1 - Fast,0.5,Same length,185,185,0,20,36,black,False,False
+2024-11-18 21:31:20,gavinedd,5,19,10,muller_lyer_day5_illusion31.svg,Left,2.791,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:31:20,John,5,16,10,muller_lyer_day5_illusion14.svg,Left,1.586,Group 1 - Fast,0.5,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:31:21,Ryanc,5,16,7,muller_lyer_day5_illusion6.svg,Left,1.591,Group 1 - Fast,0.5,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:31:22,mattrau1,5,18,11,muller_lyer_day5_illusion32.svg,Same length,2.608,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:31:22,Tanner,5,16,11,muller_lyer_day5_illusion16.svg,Right,2.097,Group 1 - Fast,0.5,Right,180,205,-25,20,36,red,False,True
+2024-11-18 21:31:23,kmurphy,5,16,10,muller_lyer_day5_illusion14.svg,Left,1.311,Group 1 - Fast,0.5,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:31:24,John,5,16,11,muller_lyer_day5_illusion16.svg,Same length,1.692,Group 1 - Fast,0.5,Right,180,205,-25,20,36,red,False,False
+2024-11-18 21:31:24,gavinedd,5,19,11,muller_lyer_day5_illusion28.svg,Left,2.041,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:31:24,Ryanc,5,16,8,muller_lyer_day5_illusion9.svg,Same length,1.957,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,True
+2024-11-18 21:31:25,Tanner,5,16,12,muller_lyer_day5_illusion13.svg,Same length,1.594,Group 1 - Fast,0.5,Right,180,210,-30,20,36,red,False,False
+2024-11-18 21:31:26,mattrau1,5,18,12,muller_lyer_day5_illusion26.svg,Same length,2.602,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:31:27,Ryanc,5,16,9,muller_lyer_day5_illusion4.svg,Same length,2.057,Group 1 - Fast,0.5,Same length,185,185,0,20,36,black,False,True
+2024-11-18 21:31:27,kmurphy,5,16,11,muller_lyer_day5_illusion16.svg,Same length,2.371,Group 1 - Fast,0.5,Right,180,205,-25,20,36,red,False,False
+2024-11-18 21:31:27,John,5,16,12,muller_lyer_day5_illusion13.svg,Right,2.262,Group 1 - Fast,0.5,Right,180,210,-30,20,36,red,False,True
+2024-11-18 21:31:28,Tanner,5,16,13,muller_lyer_day5_illusion1.svg,Right,1.365,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,False
+2024-11-18 21:31:29,gavinedd,5,19,12,muller_lyer_day5_illusion21.svg,Same length,3.872,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:31:30,kmurphy,5,16,12,muller_lyer_day5_illusion13.svg,Right,1.336,Group 1 - Fast,0.5,Right,180,210,-30,20,36,red,False,True
+2024-11-18 21:31:30,John,5,16,13,muller_lyer_day5_illusion1.svg,Left,1.594,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,False
+2024-11-18 21:31:31,Tanner,5,16,14,muller_lyer_day5_illusion8.svg,Right,1.808,Group 1 - Fast,0.5,Right,180,205,-25,20,36,black,False,True
+2024-11-18 21:31:32,Ryanc,5,16,10,muller_lyer_day5_illusion14.svg,Left,1.779,Group 1 - Fast,0.5,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:31:33,gavinedd,5,19,13,muller_lyer_day5_illusion26.svg,Same length,2.764,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:31:33,kmurphy,5,16,13,muller_lyer_day5_illusion1.svg,Left,1.349,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,False
+2024-11-18 21:31:33,John,5,16,14,muller_lyer_day5_illusion8.svg,Same length,1.749,Group 1 - Fast,0.5,Right,180,205,-25,20,36,black,False,False
+2024-11-18 21:31:34,Tanner,5,16,15,muller_lyer_day5_illusion7.svg,Same length,1.477,Group 1 - Fast,0.5,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:31:34,mattrau1,5,18,13,muller_lyer_day5_illusion30.svg,Left,6.401,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:31:35,Ryanc,5,16,11,muller_lyer_day5_illusion16.svg,Right,1.972,Group 1 - Fast,0.5,Right,180,205,-25,20,36,red,False,True
+2024-11-18 21:31:36,gavinedd,5,19,14,muller_lyer_day5_illusion25.svg,Same length,2.255,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:31:36,John,5,16,15,muller_lyer_day5_illusion7.svg,Left,1.566,Group 1 - Fast,0.5,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:31:36,kmurphy,5,16,14,muller_lyer_day5_illusion8.svg,Same length,1.849,Group 1 - Fast,0.5,Right,180,205,-25,20,36,black,False,False
+2024-11-18 21:31:38,Ryanc,5,16,12,muller_lyer_day5_illusion13.svg,Right,1.887,Group 1 - Fast,0.5,Right,180,210,-30,20,36,red,False,True
+2024-11-18 21:31:38,mattrau1,5,18,14,muller_lyer_day5_illusion17.svg,Same length,3.26,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:31:39,gavinedd,5,19,15,muller_lyer_day5_illusion18.svg,Same length,2.067,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:31:39,kmurphy,5,16,15,muller_lyer_day5_illusion7.svg,Left,1.414,Group 1 - Fast,0.5,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:31:41,Ryanc,5,16,13,muller_lyer_day5_illusion1.svg,Left,1.651,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,False
+2024-11-18 21:31:43,mattrau1,5,18,15,muller_lyer_day5_illusion28.svg,Same length,3.676,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:31:44,Ryanc,5,16,14,muller_lyer_day5_illusion8.svg,Right,1.805,Group 1 - Fast,0.5,Right,180,205,-25,20,36,black,False,True
+2024-11-18 21:31:47,Ryanc,5,16,15,muller_lyer_day5_illusion7.svg,Left,1.809,Group 1 - Fast,0.5,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:31:47,Tanner,5,17,0,muller_lyer_day5_illusion5.svg,Right,4.771,Group 1 - Slow,5.0,Right,180,210,-30,20,36,black,False,True
+2024-11-18 21:31:53,John,5,17,0,muller_lyer_day5_illusion5.svg,Same length,3.352,Group 1 - Slow,5.0,Right,180,210,-30,20,36,black,False,False
+2024-11-18 21:31:56,Tanner,5,17,1,muller_lyer_day5_illusion11.svg,Same length,7.36,Group 1 - Slow,5.0,Same length,210,210,0,20,36,red,False,True
+2024-11-18 21:31:57,John,5,17,1,muller_lyer_day5_illusion11.svg,Left,1.957,Group 1 - Slow,5.0,Same length,210,210,0,20,36,red,False,False
+2024-11-18 21:32:00,John,5,17,2,muller_lyer_day5_illusion3.svg,Left,1.578,Group 1 - Slow,5.0,Same length,210,210,0,20,36,black,False,False
+2024-11-18 21:32:00,mattrau1,5,19,0,muller_lyer_day5_illusion22.svg,Left,5.329,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:32:01,Tanner,5,17,2,muller_lyer_day5_illusion3.svg,Same length,3.386,Group 1 - Slow,5.0,Same length,210,210,0,20,36,black,False,True
+2024-11-18 21:32:02,John,5,17,3,muller_lyer_day5_illusion6.svg,Left,1.347,Group 1 - Slow,5.0,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:32:03,kmurphy,5,17,0,muller_lyer_day5_illusion5.svg,Same length,6.452,Group 1 - Slow,5.0,Right,180,210,-30,20,36,black,False,False
+2024-11-18 21:32:06,John,5,17,4,muller_lyer_day5_illusion8.svg,Same length,1.8,Group 1 - Slow,5.0,Right,180,205,-25,20,36,black,False,False
+2024-11-18 21:32:06,Ryanc,5,17,0,muller_lyer_day5_illusion5.svg,Right,3.135,Group 1 - Slow,5.0,Right,180,210,-30,20,36,black,False,True
+2024-11-18 21:32:06,mattrau1,5,19,1,muller_lyer_day5_illusion19.svg,Left,4.787,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:32:07,Tanner,5,17,3,muller_lyer_day5_illusion6.svg,Same length,4.5,Group 1 - Slow,5.0,Left,215,180,35,20,36,black,False,False
+2024-11-18 21:32:09,John,5,17,5,muller_lyer_day5_illusion15.svg,Left,2.209,Group 1 - Slow,5.0,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:32:10,kmurphy,5,17,1,muller_lyer_day5_illusion11.svg,Left,5.518,Group 1 - Slow,5.0,Same length,210,210,0,20,36,red,False,False
+2024-11-18 21:32:10,Ryanc,5,17,1,muller_lyer_day5_illusion11.svg,Left,3.059,Group 1 - Slow,5.0,Same length,210,210,0,20,36,red,False,False
+2024-11-18 21:32:11,Tanner,5,17,4,muller_lyer_day5_illusion8.svg,Right,3.161,Group 1 - Slow,5.0,Right,180,205,-25,20,36,black,False,True
+2024-11-18 21:32:12,mattrau1,5,19,2,muller_lyer_day5_illusion20.svg,Same length,4.529,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-18 21:32:13,John,5,17,6,muller_lyer_day5_illusion10.svg,Same length,2.159,Group 1 - Slow,5.0,Same length,205,205,0,20,36,red,False,True
+2024-11-18 21:32:15,Ryanc,5,17,2,muller_lyer_day5_illusion3.svg,Left,3.985,Group 1 - Slow,5.0,Same length,210,210,0,20,36,black,False,False
+2024-11-18 21:32:16,mattrau1,5,19,3,muller_lyer_day5_illusion17.svg,Left,2.38,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:32:16,kmurphy,5,17,2,muller_lyer_day5_illusion3.svg,Left,4.656,Group 1 - Slow,5.0,Same length,210,210,0,20,36,black,False,False
+2024-11-18 21:32:16,John,5,17,7,muller_lyer_day5_illusion9.svg,Left,1.974,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,False
+2024-11-18 21:32:18,Tanner,5,17,5,muller_lyer_day5_illusion15.svg,Right,5.667,Group 1 - Slow,5.0,Right,180,185,-5,20,36,red,False,True
+2024-11-18 21:32:18,Ryanc,5,17,3,muller_lyer_day5_illusion6.svg,Left,1.842,Group 1 - Slow,5.0,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:32:19,John,5,17,8,muller_lyer_day5_illusion2.svg,Left,1.376,Group 1 - Slow,5.0,Same length,205,205,0,20,36,black,False,False
+2024-11-18 21:32:21,kmurphy,5,17,3,muller_lyer_day5_illusion6.svg,Left,3.229,Group 1 - Slow,5.0,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:32:21,mattrau1,5,19,4,muller_lyer_day5_illusion32.svg,Same length,4.067,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:32:22,John,5,17,9,muller_lyer_day5_illusion14.svg,Left,1.214,Group 1 - Slow,5.0,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:32:23,Tanner,5,17,6,muller_lyer_day5_illusion10.svg,Same length,3.359,Group 1 - Slow,5.0,Same length,205,205,0,20,36,red,False,True
+2024-11-18 21:32:23,Ryanc,5,17,4,muller_lyer_day5_illusion8.svg,Right,3.206,Group 1 - Slow,5.0,Right,180,205,-25,20,36,black,False,True
+2024-11-18 21:32:25,mattrau1,5,19,5,muller_lyer_day5_illusion27.svg,Same length,2.648,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:32:26,John,5,17,10,muller_lyer_day5_illusion7.svg,Same length,2.12,Group 1 - Slow,5.0,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:32:26,Tanner,5,17,7,muller_lyer_day5_illusion9.svg,Same length,1.977,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,True
+2024-11-18 21:32:27,Ryanc,5,17,5,muller_lyer_day5_illusion15.svg,Same length,2.54,Group 1 - Slow,5.0,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:32:28,kmurphy,5,17,4,muller_lyer_day5_illusion8.svg,Same length,6.118,Group 1 - Slow,5.0,Right,180,205,-25,20,36,black,False,False
+2024-11-18 21:32:30,mattrau1,5,19,6,muller_lyer_day5_illusion24.svg,Left,3.635,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:32:30,John,5,17,11,muller_lyer_day5_illusion13.svg,Same length,3.201,Group 1 - Slow,5.0,Right,180,210,-30,20,36,red,False,False
+2024-11-18 21:32:30,Ryanc,5,17,6,muller_lyer_day5_illusion10.svg,Same length,2.649,Group 1 - Slow,5.0,Same length,205,205,0,20,36,red,False,True
+2024-11-18 21:32:32,Tanner,5,17,8,muller_lyer_day5_illusion2.svg,Same length,5.052,Group 1 - Slow,5.0,Same length,205,205,0,20,36,black,False,True
+2024-11-18 21:32:33,kmurphy,5,17,5,muller_lyer_day5_illusion15.svg,Left,2.854,Group 1 - Slow,5.0,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:32:34,mattrau1,5,19,7,muller_lyer_day5_illusion23.svg,Left,2.966,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:32:34,John,5,17,12,muller_lyer_day5_illusion16.svg,Same length,2.262,Group 1 - Slow,5.0,Right,180,205,-25,20,36,red,False,False
+2024-11-18 21:32:37,a42,5,16,0,muller_lyer_day5_illusion2.svg,Same length,2.818,Group 1 - Fast,0.5,Same length,205,205,0,20,36,black,False,True
+2024-11-18 21:32:37,Tanner,5,17,9,muller_lyer_day5_illusion14.svg,Same length,3.542,Group 1 - Slow,5.0,Left,215,180,35,20,36,red,False,False
+2024-11-18 21:32:38,John,5,17,13,muller_lyer_day5_illusion12.svg,Left,2.152,Group 1 - Slow,5.0,Same length,185,185,0,20,36,red,False,False
+2024-11-18 21:32:38,Ryanc,5,17,7,muller_lyer_day5_illusion9.svg,Left,6.895,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,False
+2024-11-18 21:32:39,mattrau1,5,19,8,muller_lyer_day5_illusion30.svg,Same length,3.985,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:32:40,kmurphy,5,17,6,muller_lyer_day5_illusion10.svg,Left,5.773,Group 1 - Slow,5.0,Same length,205,205,0,20,36,red,False,False
+2024-11-18 21:32:41,a42,5,16,1,muller_lyer_day5_illusion10.svg,Same length,2.527,Group 1 - Fast,0.5,Same length,205,205,0,20,36,red,False,True
+2024-11-18 21:32:41,Tanner,5,17,10,muller_lyer_day5_illusion7.svg,Same length,2.867,Group 1 - Slow,5.0,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:32:41,John,5,17,14,muller_lyer_day5_illusion1.svg,Left,1.95,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,False
+2024-11-18 21:32:42,Ryanc,5,17,8,muller_lyer_day5_illusion2.svg,Left,2.221,Group 1 - Slow,5.0,Same length,205,205,0,20,36,black,False,False
+2024-11-18 21:32:44,a42,5,16,2,muller_lyer_day5_illusion5.svg,Same length,2.155,Group 1 - Fast,0.5,Right,180,210,-30,20,36,black,False,False
+2024-11-18 21:32:44,mattrau1,5,19,9,muller_lyer_day5_illusion29.svg,Right,3.926,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:32:45,Ryanc,5,17,9,muller_lyer_day5_illusion14.svg,Left,1.984,Group 1 - Slow,5.0,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:32:45,Tanner,5,17,11,muller_lyer_day5_illusion13.svg,Right,2.765,Group 1 - Slow,5.0,Right,180,210,-30,20,36,red,False,True
+2024-11-18 21:32:46,John,5,17,15,muller_lyer_day5_illusion4.svg,Left,3.085,Group 1 - Slow,5.0,Same length,185,185,0,20,36,black,False,False
+2024-11-18 21:32:47,kmurphy,5,17,7,muller_lyer_day5_illusion9.svg,Left,5.367,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,False
+2024-11-18 21:32:47,a42,5,16,3,muller_lyer_day5_illusion15.svg,Same length,2.065,Group 1 - Fast,0.5,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:32:48,mattrau1,5,19,10,muller_lyer_day5_illusion31.svg,Left,2.427,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:32:49,Tanner,5,17,12,muller_lyer_day5_illusion16.svg,Same length,2.02,Group 1 - Slow,5.0,Right,180,205,-25,20,36,red,False,False
+2024-11-18 21:32:50,Ryanc,5,17,10,muller_lyer_day5_illusion7.svg,Same length,3.463,Group 1 - Slow,5.0,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:32:51,a42,5,16,4,muller_lyer_day5_illusion3.svg,Left,2.501,Group 1 - Fast,0.5,Same length,210,210,0,20,36,black,False,False
+2024-11-18 21:32:52,mattrau1,5,19,11,muller_lyer_day5_illusion28.svg,Same length,2.849,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:32:52,Tanner,5,17,13,muller_lyer_day5_illusion12.svg,Same length,2.563,Group 1 - Slow,5.0,Same length,185,185,0,20,36,red,False,True
+2024-11-18 21:32:53,Ryanc,5,17,11,muller_lyer_day5_illusion13.svg,Right,2.441,Group 1 - Slow,5.0,Right,180,210,-30,20,36,red,False,True
+2024-11-18 21:32:54,a42,5,16,5,muller_lyer_day5_illusion12.svg,Left,2.023,Group 1 - Fast,0.5,Same length,185,185,0,20,36,red,False,False
+2024-11-18 21:32:55,mattrau1,5,19,12,muller_lyer_day5_illusion21.svg,Left,2.297,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:32:56,kmurphy,5,17,8,muller_lyer_day5_illusion2.svg,Left,7.216,Group 1 - Slow,5.0,Same length,205,205,0,20,36,black,False,False
+2024-11-18 21:32:56,Tanner,5,17,14,muller_lyer_day5_illusion1.svg,Same length,2.553,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,True
+2024-11-18 21:32:57,Ryanc,5,17,12,muller_lyer_day5_illusion16.svg,Right,2.576,Group 1 - Slow,5.0,Right,180,205,-25,20,36,red,False,True
+2024-11-18 21:32:58,a42,5,16,6,muller_lyer_day5_illusion11.svg,Same length,2.324,Group 1 - Fast,0.5,Same length,210,210,0,20,36,red,False,True
+2024-11-18 21:32:59,kmurphy,5,17,9,muller_lyer_day5_illusion14.svg,Left,2.355,Group 1 - Slow,5.0,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:33:00,Tanner,5,17,15,muller_lyer_day5_illusion4.svg,Same length,2.17,Group 1 - Slow,5.0,Same length,185,185,0,20,36,black,False,True
+2024-11-18 21:33:00,mattrau1,5,19,13,muller_lyer_day5_illusion26.svg,Same length,3.473,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-18 21:33:01,Ryanc,5,17,13,muller_lyer_day5_illusion12.svg,Same length,2.884,Group 1 - Slow,5.0,Same length,185,185,0,20,36,red,False,True
+2024-11-18 21:33:01,a42,5,16,7,muller_lyer_day5_illusion6.svg,Left,2.255,Group 1 - Fast,0.5,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:33:03,mattrau1,5,19,14,muller_lyer_day5_illusion25.svg,Left,2.331,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-18 21:33:04,Ryanc,5,17,14,muller_lyer_day5_illusion1.svg,Left,2.149,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,False
+2024-11-18 21:33:05,kmurphy,5,17,10,muller_lyer_day5_illusion7.svg,Same length,3.706,Group 1 - Slow,5.0,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:33:05,a42,5,16,8,muller_lyer_day5_illusion9.svg,Same length,2.597,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,True
+2024-11-18 21:33:07,mattrau1,5,19,15,muller_lyer_day5_illusion18.svg,Left,2.311,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-18 21:33:08,kmurphy,5,17,11,muller_lyer_day5_illusion13.svg,Same length,1.995,Group 1 - Slow,5.0,Right,180,210,-30,20,36,red,False,False
+2024-11-18 21:33:10,Ryanc,5,17,15,muller_lyer_day5_illusion4.svg,Left,4.51,Group 1 - Slow,5.0,Same length,185,185,0,20,36,black,False,False
+2024-11-18 21:33:10,a42,5,16,9,muller_lyer_day5_illusion4.svg,Same length,3.968,Group 1 - Fast,0.5,Same length,185,185,0,20,36,black,False,True
+2024-11-18 21:33:13,kmurphy,5,17,12,muller_lyer_day5_illusion16.svg,Right,3.272,Group 1 - Slow,5.0,Right,180,205,-25,20,36,red,False,True
+2024-11-18 21:33:14,a42,5,16,10,muller_lyer_day5_illusion14.svg,Left,1.836,Group 1 - Fast,0.5,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:33:17,kmurphy,5,17,13,muller_lyer_day5_illusion12.svg,Left,2.545,Group 1 - Slow,5.0,Same length,185,185,0,20,36,red,False,False
+2024-11-18 21:33:18,a42,5,16,11,muller_lyer_day5_illusion16.svg,Left,3.064,Group 1 - Fast,0.5,Right,180,205,-25,20,36,red,False,False
+2024-11-18 21:33:21,kmurphy,5,17,14,muller_lyer_day5_illusion1.svg,Left,2.505,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,False
+2024-11-18 21:33:22,a42,5,16,12,muller_lyer_day5_illusion13.svg,Right,2.409,Group 1 - Fast,0.5,Right,180,210,-30,20,36,red,False,True
+2024-11-18 21:33:25,kmurphy,5,17,15,muller_lyer_day5_illusion4.svg,Left,2.252,Group 1 - Slow,5.0,Same length,185,185,0,20,36,black,False,False
+2024-11-18 21:33:26,a42,5,16,13,muller_lyer_day5_illusion1.svg,Left,2.92,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,False
+2024-11-18 21:33:30,a42,5,16,14,muller_lyer_day5_illusion8.svg,Right,2.56,Group 1 - Fast,0.5,Right,180,205,-25,20,36,black,False,True
+2024-11-18 21:33:34,a42,5,16,15,muller_lyer_day5_illusion7.svg,Same length,2.302,Group 1 - Fast,0.5,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:33:55,a42,5,17,0,muller_lyer_day5_illusion5.svg,Right,6.588,Group 1 - Slow,5.0,Right,180,210,-30,20,36,black,False,True
+2024-11-18 21:34:02,a42,5,17,1,muller_lyer_day5_illusion11.svg,Left,5.848,Group 1 - Slow,5.0,Same length,210,210,0,20,36,red,False,False
+2024-11-18 21:34:07,a42,5,17,2,muller_lyer_day5_illusion3.svg,Same length,3.725,Group 1 - Slow,5.0,Same length,210,210,0,20,36,black,False,True
+2024-11-18 21:34:11,a42,5,17,3,muller_lyer_day5_illusion6.svg,Left,2.44,Group 1 - Slow,5.0,Left,215,180,35,20,36,black,False,True
+2024-11-18 21:34:18,a42,5,17,4,muller_lyer_day5_illusion8.svg,Same length,5.234,Group 1 - Slow,5.0,Right,180,205,-25,20,36,black,False,False
+2024-11-18 21:34:23,a42,5,17,5,muller_lyer_day5_illusion15.svg,Left,4.369,Group 1 - Slow,5.0,Right,180,185,-5,20,36,red,False,False
+2024-11-18 21:34:28,a42,5,17,6,muller_lyer_day5_illusion10.svg,Left,3.006,Group 1 - Slow,5.0,Same length,205,205,0,20,36,red,False,False
+2024-11-18 21:34:34,a42,5,17,7,muller_lyer_day5_illusion9.svg,Same length,4.867,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,True
+2024-11-18 21:34:37,a42,5,17,8,muller_lyer_day5_illusion2.svg,Left,2.5,Group 1 - Slow,5.0,Same length,205,205,0,20,36,black,False,False
+2024-11-18 21:34:41,a42,5,17,9,muller_lyer_day5_illusion14.svg,Left,2.473,Group 1 - Slow,5.0,Left,215,180,35,20,36,red,False,True
+2024-11-18 21:34:47,a42,5,17,10,muller_lyer_day5_illusion7.svg,Left,4.293,Group 1 - Slow,5.0,Right,180,185,-5,20,36,black,False,False
+2024-11-18 21:34:54,a42,5,17,11,muller_lyer_day5_illusion13.svg,Same length,5.851,Group 1 - Slow,5.0,Right,180,210,-30,20,36,red,False,False
+2024-11-18 21:34:58,a42,5,17,12,muller_lyer_day5_illusion16.svg,Same length,2.803,Group 1 - Slow,5.0,Right,180,205,-25,20,36,red,False,False
+2024-11-18 21:35:02,a42,5,17,13,muller_lyer_day5_illusion12.svg,Left,2.475,Group 1 - Slow,5.0,Same length,185,185,0,20,36,red,False,False
+2024-11-18 21:35:07,a42,5,17,14,muller_lyer_day5_illusion1.svg,Same length,4.552,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,True
+2024-11-18 21:35:12,a42,5,17,15,muller_lyer_day5_illusion4.svg,Left,3.546,Group 1 - Slow,5.0,Same length,185,185,0,20,36,black,False,False
+2024-11-20 21:22:37,jonah.harmon,6,20,0,muller_lyer_day6_illusion16.svg,Same length,3.487,Group 1 - Fast,0.5,Left,205,200,5,20,36,red,False,False
+2024-11-20 21:22:39,jonah.harmon,6,20,1,muller_lyer_day6_illusion14.svg,Same length,1.234,Group 1 - Fast,0.5,Right,180,190,-10,20,36,red,False,False
+2024-11-20 21:22:43,jonah.harmon,6,20,2,muller_lyer_day6_illusion1.svg,Same length,2.509,Group 1 - Fast,0.5,Same length,190,190,0,20,36,black,False,True
+2024-11-20 21:22:45,jonah.harmon,6,20,3,muller_lyer_day6_illusion6.svg,Same length,1.296,Group 1 - Fast,0.5,Right,180,190,-10,20,36,black,False,False
+2024-11-20 21:22:48,jonah.harmon,6,20,4,muller_lyer_day6_illusion10.svg,Left,1.726,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,False
+2024-11-20 21:22:51,jonah.harmon,6,20,5,muller_lyer_day6_illusion12.svg,Same length,1.526,Group 1 - Fast,0.5,Same length,200,200,0,20,36,red,False,True
+2024-11-20 21:22:55,jonah.harmon,6,20,6,muller_lyer_day6_illusion8.svg,Same length,2.028,Group 1 - Fast,0.5,Left,205,200,5,20,36,black,False,False
+2024-11-20 21:22:58,jonah.harmon,6,20,7,muller_lyer_day6_illusion13.svg,Left,1.752,Group 1 - Fast,0.5,Left,220,195,25,20,36,red,False,True
+2024-11-20 21:23:01,jonah.harmon,6,20,8,muller_lyer_day6_illusion4.svg,Same length,1.801,Group 1 - Fast,0.5,Same length,200,200,0,20,36,black,False,True
+2024-11-20 21:23:04,jonah.harmon,6,20,9,muller_lyer_day6_illusion7.svg,Same length,2.068,Group 1 - Fast,0.5,Left,205,190,15,20,36,black,False,False
+2024-11-20 21:23:08,jonah.harmon,6,20,10,muller_lyer_day6_illusion15.svg,Left,2.235,Group 1 - Fast,0.5,Left,205,190,15,20,36,red,False,True
+2024-11-20 21:23:10,jonah.harmon,6,20,11,muller_lyer_day6_illusion2.svg,Same length,1.285,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,True
+2024-11-20 21:23:13,jonah.harmon,6,20,12,muller_lyer_day6_illusion11.svg,Same length,1.209,Group 1 - Fast,0.5,Same length,220,220,0,20,36,red,False,True
+2024-11-20 21:23:15,jonah.harmon,6,20,13,muller_lyer_day6_illusion3.svg,Same length,1.186,Group 1 - Fast,0.5,Same length,220,220,0,20,36,black,False,True
+2024-11-20 21:23:18,jonah.harmon,6,20,14,muller_lyer_day6_illusion5.svg,Left,1.495,Group 1 - Fast,0.5,Left,220,195,25,20,36,black,False,True
+2024-11-20 21:23:20,jonah.harmon,6,20,15,muller_lyer_day6_illusion9.svg,Same length,1.402,Group 1 - Fast,0.5,Same length,190,190,0,20,36,red,False,True
+2024-11-20 21:23:38,jonah.harmon,6,21,0,muller_lyer_day6_illusion8.svg,Same length,3.884,Group 1 - Slow,5.0,Left,205,200,5,20,36,black,False,False
+2024-11-20 21:23:44,jonah.harmon,6,21,1,muller_lyer_day6_illusion1.svg,Same length,4.082,Group 1 - Slow,5.0,Same length,190,190,0,20,36,black,False,True
+2024-11-20 21:23:51,jonah.harmon,6,21,2,muller_lyer_day6_illusion15.svg,Same length,6.512,Group 1 - Slow,5.0,Left,205,190,15,20,36,red,False,False
+2024-11-20 21:23:55,jonah.harmon,6,21,3,muller_lyer_day6_illusion14.svg,Left,2.711,Group 1 - Slow,5.0,Right,180,190,-10,20,36,red,False,False
+2024-11-20 21:24:13,jonah.harmon,6,21,4,muller_lyer_day6_illusion4.svg,Same length,15.977,Group 1 - Slow,5.0,Same length,200,200,0,20,36,black,False,True
+2024-11-20 21:24:22,jonah.harmon,6,21,5,muller_lyer_day6_illusion2.svg,Same length,7.833,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,True
+2024-11-20 21:24:28,jonah.harmon,6,21,6,muller_lyer_day6_illusion5.svg,Left,5.039,Group 1 - Slow,5.0,Left,220,195,25,20,36,black,False,True
+2024-11-20 21:24:34,jonah.harmon,6,21,7,muller_lyer_day6_illusion6.svg,Same length,4.506,Group 1 - Slow,5.0,Right,180,190,-10,20,36,black,False,False
+2024-11-20 21:24:43,jonah.harmon,6,21,8,muller_lyer_day6_illusion16.svg,Same length,7.406,Group 1 - Slow,5.0,Left,205,200,5,20,36,red,False,False
+2024-11-20 21:24:46,jonah.harmon,6,21,9,muller_lyer_day6_illusion9.svg,Same length,1.892,Group 1 - Slow,5.0,Same length,190,190,0,20,36,red,False,True
+2024-11-20 21:24:51,jonah.harmon,6,21,10,muller_lyer_day6_illusion13.svg,Left,3.418,Group 1 - Slow,5.0,Left,220,195,25,20,36,red,False,True
+2024-11-20 21:24:54,jonah.harmon,6,21,11,muller_lyer_day6_illusion12.svg,Same length,2.255,Group 1 - Slow,5.0,Same length,200,200,0,20,36,red,False,True
+2024-11-20 21:25:03,jonah.harmon,6,21,12,muller_lyer_day6_illusion11.svg,Left,7.532,Group 1 - Slow,5.0,Same length,220,220,0,20,36,red,False,False
+2024-11-20 21:25:19,jonah.harmon,6,21,13,muller_lyer_day6_illusion10.svg,Same length,14.596,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,True
+2024-11-20 21:25:28,jonah.harmon,6,21,14,muller_lyer_day6_illusion7.svg,Left,7.398,Group 1 - Slow,5.0,Left,205,190,15,20,36,black,False,True
+2024-11-20 21:25:31,jonah.harmon,6,21,15,muller_lyer_day6_illusion3.svg,Same length,2.467,Group 1 - Slow,5.0,Same length,220,220,0,20,36,black,False,True
+2024-11-20 21:25:42,mattb,6,20,0,muller_lyer_day6_illusion16.svg,Left,2.561,Group 1 - Fast,0.5,Left,205,200,5,20,36,red,False,True
+2024-11-20 21:25:43,Tanner,6,20,0,muller_lyer_day6_illusion16.svg,Same length,6.486,Group 1 - Fast,0.5,Left,205,200,5,20,36,red,False,False
+2024-11-20 21:25:45,mattb,6,20,1,muller_lyer_day6_illusion14.svg,Same length,1.791,Group 1 - Fast,0.5,Right,180,190,-10,20,36,red,False,False
+2024-11-20 21:25:47,Tanner,6,20,1,muller_lyer_day6_illusion14.svg,Same length,2.708,Group 1 - Fast,0.5,Right,180,190,-10,20,36,red,False,False
+2024-11-20 21:25:48,mattb,6,20,2,muller_lyer_day6_illusion1.svg,Left,1.636,Group 1 - Fast,0.5,Same length,190,190,0,20,36,black,False,False
+2024-11-20 21:25:49,Tanner,6,20,2,muller_lyer_day6_illusion1.svg,Same length,1.365,Group 1 - Fast,0.5,Same length,190,190,0,20,36,black,False,True
+2024-11-20 21:25:51,mattb,6,20,3,muller_lyer_day6_illusion6.svg,Right,1.727,Group 1 - Fast,0.5,Right,180,190,-10,20,36,black,False,True
+2024-11-20 21:25:52,Tanner,6,20,3,muller_lyer_day6_illusion6.svg,Same length,1.069,Group 1 - Fast,0.5,Right,180,190,-10,20,36,black,False,False
+2024-11-20 21:25:54,mattb,6,20,4,muller_lyer_day6_illusion10.svg,Left,1.626,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,False
+2024-11-20 21:25:54,Tanner,6,20,4,muller_lyer_day6_illusion10.svg,Same length,1.392,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,True
+2024-11-20 21:25:57,mattb,6,20,5,muller_lyer_day6_illusion12.svg,Same length,1.89,Group 1 - Fast,0.5,Same length,200,200,0,20,36,red,False,True
+2024-11-20 21:25:57,Tanner,6,20,5,muller_lyer_day6_illusion12.svg,Right,1.97,Group 1 - Fast,0.5,Same length,200,200,0,20,36,red,False,False
+2024-11-20 21:26:00,mattb,6,20,6,muller_lyer_day6_illusion8.svg,Left,1.702,Group 1 - Fast,0.5,Left,205,200,5,20,36,black,False,True
+2024-11-20 21:26:02,Tanner,6,20,6,muller_lyer_day6_illusion8.svg,Right,3.198,Group 1 - Fast,0.5,Left,205,200,5,20,36,black,False,False
+2024-11-20 21:26:03,mattb,6,20,7,muller_lyer_day6_illusion13.svg,Left,1.712,Group 1 - Fast,0.5,Left,220,195,25,20,36,red,False,True
+2024-11-20 21:26:05,Tanner,6,20,7,muller_lyer_day6_illusion13.svg,Same length,1.623,Group 1 - Fast,0.5,Left,220,195,25,20,36,red,False,False
+2024-11-20 21:26:06,mattb,6,20,8,muller_lyer_day6_illusion4.svg,Same length,1.674,Group 1 - Fast,0.5,Same length,200,200,0,20,36,black,False,True
+2024-11-20 21:26:07,Tanner,6,20,8,muller_lyer_day6_illusion4.svg,Same length,1.313,Group 1 - Fast,0.5,Same length,200,200,0,20,36,black,False,True
+2024-11-20 21:26:09,mattb,6,20,9,muller_lyer_day6_illusion7.svg,Left,1.579,Group 1 - Fast,0.5,Left,205,190,15,20,36,black,False,True
+2024-11-20 21:26:10,Tanner,6,20,9,muller_lyer_day6_illusion7.svg,Same length,1.362,Group 1 - Fast,0.5,Left,205,190,15,20,36,black,False,False
+2024-11-20 21:26:12,mattb,6,20,10,muller_lyer_day6_illusion15.svg,Left,1.677,Group 1 - Fast,0.5,Left,205,190,15,20,36,red,False,True
+2024-11-20 21:26:13,Tanner,6,20,10,muller_lyer_day6_illusion15.svg,Same length,1.725,Group 1 - Fast,0.5,Left,205,190,15,20,36,red,False,False
+2024-11-20 21:26:15,mattb,6,20,11,muller_lyer_day6_illusion2.svg,Right,1.986,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,False
+2024-11-20 21:26:16,Tanner,6,20,11,muller_lyer_day6_illusion2.svg,Same length,1.986,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,True
+2024-11-20 21:26:18,mattb,6,20,12,muller_lyer_day6_illusion11.svg,Same length,2.059,Group 1 - Fast,0.5,Same length,220,220,0,20,36,red,False,True
+2024-11-20 21:26:19,Tanner,6,20,12,muller_lyer_day6_illusion11.svg,Right,1.344,Group 1 - Fast,0.5,Same length,220,220,0,20,36,red,False,False
+2024-11-20 21:26:21,mattb,6,20,13,muller_lyer_day6_illusion3.svg,Left,1.609,Group 1 - Fast,0.5,Same length,220,220,0,20,36,black,False,False
+2024-11-20 21:26:23,Tanner,6,20,13,muller_lyer_day6_illusion3.svg,Same length,2.73,Group 1 - Fast,0.5,Same length,220,220,0,20,36,black,False,True
+2024-11-20 21:26:24,mattb,6,20,14,muller_lyer_day6_illusion5.svg,Left,1.608,Group 1 - Fast,0.5,Left,220,195,25,20,36,black,False,True
+2024-11-20 21:26:26,Tanner,6,20,14,muller_lyer_day6_illusion5.svg,Right,1.727,Group 1 - Fast,0.5,Left,220,195,25,20,36,black,False,False
+2024-11-20 21:26:27,mattb,6,20,15,muller_lyer_day6_illusion9.svg,Left,1.623,Group 1 - Fast,0.5,Same length,190,190,0,20,36,red,False,False
+2024-11-20 21:26:29,Tanner,6,20,15,muller_lyer_day6_illusion9.svg,Left,2.025,Group 1 - Fast,0.5,Same length,190,190,0,20,36,red,False,False
+2024-11-20 21:26:43,Tanner,6,21,0,muller_lyer_day6_illusion8.svg,Same length,2.744,Group 1 - Slow,5.0,Left,205,200,5,20,36,black,False,False
+2024-11-20 21:26:47,mattb,6,21,0,muller_lyer_day6_illusion8.svg,Left,2.657,Group 1 - Slow,5.0,Left,205,200,5,20,36,black,False,True
+2024-11-20 21:26:49,Tanner,6,21,1,muller_lyer_day6_illusion1.svg,Right,4.315,Group 1 - Slow,5.0,Same length,190,190,0,20,36,black,False,False
+2024-11-20 21:26:51,mattb,6,21,1,muller_lyer_day6_illusion1.svg,Left,2.234,Group 1 - Slow,5.0,Same length,190,190,0,20,36,black,False,False
+2024-11-20 21:26:53,Tanner,6,21,2,muller_lyer_day6_illusion15.svg,Same length,2.746,Group 1 - Slow,5.0,Left,205,190,15,20,36,red,False,False
+2024-11-20 21:26:54,mattb,6,21,2,muller_lyer_day6_illusion15.svg,Left,1.945,Group 1 - Slow,5.0,Left,205,190,15,20,36,red,False,True
+2024-11-20 21:26:57,Tanner,6,21,3,muller_lyer_day6_illusion14.svg,Right,3.122,Group 1 - Slow,5.0,Right,180,190,-10,20,36,red,False,True
+2024-11-20 21:26:58,mattb,6,21,3,muller_lyer_day6_illusion14.svg,Same length,2.292,Group 1 - Slow,5.0,Right,180,190,-10,20,36,red,False,False
+2024-11-20 21:27:01,mattb,6,21,4,muller_lyer_day6_illusion4.svg,Left,1.687,Group 1 - Slow,5.0,Same length,200,200,0,20,36,black,False,False
+2024-11-20 21:27:03,1121123,6,20,0,muller_lyer_day6_illusion16.svg,Left,1.873,Group 1 - Fast,0.5,Left,205,200,5,20,36,red,False,True
+2024-11-20 21:27:05,mattb,6,21,5,muller_lyer_day6_illusion2.svg,Left,2.862,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,False
+2024-11-20 21:27:05,Tanner,6,21,4,muller_lyer_day6_illusion4.svg,Right,6.784,Group 1 - Slow,5.0,Same length,200,200,0,20,36,black,False,False
+2024-11-20 21:27:07,1121123,6,20,1,muller_lyer_day6_illusion14.svg,Same length,2.003,Group 1 - Fast,0.5,Right,180,190,-10,20,36,red,False,False
+2024-11-20 21:27:08,Tanner,6,21,5,muller_lyer_day6_illusion2.svg,Right,2.069,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,False
+2024-11-20 21:27:09,mattb,6,21,6,muller_lyer_day6_illusion5.svg,Left,2.721,Group 1 - Slow,5.0,Left,220,195,25,20,36,black,False,True
+2024-11-20 21:27:11,1121123,6,20,2,muller_lyer_day6_illusion1.svg,Left,3.194,Group 1 - Fast,0.5,Same length,190,190,0,20,36,black,False,False
+2024-11-20 21:27:12,Tanner,6,21,6,muller_lyer_day6_illusion5.svg,Right,2.34,Group 1 - Slow,5.0,Left,220,195,25,20,36,black,False,False
+2024-11-20 21:27:12,mattb,6,21,7,muller_lyer_day6_illusion6.svg,Same length,2.415,Group 1 - Slow,5.0,Right,180,190,-10,20,36,black,False,False
+2024-11-20 21:27:14,1121123,6,20,3,muller_lyer_day6_illusion6.svg,Same length,1.606,Group 1 - Fast,0.5,Right,180,190,-10,20,36,black,False,False
+2024-11-20 21:27:15,mattb,6,21,8,muller_lyer_day6_illusion16.svg,Left,1.657,Group 1 - Slow,5.0,Left,205,200,5,20,36,red,False,True
+2024-11-20 21:27:17,Tanner,6,21,7,muller_lyer_day6_illusion6.svg,Same length,4.006,Group 1 - Slow,5.0,Right,180,190,-10,20,36,black,False,False
+2024-11-20 21:27:20,mattb,6,21,9,muller_lyer_day6_illusion9.svg,Right,3.539,Group 1 - Slow,5.0,Same length,190,190,0,20,36,red,False,False
+2024-11-20 21:27:20,1121123,6,20,4,muller_lyer_day6_illusion10.svg,Same length,4.851,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,True
+2024-11-20 21:27:23,mattb,6,21,10,muller_lyer_day6_illusion13.svg,Left,1.5,Group 1 - Slow,5.0,Left,220,195,25,20,36,red,False,True
+2024-11-20 21:27:23,Tanner,6,21,8,muller_lyer_day6_illusion16.svg,Same length,4.481,Group 1 - Slow,5.0,Left,205,200,5,20,36,red,False,False
+2024-11-20 21:27:23,1121123,6,20,5,muller_lyer_day6_illusion12.svg,Left,1.667,Group 1 - Fast,0.5,Same length,200,200,0,20,36,red,False,False
+2024-11-20 21:27:27,mattb,6,21,11,muller_lyer_day6_illusion12.svg,Same length,2.535,Group 1 - Slow,5.0,Same length,200,200,0,20,36,red,False,True
+2024-11-20 21:27:28,1121123,6,20,6,muller_lyer_day6_illusion8.svg,Left,3.097,Group 1 - Fast,0.5,Left,205,200,5,20,36,black,False,True
+2024-11-20 21:27:30,Tanner,6,21,9,muller_lyer_day6_illusion9.svg,Left,5.973,Group 1 - Slow,5.0,Same length,190,190,0,20,36,red,False,False
+2024-11-20 21:27:30,mattb,6,21,12,muller_lyer_day6_illusion11.svg,Same length,2.244,Group 1 - Slow,5.0,Same length,220,220,0,20,36,red,False,True
+2024-11-20 21:27:30,1121123,6,20,7,muller_lyer_day6_illusion13.svg,Left,1.464,Group 1 - Fast,0.5,Left,220,195,25,20,36,red,False,True
+2024-11-20 21:27:34,Tanner,6,21,10,muller_lyer_day6_illusion13.svg,Left,2.196,Group 1 - Slow,5.0,Left,220,195,25,20,36,red,False,True
+2024-11-20 21:27:34,1121123,6,20,8,muller_lyer_day6_illusion4.svg,Left,2.242,Group 1 - Fast,0.5,Same length,200,200,0,20,36,black,False,False
+2024-11-20 21:27:34,mattb,6,21,13,muller_lyer_day6_illusion10.svg,Left,3.128,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,False
+2024-11-20 21:27:36,1121123,6,20,9,muller_lyer_day6_illusion7.svg,Left,1.209,Group 1 - Fast,0.5,Left,205,190,15,20,36,black,False,True
+2024-11-20 21:27:38,mattb,6,21,14,muller_lyer_day6_illusion7.svg,Same length,2.688,Group 1 - Slow,5.0,Left,205,190,15,20,36,black,False,False
+2024-11-20 21:27:40,Tanner,6,21,11,muller_lyer_day6_illusion12.svg,Same length,4.837,Group 1 - Slow,5.0,Same length,200,200,0,20,36,red,False,True
+2024-11-20 21:27:40,1121123,6,20,10,muller_lyer_day6_illusion15.svg,Left,2.223,Group 1 - Fast,0.5,Left,205,190,15,20,36,red,False,True
+2024-11-20 21:27:42,mattb,6,21,15,muller_lyer_day6_illusion3.svg,Same length,1.908,Group 1 - Slow,5.0,Same length,220,220,0,20,36,black,False,True
+2024-11-20 21:27:43,1121123,6,20,11,muller_lyer_day6_illusion2.svg,Left,1.798,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,False
+2024-11-20 21:27:44,Tanner,6,21,12,muller_lyer_day6_illusion11.svg,Same length,2.706,Group 1 - Slow,5.0,Same length,220,220,0,20,36,red,False,True
+2024-11-20 21:27:46,1121123,6,20,12,muller_lyer_day6_illusion11.svg,Same length,2.201,Group 1 - Fast,0.5,Same length,220,220,0,20,36,red,False,True
+2024-11-20 21:27:50,1121123,6,20,13,muller_lyer_day6_illusion3.svg,Left,1.864,Group 1 - Fast,0.5,Same length,220,220,0,20,36,black,False,False
+2024-11-20 21:27:51,Tanner,6,21,13,muller_lyer_day6_illusion10.svg,Right,6.065,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,False
+2024-11-20 21:27:52,1121123,6,20,14,muller_lyer_day6_illusion5.svg,Left,1.291,Group 1 - Fast,0.5,Left,220,195,25,20,36,black,False,True
+2024-11-20 21:27:56,1121123,6,20,15,muller_lyer_day6_illusion9.svg,Same length,2.408,Group 1 - Fast,0.5,Same length,190,190,0,20,36,red,False,True
+2024-11-20 21:27:58,Tanner,6,21,14,muller_lyer_day6_illusion7.svg,Right,5.971,Group 1 - Slow,5.0,Left,205,190,15,20,36,black,False,False
+2024-11-20 21:28:06,1121123,6,21,0,muller_lyer_day6_illusion8.svg,Left,1.923,Group 1 - Slow,5.0,Left,205,200,5,20,36,black,False,True
+2024-11-20 21:28:07,Tanner,6,21,15,muller_lyer_day6_illusion3.svg,Same length,7.908,Group 1 - Slow,5.0,Same length,220,220,0,20,36,black,False,True
+2024-11-20 21:28:10,1121123,6,21,1,muller_lyer_day6_illusion1.svg,Left,2.378,Group 1 - Slow,5.0,Same length,190,190,0,20,36,black,False,False
+2024-11-20 21:28:13,1121123,6,21,2,muller_lyer_day6_illusion15.svg,Left,2.582,Group 1 - Slow,5.0,Left,205,190,15,20,36,red,False,True
+2024-11-20 21:28:20,1121123,6,21,3,muller_lyer_day6_illusion14.svg,Same length,5.178,Group 1 - Slow,5.0,Right,180,190,-10,20,36,red,False,False
+2024-11-20 21:28:24,1121123,6,21,4,muller_lyer_day6_illusion4.svg,Left,1.99,Group 1 - Slow,5.0,Same length,200,200,0,20,36,black,False,False
+2024-11-20 21:28:29,1121123,6,21,5,muller_lyer_day6_illusion2.svg,Left,3.826,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,False
+2024-11-20 21:28:31,1121123,6,21,6,muller_lyer_day6_illusion5.svg,Left,1.427,Group 1 - Slow,5.0,Left,220,195,25,20,36,black,False,True
+2024-11-20 21:28:39,1121123,6,21,7,muller_lyer_day6_illusion6.svg,Same length,5.725,Group 1 - Slow,5.0,Right,180,190,-10,20,36,black,False,False
+2024-11-20 21:28:43,1121123,6,21,8,muller_lyer_day6_illusion16.svg,Left,3.124,Group 1 - Slow,5.0,Left,205,200,5,20,36,red,False,True
+2024-11-20 21:28:49,1121123,6,21,9,muller_lyer_day6_illusion9.svg,Left,4.647,Group 1 - Slow,5.0,Same length,190,190,0,20,36,red,False,False
+2024-11-20 21:28:52,1121123,6,21,10,muller_lyer_day6_illusion13.svg,Left,2.033,Group 1 - Slow,5.0,Left,220,195,25,20,36,red,False,True
+2024-11-20 21:29:00,1121123,6,21,11,muller_lyer_day6_illusion12.svg,Left,5.971,Group 1 - Slow,5.0,Same length,200,200,0,20,36,red,False,False
+2024-11-20 21:29:07,1121123,6,21,12,muller_lyer_day6_illusion11.svg,Left,6.073,Group 1 - Slow,5.0,Same length,220,220,0,20,36,red,False,False
+2024-11-20 21:29:12,1121123,6,21,13,muller_lyer_day6_illusion10.svg,Left,4.235,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,False
+2024-11-20 21:29:16,caitthax,6,20,0,muller_lyer_day6_illusion16.svg,Left,1.619,Group 1 - Fast,0.5,Left,205,200,5,20,36,red,False,True
+2024-11-20 21:29:17,1121123,6,21,14,muller_lyer_day6_illusion7.svg,Left,2.788,Group 1 - Slow,5.0,Left,205,190,15,20,36,black,False,True
+2024-11-20 21:29:17,John,1,0,0,muller_lyer_day1_illusion4.svg,Same length,2.846,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,True
+2024-11-20 21:29:19,caitthax,6,20,1,muller_lyer_day6_illusion14.svg,Same length,1.665,Group 1 - Fast,0.5,Right,180,190,-10,20,36,red,False,False
+2024-11-20 21:29:20,John,1,0,1,muller_lyer_day1_illusion11.svg,Same length,1.964,Group 1 - Fast,0.5,Same length,205,205,0,20,36,red,False,True
+2024-11-20 21:29:22,caitthax,6,20,2,muller_lyer_day6_illusion1.svg,Left,1.415,Group 1 - Fast,0.5,Same length,190,190,0,20,36,black,False,False
+2024-11-20 21:29:24,caitthax,6,20,3,muller_lyer_day6_illusion6.svg,Same length,1.35,Group 1 - Fast,0.5,Right,180,190,-10,20,36,black,False,False
+2024-11-20 21:29:25,1121123,6,21,15,muller_lyer_day6_illusion3.svg,Left,6.354,Group 1 - Slow,5.0,Same length,220,220,0,20,36,black,False,False
+2024-11-20 21:29:26,John,1,0,2,muller_lyer_day1_illusion14.svg,Right,3.868,Group 1 - Fast,0.5,Right,185,220,-35,20,36,red,False,True
+2024-11-20 21:29:29,John,1,0,3,muller_lyer_day1_illusion6.svg,Same length,1.667,Group 1 - Fast,0.5,Right,185,220,-35,20,36,black,False,False
+2024-11-20 21:29:29,caitthax,6,20,4,muller_lyer_day6_illusion10.svg,Same length,3.891,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,True
+2024-11-20 21:29:32,John,1,0,4,muller_lyer_day1_illusion15.svg,Same length,2.008,Group 1 - Fast,0.5,Right,185,205,-20,20,36,red,False,False
+2024-11-20 21:29:32,caitthax,6,20,5,muller_lyer_day6_illusion12.svg,Left,1.658,Group 1 - Fast,0.5,Same length,200,200,0,20,36,red,False,False
+2024-11-20 21:29:35,caitthax,6,20,6,muller_lyer_day6_illusion8.svg,Left,1.575,Group 1 - Fast,0.5,Left,205,200,5,20,36,black,False,True
+2024-11-20 21:29:35,kmurphy,6,21,0,muller_lyer_day6_illusion8.svg,Left,3.956,Group 1 - Slow,5.0,Left,205,200,5,20,36,black,False,True
+2024-11-20 21:29:35,John,1,0,5,muller_lyer_day1_illusion8.svg,Same length,1.864,Group 1 - Fast,0.5,Right,190,215,-25,20,36,black,False,False
+2024-11-20 21:29:38,caitthax,6,20,7,muller_lyer_day6_illusion13.svg,Left,1.574,Group 1 - Fast,0.5,Left,220,195,25,20,36,red,False,True
+2024-11-20 21:29:38,John,1,0,6,muller_lyer_day1_illusion10.svg,Left,1.455,Group 1 - Fast,0.5,Same length,200,200,0,20,36,red,False,False
+2024-11-20 21:29:41,caitthax,6,20,8,muller_lyer_day6_illusion4.svg,Same length,1.678,Group 1 - Fast,0.5,Same length,200,200,0,20,36,black,False,True
+2024-11-20 21:29:41,John,1,0,7,muller_lyer_day1_illusion12.svg,Left,1.569,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,False
+2024-11-20 21:29:43,gavinedd,6,22,0,muller_lyer_day6_illusion31.svg,Same length,4.193,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:29:44,caitthax,6,20,9,muller_lyer_day6_illusion7.svg,Left,1.507,Group 1 - Fast,0.5,Left,205,190,15,20,36,black,False,True
+2024-11-20 21:29:45,John,1,0,8,muller_lyer_day1_illusion5.svg,Left,2.601,Group 1 - Fast,0.5,Right,200,215,-15,20,36,black,False,False
+2024-11-20 21:29:47,gavinedd,6,22,1,muller_lyer_day6_illusion19.svg,Left,1.983,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:29:47,caitthax,6,20,10,muller_lyer_day6_illusion15.svg,Left,1.649,Group 1 - Fast,0.5,Left,205,190,15,20,36,red,False,True
+2024-11-20 21:29:47,kmurphy,6,21,1,muller_lyer_day6_illusion1.svg,Left,10.459,Group 1 - Slow,5.0,Same length,190,190,0,20,36,black,False,False
+2024-11-20 21:29:49,John,1,0,9,muller_lyer_day1_illusion1.svg,Left,2.171,Group 1 - Fast,0.5,Same length,220,220,0,20,36,black,False,False
+2024-11-20 21:29:51,gavinedd,6,22,2,muller_lyer_day6_illusion32.svg,Left,2.762,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-20 21:29:51,caitthax,6,20,11,muller_lyer_day6_illusion2.svg,Same length,3.364,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,True
+2024-11-20 21:29:51,John,1,0,10,muller_lyer_day1_illusion2.svg,Left,1.555,Group 1 - Fast,0.5,Same length,200,200,0,20,36,black,False,False
+2024-11-20 21:29:53,kmurphy,6,21,2,muller_lyer_day6_illusion15.svg,Left,4.719,Group 1 - Slow,5.0,Left,205,190,15,20,36,red,False,True
+2024-11-20 21:29:54,gavinedd,6,22,3,muller_lyer_day6_illusion18.svg,Same length,2.09,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-20 21:29:54,caitthax,6,20,12,muller_lyer_day6_illusion11.svg,Same length,1.694,Group 1 - Fast,0.5,Same length,220,220,0,20,36,red,False,True
+2024-11-20 21:29:54,John,1,0,11,muller_lyer_day1_illusion7.svg,Same length,1.474,Group 1 - Fast,0.5,Right,185,205,-20,20,36,black,False,False
+2024-11-20 21:29:57,mattrau1,6,22,0,muller_lyer_day6_illusion31.svg,Left,6.526,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-20 21:29:57,John,1,0,12,muller_lyer_day1_illusion13.svg,Same length,1.657,Group 1 - Fast,0.5,Right,200,215,-15,20,36,red,False,False
+2024-11-20 21:29:58,caitthax,6,20,13,muller_lyer_day6_illusion3.svg,Same length,2.138,Group 1 - Fast,0.5,Same length,220,220,0,20,36,black,False,True
+2024-11-20 21:29:58,gavinedd,6,22,4,muller_lyer_day6_illusion29.svg,Left,2.168,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-20 21:29:58,kmurphy,6,21,3,muller_lyer_day6_illusion14.svg,Same length,3.502,Group 1 - Slow,5.0,Right,180,190,-10,20,36,red,False,False
+2024-11-20 21:30:00,caitthax,6,20,14,muller_lyer_day6_illusion5.svg,Left,1.499,Group 1 - Fast,0.5,Left,220,195,25,20,36,black,False,True
+2024-11-20 21:30:01,John,1,0,13,muller_lyer_day1_illusion16.svg,Right,2.022,Group 1 - Fast,0.5,Right,190,215,-25,20,36,red,False,True
+2024-11-20 21:30:01,gavinedd,6,22,5,muller_lyer_day6_illusion28.svg,Same length,1.894,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:30:02,mattrau1,6,22,1,muller_lyer_day6_illusion19.svg,Same length,3.507,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-20 21:30:02,kmurphy,6,21,4,muller_lyer_day6_illusion4.svg,Left,3.021,Group 1 - Slow,5.0,Same length,200,200,0,20,36,black,False,False
+2024-11-20 21:30:03,caitthax,6,20,15,muller_lyer_day6_illusion9.svg,Same length,1.516,Group 1 - Fast,0.5,Same length,190,190,0,20,36,red,False,True
+2024-11-20 21:30:04,John,1,0,14,muller_lyer_day1_illusion3.svg,Left,1.609,Group 1 - Fast,0.5,Same length,205,205,0,20,36,black,False,False
+2024-11-20 21:30:04,gavinedd,6,22,6,muller_lyer_day6_illusion30.svg,Same length,2.304,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:30:06,John,1,0,15,muller_lyer_day1_illusion9.svg,Left,1.493,Group 1 - Fast,0.5,Same length,220,220,0,20,36,red,False,False
+2024-11-20 21:30:07,kmurphy,6,21,5,muller_lyer_day6_illusion2.svg,Same length,3.3,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,True
+2024-11-20 21:30:07,mattrau1,6,22,2,muller_lyer_day6_illusion32.svg,Same length,4.128,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:30:07,gavinedd,6,22,7,muller_lyer_day6_illusion21.svg,Left,1.905,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:30:10,kmurphy,6,21,6,muller_lyer_day6_illusion5.svg,Left,1.611,Group 1 - Slow,5.0,Left,220,195,25,20,36,black,False,True
+2024-11-20 21:30:10,gavinedd,6,22,8,muller_lyer_day6_illusion20.svg,Same length,1.729,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-20 21:30:13,mattrau1,6,22,3,muller_lyer_day6_illusion18.svg,Same length,4.285,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-20 21:30:14,gavinedd,6,22,9,muller_lyer_day6_illusion25.svg,Left,2.143,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-20 21:30:15,kmurphy,6,21,7,muller_lyer_day6_illusion6.svg,Same length,3.535,Group 1 - Slow,5.0,Right,180,190,-10,20,36,black,False,False
+2024-11-20 21:30:17,mattrau1,6,22,4,muller_lyer_day6_illusion29.svg,Left,3.139,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-20 21:30:17,gavinedd,6,22,10,muller_lyer_day6_illusion24.svg,Left,2.022,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:30:19,kmurphy,6,21,8,muller_lyer_day6_illusion16.svg,Same length,3.148,Group 1 - Slow,5.0,Left,205,200,5,20,36,red,False,False
+2024-11-20 21:30:19,caitthax,6,21,0,muller_lyer_day6_illusion8.svg,Same length,4.597,Group 1 - Slow,5.0,Left,205,200,5,20,36,black,False,False
+2024-11-20 21:30:21,mattrau1,6,22,5,muller_lyer_day6_illusion28.svg,Left,2.493,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-20 21:30:21,gavinedd,6,22,11,muller_lyer_day6_illusion17.svg,Left,2.416,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:30:23,kmurphy,6,21,9,muller_lyer_day6_illusion9.svg,Left,2.185,Group 1 - Slow,5.0,Same length,190,190,0,20,36,red,False,False
+2024-11-20 21:30:23,caitthax,6,21,1,muller_lyer_day6_illusion1.svg,Same length,2.301,Group 1 - Slow,5.0,Same length,190,190,0,20,36,black,False,True
+2024-11-20 21:30:24,gavinedd,6,22,12,muller_lyer_day6_illusion22.svg,Same length,1.939,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-20 21:30:24,mattrau1,6,22,6,muller_lyer_day6_illusion30.svg,Same length,2.441,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:30:26,kmurphy,6,21,10,muller_lyer_day6_illusion13.svg,Left,1.769,Group 1 - Slow,5.0,Left,220,195,25,20,36,red,False,True
+2024-11-20 21:30:27,caitthax,6,21,2,muller_lyer_day6_illusion15.svg,Left,2.362,Group 1 - Slow,5.0,Left,205,190,15,20,36,red,False,True
+2024-11-20 21:30:27,John,6,20,0,muller_lyer_day6_illusion16.svg,Same length,2.078,Group 1 - Fast,0.5,Left,205,200,5,20,36,red,False,False
+2024-11-20 21:30:27,gavinedd,6,22,13,muller_lyer_day6_illusion23.svg,Same length,1.873,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-20 21:30:29,mattrau1,6,22,7,muller_lyer_day6_illusion21.svg,Left,3.137,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:30:30,John,6,20,1,muller_lyer_day6_illusion14.svg,Left,1.493,Group 1 - Fast,0.5,Right,180,190,-10,20,36,red,False,False
+2024-11-20 21:30:30,gavinedd,6,22,14,muller_lyer_day6_illusion26.svg,Left,1.612,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-20 21:30:30,kmurphy,6,21,11,muller_lyer_day6_illusion12.svg,Left,3.008,Group 1 - Slow,5.0,Same length,200,200,0,20,36,red,False,False
+2024-11-20 21:30:30,caitthax,6,21,3,muller_lyer_day6_illusion14.svg,Same length,2.378,Group 1 - Slow,5.0,Right,180,190,-10,20,36,red,False,False
+2024-11-20 21:30:32,mattrau1,6,22,8,muller_lyer_day6_illusion20.svg,Left,2.449,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:30:33,John,6,20,2,muller_lyer_day6_illusion1.svg,Left,1.437,Group 1 - Fast,0.5,Same length,190,190,0,20,36,black,False,False
+2024-11-20 21:30:34,gavinedd,6,22,15,muller_lyer_day6_illusion27.svg,Same length,2.486,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:30:35,caitthax,6,21,4,muller_lyer_day6_illusion4.svg,Left,3.599,Group 1 - Slow,5.0,Same length,200,200,0,20,36,black,False,False
+2024-11-20 21:30:36,John,6,20,3,muller_lyer_day6_illusion6.svg,Same length,1.535,Group 1 - Fast,0.5,Right,180,190,-10,20,36,black,False,False
+2024-11-20 21:30:36,kmurphy,6,21,12,muller_lyer_day6_illusion11.svg,Left,4.474,Group 1 - Slow,5.0,Same length,220,220,0,20,36,red,False,False
+2024-11-20 21:30:36,mattrau1,6,22,9,muller_lyer_day6_illusion25.svg,Same length,2.448,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:30:39,caitthax,6,21,5,muller_lyer_day6_illusion2.svg,Same length,2.329,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,True
+2024-11-20 21:30:39,John,6,20,4,muller_lyer_day6_illusion10.svg,Left,1.607,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,False
+2024-11-20 21:30:41,mattrau1,6,22,10,muller_lyer_day6_illusion24.svg,Left,3.359,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:30:42,kmurphy,6,21,13,muller_lyer_day6_illusion10.svg,Same length,4.478,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,True
+2024-11-20 21:30:42,caitthax,6,21,6,muller_lyer_day6_illusion5.svg,Left,1.651,Group 1 - Slow,5.0,Left,220,195,25,20,36,black,False,True
+2024-11-20 21:30:42,John,6,20,5,muller_lyer_day6_illusion12.svg,Left,1.443,Group 1 - Fast,0.5,Same length,200,200,0,20,36,red,False,False
+2024-11-20 21:30:44,John,6,20,6,muller_lyer_day6_illusion8.svg,Left,1.235,Group 1 - Fast,0.5,Left,205,200,5,20,36,black,False,True
+2024-11-20 21:30:45,mattrau1,6,22,11,muller_lyer_day6_illusion17.svg,Left,3.172,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:30:47,kmurphy,6,21,14,muller_lyer_day6_illusion7.svg,Left,3.599,Group 1 - Slow,5.0,Left,205,190,15,20,36,black,False,True
+2024-11-20 21:30:47,John,6,20,7,muller_lyer_day6_illusion13.svg,Left,1.184,Group 1 - Fast,0.5,Left,220,195,25,20,36,red,False,True
+2024-11-20 21:30:48,caitthax,6,21,7,muller_lyer_day6_illusion6.svg,Same length,5.045,Group 1 - Slow,5.0,Right,180,190,-10,20,36,black,False,False
+2024-11-20 21:30:50,mattrau1,6,22,12,muller_lyer_day6_illusion22.svg,Same length,3.643,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,True
+2024-11-20 21:30:50,John,6,20,8,muller_lyer_day6_illusion4.svg,Same length,1.735,Group 1 - Fast,0.5,Same length,200,200,0,20,36,black,False,True
+2024-11-20 21:30:52,kmurphy,6,21,15,muller_lyer_day6_illusion3.svg,Same length,3.858,Group 1 - Slow,5.0,Same length,220,220,0,20,36,black,False,True
+2024-11-20 21:30:52,caitthax,6,21,8,muller_lyer_day6_illusion16.svg,Left,2.809,Group 1 - Slow,5.0,Left,205,200,5,20,36,red,False,True
+2024-11-20 21:30:53,John,6,20,9,muller_lyer_day6_illusion7.svg,Left,1.395,Group 1 - Fast,0.5,Left,205,190,15,20,36,black,False,True
+2024-11-20 21:30:53,gavinedd,6,23,0,muller_lyer_day6_illusion31.svg,Same length,3.007,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:30:55,mattrau1,6,22,13,muller_lyer_day6_illusion23.svg,Left,3.802,Group 2 - Fast,0.5,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:30:56,caitthax,6,21,9,muller_lyer_day6_illusion9.svg,Same length,2.549,Group 1 - Slow,5.0,Same length,190,190,0,20,36,red,False,True
+2024-11-20 21:30:57,John,6,20,10,muller_lyer_day6_illusion15.svg,Same length,2.313,Group 1 - Fast,0.5,Left,205,190,15,20,36,red,False,False
+2024-11-20 21:30:57,gavinedd,6,23,1,muller_lyer_day6_illusion24.svg,Same length,2.708,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-20 21:30:59,caitthax,6,21,10,muller_lyer_day6_illusion13.svg,Left,1.729,Group 1 - Slow,5.0,Left,220,195,25,20,36,red,False,True
+2024-11-20 21:30:59,mattrau1,6,22,14,muller_lyer_day6_illusion26.svg,Same length,3.278,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:31:00,John,6,20,11,muller_lyer_day6_illusion2.svg,Left,1.519,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,False
+2024-11-20 21:31:01,gavinedd,6,23,2,muller_lyer_day6_illusion26.svg,Same length,2.674,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:31:02,caitthax,6,21,11,muller_lyer_day6_illusion12.svg,Same length,2.086,Group 1 - Slow,5.0,Same length,200,200,0,20,36,red,False,True
+2024-11-20 21:31:03,John,6,20,12,muller_lyer_day6_illusion11.svg,Same length,1.815,Group 1 - Fast,0.5,Same length,220,220,0,20,36,red,False,True
+2024-11-20 21:31:04,mattrau1,6,22,15,muller_lyer_day6_illusion27.svg,Right,3.173,Group 2 - Fast,0.5,Same length,200,200,0,20,36,red,True,False
+2024-11-20 21:31:05,gavinedd,6,23,3,muller_lyer_day6_illusion32.svg,Same length,2.203,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:31:06,John,6,20,13,muller_lyer_day6_illusion3.svg,Left,1.514,Group 1 - Fast,0.5,Same length,220,220,0,20,36,black,False,False
+2024-11-20 21:31:06,caitthax,6,21,12,muller_lyer_day6_illusion11.svg,Same length,2.708,Group 1 - Slow,5.0,Same length,220,220,0,20,36,red,False,True
+2024-11-20 21:31:08,gavinedd,6,23,4,muller_lyer_day6_illusion29.svg,Same length,2.437,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:31:09,John,6,20,14,muller_lyer_day6_illusion5.svg,Left,1.364,Group 1 - Fast,0.5,Left,220,195,25,20,36,black,False,True
+2024-11-20 21:31:11,caitthax,6,21,13,muller_lyer_day6_illusion10.svg,Right,3.486,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,False
+2024-11-20 21:31:12,John,6,20,15,muller_lyer_day6_illusion9.svg,Left,1.548,Group 1 - Fast,0.5,Same length,190,190,0,20,36,red,False,False
+2024-11-20 21:31:13,gavinedd,6,23,5,muller_lyer_day6_illusion22.svg,Left,3.407,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:31:15,kmurphy,6,20,0,muller_lyer_day6_illusion16.svg,Left,2.348,Group 1 - Fast,0.5,Left,205,200,5,20,36,red,False,True
+2024-11-20 21:31:15,caitthax,6,21,14,muller_lyer_day6_illusion7.svg,Left,3.077,Group 1 - Slow,5.0,Left,205,190,15,20,36,black,False,True
+2024-11-20 21:31:18,kmurphy,6,20,1,muller_lyer_day6_illusion14.svg,Same length,1.363,Group 1 - Fast,0.5,Right,180,190,-10,20,36,red,False,False
+2024-11-20 21:31:19,caitthax,6,21,15,muller_lyer_day6_illusion3.svg,Same length,2.267,Group 1 - Slow,5.0,Same length,220,220,0,20,36,black,False,True
+2024-11-20 21:31:20,gavinedd,6,23,6,muller_lyer_day6_illusion28.svg,Left,5.81,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-20 21:31:20,mattrau1,6,23,0,muller_lyer_day6_illusion31.svg,Left,3.619,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-20 21:31:21,kmurphy,6,20,2,muller_lyer_day6_illusion1.svg,Left,1.462,Group 1 - Fast,0.5,Same length,190,190,0,20,36,black,False,False
+2024-11-20 21:31:23,gavinedd,6,23,7,muller_lyer_day6_illusion21.svg,Same length,2.143,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-20 21:31:24,kmurphy,6,20,3,muller_lyer_day6_illusion6.svg,Same length,1.486,Group 1 - Fast,0.5,Right,180,190,-10,20,36,black,False,False
+2024-11-20 21:31:25,mattrau1,6,23,1,muller_lyer_day6_illusion24.svg,Left,3.505,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:31:27,kmurphy,6,20,4,muller_lyer_day6_illusion10.svg,Left,1.308,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,False
+2024-11-20 21:31:29,mattrau1,6,23,2,muller_lyer_day6_illusion26.svg,Same length,3.335,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:31:29,gavinedd,6,23,8,muller_lyer_day6_illusion23.svg,Same length,4.917,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-20 21:31:30,John,6,21,0,muller_lyer_day6_illusion8.svg,Left,3.686,Group 1 - Slow,5.0,Left,205,200,5,20,36,black,False,True
+2024-11-20 21:31:31,kmurphy,6,20,5,muller_lyer_day6_illusion12.svg,Right,1.996,Group 1 - Fast,0.5,Same length,200,200,0,20,36,red,False,False
+2024-11-20 21:31:33,mattrau1,6,23,3,muller_lyer_day6_illusion32.svg,Same length,3.005,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:31:35,kmurphy,6,20,6,muller_lyer_day6_illusion8.svg,Right,1.512,Group 1 - Fast,0.5,Left,205,200,5,20,36,black,False,False
+2024-11-20 21:31:35,John,6,21,1,muller_lyer_day6_illusion1.svg,Left,3.833,Group 1 - Slow,5.0,Same length,190,190,0,20,36,black,False,False
+2024-11-20 21:31:38,gavinedd,6,23,9,muller_lyer_day6_illusion20.svg,Same length,7.121,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-20 21:31:38,John,6,21,2,muller_lyer_day6_illusion15.svg,Left,1.52,Group 1 - Slow,5.0,Left,205,190,15,20,36,red,False,True
+2024-11-20 21:31:39,kmurphy,6,20,7,muller_lyer_day6_illusion13.svg,Left,1.241,Group 1 - Fast,0.5,Left,220,195,25,20,36,red,False,True
+2024-11-20 21:31:40,mattrau1,6,23,4,muller_lyer_day6_illusion29.svg,Right,5.091,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-20 21:31:41,gavinedd,6,23,10,muller_lyer_day6_illusion17.svg,Left,2.282,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:31:41,John,6,21,3,muller_lyer_day6_illusion14.svg,Same length,1.878,Group 1 - Slow,5.0,Right,180,190,-10,20,36,red,False,False
+2024-11-20 21:31:42,kmurphy,6,20,8,muller_lyer_day6_illusion4.svg,Same length,1.301,Group 1 - Fast,0.5,Same length,200,200,0,20,36,black,False,True
+2024-11-20 21:31:44,mattrau1,6,23,5,muller_lyer_day6_illusion22.svg,Left,2.953,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:31:45,kmurphy,6,20,9,muller_lyer_day6_illusion7.svg,Left,1.155,Group 1 - Fast,0.5,Left,205,190,15,20,36,black,False,True
+2024-11-20 21:31:45,John,6,21,4,muller_lyer_day6_illusion4.svg,Same length,2.442,Group 1 - Slow,5.0,Same length,200,200,0,20,36,black,False,True
+2024-11-20 21:31:46,gavinedd,6,23,11,muller_lyer_day6_illusion30.svg,Same length,3.368,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:31:48,mattrau1,6,23,6,muller_lyer_day6_illusion28.svg,Same length,3.024,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:31:48,John,6,21,5,muller_lyer_day6_illusion2.svg,Same length,1.492,Group 1 - Slow,5.0,Same length,180,180,0,20,36,black,False,True
+2024-11-20 21:31:49,kmurphy,6,20,10,muller_lyer_day6_illusion15.svg,Left,1.337,Group 1 - Fast,0.5,Left,205,190,15,20,36,red,False,True
+2024-11-20 21:31:52,John,6,21,6,muller_lyer_day6_illusion5.svg,Left,2.085,Group 1 - Slow,5.0,Left,220,195,25,20,36,black,False,True
+2024-11-20 21:31:52,mattrau1,6,23,7,muller_lyer_day6_illusion21.svg,Left,2.837,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:31:52,kmurphy,6,20,11,muller_lyer_day6_illusion2.svg,Same length,1.283,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,True
+2024-11-20 21:31:52,gavinedd,6,23,12,muller_lyer_day6_illusion25.svg,Left,5.063,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-20 21:31:55,John,6,21,7,muller_lyer_day6_illusion6.svg,Same length,1.635,Group 1 - Slow,5.0,Right,180,190,-10,20,36,black,False,False
+2024-11-20 21:31:55,kmurphy,6,20,12,muller_lyer_day6_illusion11.svg,Left,1.25,Group 1 - Fast,0.5,Same length,220,220,0,20,36,red,False,False
+2024-11-20 21:31:57,mattrau1,6,23,8,muller_lyer_day6_illusion23.svg,Same length,3.445,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-20 21:31:57,gavinedd,6,23,13,muller_lyer_day6_illusion18.svg,Same length,3.906,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-20 21:31:58,John,6,21,8,muller_lyer_day6_illusion16.svg,Left,2.01,Group 1 - Slow,5.0,Left,205,200,5,20,36,red,False,True
+2024-11-20 21:31:58,kmurphy,6,20,13,muller_lyer_day6_illusion3.svg,Same length,1.265,Group 1 - Fast,0.5,Same length,220,220,0,20,36,black,False,True
+2024-11-20 21:32:01,John,6,21,9,muller_lyer_day6_illusion9.svg,Same length,1.513,Group 1 - Slow,5.0,Same length,190,190,0,20,36,red,False,True
+2024-11-20 21:32:01,kmurphy,6,20,14,muller_lyer_day6_illusion5.svg,Left,1.129,Group 1 - Fast,0.5,Left,220,195,25,20,36,black,False,True
+2024-11-20 21:32:01,mattrau1,6,23,9,muller_lyer_day6_illusion20.svg,Left,3.5,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:32:02,gavinedd,6,23,14,muller_lyer_day6_illusion19.svg,Same length,3.159,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-20 21:32:04,John,6,21,10,muller_lyer_day6_illusion13.svg,Left,1.935,Group 1 - Slow,5.0,Left,220,195,25,20,36,red,False,True
+2024-11-20 21:32:05,kmurphy,6,20,15,muller_lyer_day6_illusion9.svg,Same length,1.518,Group 1 - Fast,0.5,Same length,190,190,0,20,36,red,False,True
+2024-11-20 21:32:05,mattrau1,6,23,10,muller_lyer_day6_illusion17.svg,Left,2.681,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:32:06,gavinedd,6,23,15,muller_lyer_day6_illusion27.svg,Left,2.737,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-20 21:32:08,John,6,21,11,muller_lyer_day6_illusion12.svg,Same length,1.997,Group 1 - Slow,5.0,Same length,200,200,0,20,36,red,False,True
+2024-11-20 21:32:10,mattrau1,6,23,11,muller_lyer_day6_illusion30.svg,Same length,3.485,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-20 21:32:11,John,6,21,12,muller_lyer_day6_illusion11.svg,Same length,1.642,Group 1 - Slow,5.0,Same length,220,220,0,20,36,red,False,True
+2024-11-20 21:32:14,mattrau1,6,23,12,muller_lyer_day6_illusion25.svg,Left,2.979,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-20 21:32:15,John,6,21,13,muller_lyer_day6_illusion10.svg,Left,2.85,Group 1 - Slow,5.0,Same length,180,180,0,20,36,red,False,False
+2024-11-20 21:32:18,mattrau1,6,23,13,muller_lyer_day6_illusion18.svg,Left,2.962,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:32:18,John,6,21,14,muller_lyer_day6_illusion7.svg,Left,1.78,Group 1 - Slow,5.0,Left,205,190,15,20,36,black,False,True
+2024-11-20 21:32:22,John,6,21,15,muller_lyer_day6_illusion3.svg,Same length,2.631,Group 1 - Slow,5.0,Same length,220,220,0,20,36,black,False,True
+2024-11-20 21:32:23,mattrau1,6,23,14,muller_lyer_day6_illusion19.svg,Left,3.751,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-20 21:32:27,mattrau1,6,23,15,muller_lyer_day6_illusion27.svg,Same length,2.709,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-21 04:29:59,Ryanc,6,20,0,muller_lyer_day6_illusion16.svg,Left,2.006,Group 1 - Fast,0.5,Left,205,200,5,20,36,red,False,True
+2024-11-21 04:30:02,Ryanc,6,20,1,muller_lyer_day6_illusion14.svg,Right,1.727,Group 1 - Fast,0.5,Right,180,190,-10,20,36,red,False,True
+2024-11-21 04:30:06,Ryanc,6,20,2,muller_lyer_day6_illusion1.svg,Same length,1.837,Group 1 - Fast,0.5,Same length,190,190,0,20,36,black,False,True
+2024-11-21 04:30:09,Ryanc,6,20,3,muller_lyer_day6_illusion6.svg,Same length,2.122,Group 1 - Fast,0.5,Right,180,190,-10,20,36,black,False,False
+2024-11-21 04:30:12,Ryanc,6,20,4,muller_lyer_day6_illusion10.svg,Right,1.792,Group 1 - Fast,0.5,Same length,180,180,0,20,36,red,False,False
+2024-11-21 04:30:15,Ryanc,6,20,5,muller_lyer_day6_illusion12.svg,Left,1.683,Group 1 - Fast,0.5,Same length,200,200,0,20,36,red,False,False
+2024-11-21 04:30:18,Ryanc,6,20,6,muller_lyer_day6_illusion8.svg,Same length,1.997,Group 1 - Fast,0.5,Left,205,200,5,20,36,black,False,False
+2024-11-21 04:30:21,Ryanc,6,20,7,muller_lyer_day6_illusion13.svg,Left,1.698,Group 1 - Fast,0.5,Left,220,195,25,20,36,red,False,True
+2024-11-21 04:30:23,Ryanc,6,20,8,muller_lyer_day6_illusion4.svg,Same length,1.611,Group 1 - Fast,0.5,Same length,200,200,0,20,36,black,False,True
+2024-11-21 04:30:26,Ryanc,6,20,9,muller_lyer_day6_illusion7.svg,Same length,1.741,Group 1 - Fast,0.5,Left,205,190,15,20,36,black,False,False
+2024-11-21 04:30:29,Ryanc,6,20,10,muller_lyer_day6_illusion15.svg,Left,1.488,Group 1 - Fast,0.5,Left,205,190,15,20,36,red,False,True
+2024-11-21 04:30:32,Ryanc,6,20,11,muller_lyer_day6_illusion2.svg,Same length,1.903,Group 1 - Fast,0.5,Same length,180,180,0,20,36,black,False,True
+2024-11-21 04:30:35,Ryanc,6,20,12,muller_lyer_day6_illusion11.svg,Right,1.743,Group 1 - Fast,0.5,Same length,220,220,0,20,36,red,False,False
+2024-11-21 04:30:38,Ryanc,6,20,13,muller_lyer_day6_illusion3.svg,Left,2.244,Group 1 - Fast,0.5,Same length,220,220,0,20,36,black,False,False
+2024-11-21 04:30:41,Ryanc,6,20,14,muller_lyer_day6_illusion5.svg,Left,1.417,Group 1 - Fast,0.5,Left,220,195,25,20,36,black,False,True
+2024-11-21 04:30:45,Ryanc,6,20,15,muller_lyer_day6_illusion9.svg,Same length,2.511,Group 1 - Fast,0.5,Same length,190,190,0,20,36,red,False,True
+2024-11-21 04:31:09,Ryanc,6,23,0,muller_lyer_day6_illusion31.svg,Left,3.196,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-21 04:31:16,Ryanc,6,23,1,muller_lyer_day6_illusion24.svg,Left,5.196,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-21 04:31:22,Ryanc,6,23,2,muller_lyer_day6_illusion26.svg,Left,5.715,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-21 04:31:26,Ryanc,6,23,3,muller_lyer_day6_illusion32.svg,Same length,2.648,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,True
+2024-11-21 04:31:31,Ryanc,6,23,4,muller_lyer_day6_illusion29.svg,Left,3.788,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-21 04:31:34,Ryanc,6,23,5,muller_lyer_day6_illusion22.svg,Left,2.008,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-21 04:31:38,Ryanc,6,23,6,muller_lyer_day6_illusion28.svg,Left,2.388,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-21 04:31:42,Ryanc,6,23,7,muller_lyer_day6_illusion21.svg,Same length,2.768,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-21 04:31:45,Ryanc,6,23,8,muller_lyer_day6_illusion23.svg,Same length,1.812,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-21 04:31:48,Ryanc,6,23,9,muller_lyer_day6_illusion20.svg,Left,1.857,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-21 04:31:51,Ryanc,6,23,10,muller_lyer_day6_illusion17.svg,Left,1.516,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-21 04:31:54,Ryanc,6,23,11,muller_lyer_day6_illusion30.svg,Left,2.688,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-21 04:31:58,Ryanc,6,23,12,muller_lyer_day6_illusion25.svg,Left,2.013,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
+2024-11-21 04:32:01,Ryanc,6,23,13,muller_lyer_day6_illusion18.svg,Left,1.763,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,False
+2024-11-21 04:32:04,Ryanc,6,23,14,muller_lyer_day6_illusion19.svg,Same length,2.557,Group 2 - Slow,5.0,Same length,200,200,0,20,36,black,True,True
+2024-11-21 04:32:07,Ryanc,6,23,15,muller_lyer_day6_illusion27.svg,Left,1.795,Group 2 - Slow,5.0,Same length,200,200,0,20,36,red,True,False
